@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'PrettyFont';
+    src: url('Fonts/PrettyFont.woff') format('woff');
+    /* Agrega más formatos de fuente según sea necesario */
+}
+/* Estilos adicionales según tu preferencia */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('img/BackgroundBlack1.jpg'); /* Cambia 'tu_imagen_de_fondo.jpg' por la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+}
+
+.background-overlay {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+}
+.image-container {
+    position: absolute; /* Posicionamiento absoluto para posicionar la imagen dentro del left-column */
+    top: -20px; /* Mueve la imagen hacia arriba para que sobresalga un poco del cuadro */
+    left: 50%; /* Centra horizontalmente la imagen */
+    transform: translateX(-50%); /* Centra horizontalmente la imagen */
+    width: 70%; /* Ancho del contenedor de la imagen */
+   
+}
+
+.Image-Profile {
+    margin: -60% 10% 0 10%;
+    width: 80%; /* Establece el ancho de la imagen al 100% del contenedor */
+    height: auto; /* Permite que la altura de la imagen se ajuste automáticamente */
+    display: block; /* Asegura que la imagen sea un elemento de bloque */
+    border-radius: 30%; /* Borde redondeado */
+}
+
+.icon img{
+    height: 50px;
+    width: auto;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+.left-column {
+    
+    width: 300px; /* Ancho del contenedor izquierdo */
+    height: auto;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6)); /* Degradado blanco */
+}
+
+.right-column {
+    border-radius: 30px;
+    padding: 20px;
+    flex: 1;
+    margin-top: 50px;
+    margin: 20px;
+    overflow-y: auto; /* Agrega un scrollbar vertical si el contenido es largo */
+    max-height: 500px; /* Altura máxima igual a la altura de la ventana menos el padding */
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+}
+
+
