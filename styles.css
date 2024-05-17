@@ -3,26 +3,24 @@
     src: url('Fonts/PrettyFont.woff') format('woff');
     /* Agrega más formatos de fuente según sea necesario */
 }
+
 /* Estilos adicionales según tu preferencia */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('img/BackgroundBlack1.jpg'); /* Cambia 'tu_imagen_de_fondo.jpg' por la ruta de tu imagen */
+    background: linear-gradient(45deg, #566981, #3a415a, #34344e); /* Degradado diagonal */
     background-size: cover;
     background-position: center;
 }
 
-.background-overlay {
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
-}
+
 .image-container {
     position: absolute; /* Posicionamiento absoluto para posicionar la imagen dentro del left-column */
     top: -20px; /* Mueve la imagen hacia arriba para que sobresalga un poco del cuadro */
     left: 50%; /* Centra horizontalmente la imagen */
     transform: translateX(-50%); /* Centra horizontalmente la imagen */
     width: 70%; /* Ancho del contenedor de la imagen */
-   
 }
 
 .Image-Profile {
@@ -33,37 +31,92 @@ body {
     border-radius: 30%; /* Borde redondeado */
 }
 
-.icon img{
+.icon img {
     height: 50px;
     width: auto;
 }
 
 .content {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100vh;
+    justify-content: flex-start; /* Alinea los elementos hacia la izquierda */
+    align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+    padding-top: 100px; /* Espacio suficiente para la navegación fija */
+    padding-left: 340px; /* Espacio suficiente para la columna fija */
 }
 
 .left-column {
-    
     width: 300px; /* Ancho del contenedor izquierdo */
-    height: auto;
     padding: 20px;
-    margin: 20px;
     border-radius: 20px;
     background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6)); /* Degradado blanco */
+    color: #34344e;
+    position: fixed; /* Mantiene la columna en una posición fija */
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%); /* Centra verticalmente */
+    left: 20px; /* Espacio desde el lado izquierdo */
 }
 
-.right-column {
-    border-radius: 30px;
-    padding: 20px;
-    flex: 1;
-    margin-top: 50px;
-    margin: 20px;
-    overflow-y: auto; /* Agrega un scrollbar vertical si el contenido es largo */
-    max-height: 500px; /* Altura máxima igual a la altura de la ventana menos el padding */
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+.main-content {
+    flex-grow: 1;
+    margin: 20px 20px 0 20px;
 }
+
+.navigation {
+    width: 60%; /* La navegación ocupa el 60% del ancho de la ventana */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    color: #34344e;
+    position: fixed; /* Mantiene la navegación en una posición fija */
+    top: 0;
+    right: 1; /* Posiciona la navegación en el lado derecho */
+    z-index: 1000; /* Asegura que la navegación esté por encima de otros elementos */
+    border-radius: 20px; /* Borde redondeado */
+    margin: 20px; /* Espacio alrededor de la navegación */
+}
+.navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navigation ul li {
+    position: relative;
+}
+
+.navigation ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+.navigation ul li:hover .submenu {
+    display: block;
+}
+
+.info {
+    flex-grow: 1; /* La columna derecha ocupa el espacio restante */
+    margin: 20px; /* Margen de 20 píxeles alrededor */
+    padding: 40px;
+    border-radius: 20px;
+    margin-left: 20px; /* Asegura que no esté directamente al lado de la columna fija */
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    color: #cbdad5;
+}
+
+#lang {
+    border-radius: 20px;
+    background-color: #cbdad5;
+    padding: 10px 20px;
+    font-size: 80%;
+}
+
+
 
 
