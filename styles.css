@@ -13,28 +13,124 @@ body {
     background-size: cover;
     background-position: center;
 }
-
-
-.image-container {
-    position: absolute; /* Posicionamiento absoluto para posicionar la imagen dentro del left-column */
-    top: -20px; /* Mueve la imagen hacia arriba para que sobresalga un poco del cuadro */
-    left: 50%; /* Centra horizontalmente la imagen */
-    transform: translateX(-50%); /* Centra horizontalmente la imagen */
-    width: 70%; /* Ancho del contenedor de la imagen */
+.separator {
+    border-top: 1px solid #566981; /* Borde superior de 1 píxel sólido con color gris claro */
+    margin-left: 25px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
 }
 
+/* ------------------------------------Contenedor Izquierdo---------------------------------------------------------- */
+.left-column {
+    width: 300px; /* Ancho del contenedor izquierdo */
+    height: 500px;
+    padding: 20px;
+    border-radius: 20px;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6)); /* Degradado blanco */
+    color: #34344e;
+    position: fixed; /* Mantiene la columna en una posición fija */
+    top: 60%; /* Centra verticalmente */
+    transform: translateY(-50%); /* Centra verticalmente */
+    left: 20px; /* Espacio desde el lado izquierdo */
+}
 .Image-Profile {
-    margin: -60% 10% 0 10%;
-    width: 80%; /* Establece el ancho de la imagen al 100% del contenedor */
+    margin: -60% 10% 0 20%;
+    width: 60%; /* Establece el ancho de la imagen al 100% del contenedor */
     height: auto; /* Permite que la altura de la imagen se ajuste automáticamente */
-    display: block; /* Asegura que la imagen sea un elemento de bloque */
-    border-radius: 30%; /* Borde redondeado */
+    border-radius: 10%; /* Borde redondeado */
+}
+.name{
+    margin-top: 1px;
+    display: flex;
+    justify-content: center;
+}
+.container_soft {
+    width: 65%; /* Ancho del contenedor principal */
+    margin: 0 auto; /* Centra el contenedor principal horizontalmente */
+}
+.Software_Development {
+    display: block;
+    background-color: #bdcac6;
+    color: #566981;
+    margin: 5px auto;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-align: center; /* Centra el texto horizontalmente */
+}
+.personal_info{
+    background-color: #bdcac6;
+    border-radius: 10px;
+    height: auto;
+    align-self: stretch;
+}
+/*------------------------------ Acomodando informacion del telefono--------------------------------------------------------------*/
+.container_phone {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
+    height: 75px;
 }
 
-.icon img {
-    height: 50px;
-    width: auto;
+.container_icon_phone {
+    margin-left: 10px; /* Espacio entre el icono y el texto */
+    margin-top: 15px;
+    display: flex;
+    align-items: center; /* Centra verticalmente el icono */
+    height: 10px;
+    width: 60px;
+    
 }
+
+.phone_info {
+    display: flex;
+    flex-direction: column;
+}
+.phone_info p {
+    margin: 0; /* Elimina el margen predeterminado de los párrafos */
+}
+/*------------------------------ Acomodando informacion del Gmail--------------------------------------------------------------*/
+.container_gmail {
+    margin-top: 5px;
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
+    height: 75px;
+}
+
+.icon_gmail {
+    margin-left: 10px; /* Espacio entre el icono y el texto */
+    margin-top: 15px;
+    display: flex;
+    align-items: center; /* Centra verticalmente el icono */
+    height: 10px;
+    width: 60px;
+}
+.gmail_info {
+    display: flex;
+    flex-direction: column;
+}
+.gmail_info p {
+    margin: 0; /* Elimina el margen predeterminado de los párrafos */
+}
+
+/*------------------------------ Acomodando Iconos--------------------------------------------------------------*/
+.icon {
+    display: inline-block;
+    margin-right: 20px; /* Ajusta el margen según sea necesario */
+}
+.icons-container {
+    display: flex;
+    justify-content: center; /* Centra los íconos horizontalmente */
+    margin-bottom: 1px; /* Margen inferior para separación */
+    margin-top: 5px;
+}
+.icon-tabler, .icon {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 10px; /* Espacio entre los íconos */
+    color: #597e8d; /* El color de los íconos */
+}
+/* ---------------------------------------------------------------------------------------------- */
+
 
 .content {
     display: flex;
@@ -42,18 +138,6 @@ body {
     align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
     padding-top: 100px; /* Espacio suficiente para la navegación fija */
     padding-left: 340px; /* Espacio suficiente para la columna fija */
-}
-
-.left-column {
-    width: 300px; /* Ancho del contenedor izquierdo */
-    padding: 20px;
-    border-radius: 20px;
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6)); /* Degradado blanco */
-    color: #34344e;
-    position: fixed; /* Mantiene la columna en una posición fija */
-    top: 50%; /* Centra verticalmente */
-    transform: translateY(-50%); /* Centra verticalmente */
-    left: 20px; /* Espacio desde el lado izquierdo */
 }
 
 .main-content {
@@ -65,13 +149,13 @@ body {
     width: 60%; /* La navegación ocupa el 60% del ancho de la ventana */
     padding: 20px;
     background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
-    color: #34344e;
     position: fixed; /* Mantiene la navegación en una posición fija */
     top: 0;
     right: 1; /* Posiciona la navegación en el lado derecho */
     z-index: 1000; /* Asegura que la navegación esté por encima de otros elementos */
     border-radius: 20px; /* Borde redondeado */
     margin: 20px; /* Espacio alrededor de la navegación */
+
 }
 .navigation ul {
     list-style-type: none;
@@ -86,14 +170,11 @@ body {
 }
 
 .navigation ul li a {
-    color: #fff;
+    color: #34344e;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 10px;
     display: block;
-}
-
-.navigation ul li:hover .submenu {
-    display: block;
+    font-family: 'PrettyFont';
 }
 
 .info {
