@@ -20,6 +20,10 @@ body {
     display: flex;
     justify-content: center;
 }
+nav{
+    justify-content: flex-end;
+    
+}
 
 /* ------------------------------------Contenedor Izquierdo---------------------------------------------------------- */
 .left-column {
@@ -140,10 +144,7 @@ body {
     padding-left: 340px; /* Espacio suficiente para la columna fija */
 }
 
-.main-content {
-    flex-grow: 1;
-    margin: 20px 20px 0 20px;
-}
+
 
 .navigation {
     width: 60%; /* La navegación ocupa el 60% del ancho de la ventana */
