@@ -19,11 +19,13 @@ body {
 }
 
 /* ----------------------------------Barra de navegacion----------------------------------------------------------- */
+/* ----------------------------------Barra de navegacion----------------------------------------------------------- */
 .navigation {
     padding-left: 1000px;
     width: 65%; /* La navegación ocupa el 60% del ancho de la ventana */
     background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
     right: 0;
+    top: 0;
     border-radius: 20px; /* Borde redondeado */
     margin-right: 3rem;
     margin-top: 1rem;
@@ -38,14 +40,14 @@ body {
     margin: 0;
     padding: 0.5rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; /* Distribuir elementos con espacio entre ellos */
+    align-items: center; /* Centrar verticalmente los elementos */
+    width: 100%;
 }
-
 
 .navigation ul li a {
     color: #34344e;
     text-decoration: none;
-    font-family: 'PrettyFont';
 }
 #lang {
     border-radius: 10px;
@@ -53,6 +55,7 @@ body {
     padding: 10px 20px;
     font-size: 80%;
 }
+
 
 /* ------------------------------------Contenedor Izquierdo---------------------------------------------------------- */
 .left-column {
@@ -166,19 +169,16 @@ body {
 
 
 /* ------------------------------------Contenedor de infromacion--------------------------------------------------------*/
-
 .sobre_mi {
     margin-left: 25rem;
     width: 70%;
-    background-color: #bdcac6;
-    flex-grow: 1;
     flex-grow: 1; 
-    margin-top: 7rem;
+    margin-top: 8.6rem; /* Ajustar este valor si la barra de navegación es más alta */
     border-radius: 20px;
 }
 
 h1 {
-    margin-top: 5rem;
+    margin: 1rem;
     display: flex;
     justify-content: center;
     color: #cbdad5;
