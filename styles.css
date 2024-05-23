@@ -8,11 +8,7 @@
 /* Probando si puedo subir otro archivo*/
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(45deg, #566981, #3a415a, #34344e); /* Degradado diagonal */
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(50deg, #566981, #3a415a, #34344e); 
 }
 .separator {
     border-top: 1px solid #566981; /* Borde superior de 1 píxel sólido con color gris claro */
@@ -21,9 +17,41 @@ body {
     display: flex;
     justify-content: center;
 }
-nav{
-    justify-content: flex-end;
-    
+
+/* ----------------------------------Barra de navegacion----------------------------------------------------------- */
+.navigation {
+    padding-left: 1000px;
+    width: 65%; /* La navegación ocupa el 60% del ancho de la ventana */
+    background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    right: 0;
+    border-radius: 20px; /* Borde redondeado */
+    margin-right: 3rem;
+    margin-top: 1rem;
+    z-index: 1000; /* Asegura que la navegación esté por encima de otros elementos */
+    position: fixed; /* Mantiene la navegación en una posición fija */
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.navigation ul li a {
+    color: #34344e;
+    text-decoration: none;
+    font-family: 'PrettyFont';
+}
+#lang {
+    border-radius: 10px;
+    background-color: #cbdad5;
+    padding: 10px 20px;
+    font-size: 80%;
 }
 
 /* ------------------------------------Contenedor Izquierdo---------------------------------------------------------- */
@@ -137,68 +165,26 @@ nav{
 /* ---------------------------------------------------------------------------------------------- */
 
 
-.content {
-    display: flex;
-    justify-content: flex-start; /* Alinea los elementos hacia la izquierda */
-    align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
-    padding-top: 100px; /* Espacio suficiente para la navegación fija */
-    padding-left: 340px; /* Espacio suficiente para la columna fija */
-}
+/* ------------------------------------Contenedor de infromacion--------------------------------------------------------*/
 
-
-
-.navigation {
-    width: 60%; /* La navegación ocupa el 60% del ancho de la ventana */
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
-    position: fixed; /* Mantiene la navegación en una posición fija */
-    top: 0;
-    right: 1; /* Posiciona la navegación en el lado derecho */
-    z-index: 1000; /* Asegura que la navegación esté por encima de otros elementos */
-    border-radius: 20px; /* Borde redondeado */
-    margin: 20px; /* Espacio alrededor de la navegación */
-
-}
-.navigation ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-.navigation ul li {
-    position: relative;
-}
-
-.navigation ul li a {
-    color: #34344e;
-    text-decoration: none;
-    padding: 10px 10px;
-    display: block;
-    font-family: 'PrettyFont';
-}
-
-.info {
-    flex-grow: 1; /* La columna derecha ocupa el espacio restante */
-    margin: 20px; /* Margen de 20 píxeles alrededor */
-    padding: 40px;
+.sobre_mi {
+    margin-left: 25rem;
+    width: 70%;
+    background-color: #bdcac6;
+    flex-grow: 1;
+    flex-grow: 1; 
+    margin-top: 7rem;
     border-radius: 20px;
-    margin-left: 20px; /* Asegura que no esté directamente al lado de la columna fija */
 }
 
 h1 {
+    margin-top: 5rem;
     display: flex;
     justify-content: center;
     color: #cbdad5;
 }
 
-#lang {
-    border-radius: 20px;
-    background-color: #cbdad5;
-    padding: 10px 20px;
-    font-size: 80%;
-}
+
 
 
 
