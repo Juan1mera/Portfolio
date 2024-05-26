@@ -18,12 +18,12 @@ body {
     justify-content: center;
 }
 
-/* ----------------------------------Barra de navegacion----------------------------------------------------------- */
+
 /* ----------------------------------Barra de navegacion----------------------------------------------------------- */
 .navigation {
     padding-left: 1000px;
     width: 65%; /* La navegación ocupa el 60% del ancho de la ventana */
-    background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6)); /* Degradado blanco */
     right: 0;
     top: 0;
     border-radius: 20px; /* Borde redondeado */
@@ -59,7 +59,7 @@ body {
 
 /* ------------------------------------Contenedor Izquierdo---------------------------------------------------------- */
 .left-column {
-    width: 300px; /* Ancho del contenedor izquierdo */
+    width: 20%; /* Ancho del contenedor izquierdo */
     height: 500px;
     padding: 20px;
     border-radius: 20px;
@@ -165,8 +165,23 @@ body {
     margin-bottom: 10px; /* Espacio entre los íconos */
     color: #597e8d; /* El color de los íconos */
 }
-/* ---------------------------------------------------------------------------------------------- */
-
+/*------------------------------ Boton de descarga de CV--------------------------------------------------------------*/
+.container_cv{
+    display: block;
+    color: #566981;
+    padding-top: 8%;
+    height: 30%;
+    text-align: center; /* Centra el texto horizontalmente */
+}
+.cv{
+    border: #3a415a;
+    color: #cbdad5;
+    font-size: 100%;
+    background-color: #566981;
+    width: 60%;
+    height: 30%;
+    border-radius: 20px;
+}
 
 /* ------------------------------------Contenedor de infromacion--------------------------------------------------------*/
 .sobre_mi {
