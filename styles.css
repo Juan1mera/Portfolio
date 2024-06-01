@@ -6,10 +6,15 @@
 
 /* Estilos adicionales según tu preferencia */
 /* Probando si puedo subir otro archivo*/
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(50deg, #566981, #3a415a, #34344e); 
+html{
+    font-size: 62.5%;
 }
+body {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(50deg, #34344e,#34344e,#566981, #34344e); 
+}
+/*--------------------------Utilidades-----------------------------------------------------------------------*/
 .separator {
     border-top: 1px solid #566981; /* Borde superior de 1 píxel sólido con color gris claro */
     margin-left: 25px;
@@ -17,38 +22,116 @@ body {
     display: flex;
     justify-content: center;
 }
+.container{
+    max-width: 120rem;
+    margin: 0 auto 0 auto ;
+}
+.button {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    text-decoration: none;
+    color: #34344e;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
+
+
 
 
 /* ----------------------------------Barra de navegacion----------------------------------------------------------- */
-.navigation {
-    padding-left: 1000px;
-    width: 65%; /* La navegación ocupa el 60% del ancho de la ventana */
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6)); /* Degradado blanco */
-    right: 0;
+.nav_bg{
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+    width: 90%;
+    position: absolute;
+    justify-content: center;
     top: 0;
-    border-radius: 20px; /* Borde redondeado */
-    margin-right: 3rem;
-    margin-top: 1rem;
-    z-index: 1000; /* Asegura que la navegación esté por encima de otros elementos */
-    position: fixed; /* Mantiene la navegación en una posición fija */
-    padding: 20px;
-    flex-grow: 1;
+    margin: 3rem 0 3rem 1rem;
+    border-radius: 3rem;
+    z-index: 1;
 }
-
-.navigation ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0.5rem;
+.navigation{
     display: flex;
-    justify-content: space-around; /* Distribuir elementos con espacio entre ellos */
-    align-items: center; /* Centrar verticalmente los elementos */
-    width: 100%;
+    flex-direction: column;
+    align-items: center;
 }
+@media(min-width: 600px){
+    .navigation{
+        flex-direction: row; 
+        justify-content: space-evenly;
+        align-items: center;
+        padding-bottom: 4rem;
+    }
+    .nav_bg{
+        display: block;
+        position: fixed;
+        width: 70%;
+        margin: 3rem 3rem 0 0;
+        right: 0;
+        height: 6rem;
+        
+    }
+}
+.navigation a:hover {
+    color: #bdcac6;
+    background: #597e8d;
+    box-shadow: 0 0 30px 5px #566981;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  
+.navigation a:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+  }
+  
+.navigation a::before {
+    content: '';
+    height: 86%;
+    position: absolute;
+    opacity: 0;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+.navigation a:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
 
-.navigation ul li a {
-    color: #34344e;
-    text-decoration: none;
-}
+
 #lang {
     border-radius: 10px;
     background-color: #cbdad5;
@@ -56,25 +139,25 @@ body {
     font-size: 80%;
 }
 
-
 /* ------------------------------------Contenedor Izquierdo---------------------------------------------------------- */
 .left-column {
-    width: 20%; /* Ancho del contenedor izquierdo */
+    width: 21%; /* Ancho del contenedor izquierdo */
     height: 500px;
     padding: 20px;
     border-radius: 20px;
     background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6)); /* Degradado blanco */
     color: #34344e;
     position: fixed; /* Mantiene la columna en una posición fija */
-    top: 60%; /* Centra verticalmente */
+    top: 61.5%; /* Centra verticalmente */
     transform: translateY(-50%); /* Centra verticalmente */
     left: 20px; /* Espacio desde el lado izquierdo */
+    z-index: 1;
 }
 .Image-Profile {
     margin: -60% 10% 0 20%;
     width: 60%; /* Establece el ancho de la imagen al 100% del contenedor */
     height: auto; /* Permite que la altura de la imagen se ajuste automáticamente */
-    border-radius: 10%; /* Borde redondeado */
+    border-radius: 58% 42% 23% 77% / 43% 53% 47% 57%  ;  /* Borde redondeado */
 }
 .name{
     margin-top: 1px;
@@ -106,17 +189,15 @@ body {
     align-items: center; /* Centra verticalmente los elementos */
     height: 75px;
 }
-
 .container_icon_phone {
     margin-left: 10px; /* Espacio entre el icono y el texto */
     margin-top: 15px;
-    display: flex;
+    display: inline;
     align-items: center; /* Centra verticalmente el icono */
     height: 10px;
     width: 60px;
     
 }
-
 .phone_info {
     display: flex;
     flex-direction: column;
@@ -131,7 +212,6 @@ body {
     align-items: center; /* Centra verticalmente los elementos */
     height: 75px;
 }
-
 .icon_gmail {
     margin-left: 10px; /* Espacio entre el icono y el texto */
     margin-top: 15px;
@@ -147,7 +227,6 @@ body {
 .gmail_info p {
     margin: 0; /* Elimina el margen predeterminado de los párrafos */
 }
-
 /*------------------------------ Acomodando Iconos--------------------------------------------------------------*/
 .icon {
     display: inline-block;
@@ -166,30 +245,29 @@ body {
     color: #597e8d; /* El color de los íconos */
 }
 /*------------------------------ Boton de descarga de CV--------------------------------------------------------------*/
-.container_cv{
-    display: block;
-    color: #566981;
-    padding-top: 8%;
-    height: 30%;
-    text-align: center; /* Centra el texto horizontalmente */
+.cv_bg{
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+    width: 90%;
+    margin: 3rem 1rem 0 1rem;
+    border-radius: 3rem;
+    z-index: 1;
 }
 .cv{
-    border: #3a415a;
-    color: #cbdad5;
-    font-size: 100%;
-    background-color: #566981;
-    width: 60%;
-    height: 30%;
-    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
 /* ------------------------------------Contenedor de infromacion--------------------------------------------------------*/
 .sobre_mi {
-    margin-left: 25rem;
+    /*
+    margin-left: 30rem;
+    */
+    position: relative;
+    bottom: 100%;
+    left: 0%;
     width: 70%;
     flex-grow: 1; 
     margin-top: 8.6rem; /* Ajustar este valor si la barra de navegación es más alta */
-    border-radius: 20px;
 }
 
 h1 {
