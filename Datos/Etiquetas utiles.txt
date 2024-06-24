@@ -1,0 +1,14 @@
+ <form>
+    <fieldset>
+            <legend></legend>
+    </fieldset>
+</form>
+//Para hacer formularios(QUeda bonito xd)
+//al usar "Legend" le da un dise;o para describir el formulario
+
+<label>
+//Campo sobre el cual el usuario pueda escribir
+
+<input type="text">
+//Entrada de informacion, text para entrada de texto 
+//Se puede usar checbox, radio, tel(Para numeros telefonicos), email, number

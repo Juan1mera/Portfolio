@@ -4,28 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"><!--bvhfd-->
 </head>
 <body>
+    <div class="nav_bg">
+        <nav class="navigation container " >
+            <a class="button" href="#">Inicio</a>
+            <a class="button" href="#">Sobre Mi</a>
+            <a class="button" href="#">Clientes</a>
+            <select name="idiomas" id="lang">
+                <option value="Español">Español</option>
+                <option value="Ingles">English</option>
+                <option value="Russian">Руский</option>
+            </select> 
+        </nav>
+    </div>
     <script src="script.js"></script>
-
-        <aside class="left-column">
-            <img class="Image-Profile" src="img/Profile.jpg" alt="Tu Foto">
-            <h2 class="name">Juan Jose Mera </h2>
-            <div class="container_soft"><p class="Software_Development">Software Development</p></div>
-            <section class="icons-container">
-                <!-- Ícono de Github -->
-                <a class="icon" href="https://github.com/Juan1mera" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#34344e" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
-                      </svg>
-                </a>
-                <!-- Ícono de Linkedin -->
-                <a class="icon" href="https://www.linkedin.com/feed/?trk=404_page" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#34344e" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
+    <aside class="left-column">
+        <img class="Image-Profile" src="img/Profile.jpg" alt="Tu Foto">
+        <h2 class="name">Juan Jose Mera </h2>
+        <div class="container_soft"><p class="Software_Development">Software Development</p></div>
+        <section class="icons-container">
+            <!-- Ícono de Github -->
+            <a class="icon" href="https://github.com/Juan1mera" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#34344e" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+                  </svg>
+            </a>
+            <!-- Ícono de Linkedin -->
+            <a class="icon" href="https://www.linkedin.com/feed/?trk=404_page" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#34344e" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
                         <path d="M8 11l0 5" />
                         <path d="M8 8l0 .01" />
                         <path d="M12 16l0 -5" />
@@ -41,9 +52,9 @@
                         <path d="M16.5 7.5l0 .01" />
                       </svg>
                 </a>
-            </section>
-            <div class="personal_info">  
-                <div class="container_phone">
+        </section>
+        <section class="personal_info">  
+                <section class="container_phone">
                     <div class="container_icon_phone"><!-- Info de Telefono-->
                         <div class="icon_phone">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-device-mobile" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#34344e" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -59,9 +70,9 @@
                         <p>+7 980 389 30 16</p>
                         <p>+57 310 889 06 94</p>
                     </div>
-                </div>  
+                </section>  
                 <div class="separator"></div>
-                <div class="container_gmail">
+                <section class="container_gmail">
                     <!-- Info de gmail-->
                     <div class="icon_gmail">
                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#34344e" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -75,9 +86,9 @@
                         <p>Juan1mera2barrera@gmail.com</p>
                         <p>Merabarrerajjmb@gmail.com</p>
                     </div>
-                </div>    
+                </section>    
                 <div class="separator"></div>
-                <div class="container_gmail">
+                <section class="container_gmail">
                     <!-- Info de gmail-->
                     <div class="icon_gmail">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#34344e" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -91,47 +102,35 @@
                         <p><strong>Location:</strong></p>
                         <p>Popayan, Cauca, Colombia</p>
                     </div>
-                </div>        
-            </div> 
-        </aside>
-        <nav class="navigation">
-                <ul>
-                    <li><a href="#sobre-mi">Sobre mi</a></li>
-                    <li><a href="#experiencia">Experiencia</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <select name="idiomas" id="lang">
-                        <option value="Español">Español</option>
-                        <option value="Ingles">English</option>
-                        <option value="Russian">Руский</option>
-                </select>
-                    
-             </ul>
-        </nav>
-        <div class="info">
-            <h1>Hola mundo</h1>
-            <p>Hola mundo otra ves porque si</p>
-            <p> Hola
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis 
-                    corporis eligendi accusantium cumque, ullam accusamus aspernatur 
-                    inventore ab impedit totam consectetur quae excepturi modi possimus
-                     rerum quibusdam placeat aliquam ut!
-                     Lorem ipsum dolor sit, amet consectetur 
-                     adipisicing elit. Quasi totam tempore ad impedit
-                      ex enim fuga optio repudiandae rerum voluptate quo
-                       nobis porro distinctio consequatur, explicabo fugit
-                        obcaecati adipisci illum!
-            </p>
-            <p> Hola Como estas</p>
-            <p> Intento otraves</p>
-            <p> Intentare crear otra rama</p>
-            <p>Ahora intentare unir estas ramas a la rama principal, como? no se xd</p>
-                <!-- Aquí va el contenido dinámico que cambiará según la selección del menú -->
-            <p>Funciono la pasada, probemos con esta xd</p>
-            <p>Ya no pude xd, aunque hize lo mismo</p>
-            <p>PTMMMMMM</p>
-            <p>Ya pude, intentare de nuevo</p>
-            <p>Yeiiiii Aprendi</p>
+                </section>        
+        </section> 
+        <div class="cv_bg">
+            <nav class="cv container">
+                <a class="button" href="#">Download cv</a>
+            </nav>
         </div>
+    </aside>
+   
+    
+    <div class="sobre_mi">
+        <h1>Hola mundo</h1>
+    <p>Hola mundo otra ves porque si</p>
+    <p> Hola
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis 
+            corporis eligendi accusantium cumque, ullam accusamus aspernatur 
+            inventore ab impedit totam consectetur quae excepturi modi possimus
+            rerum quibusdam placeat aliquam ut!
+            Lorem ipsum dolor sit, amet consectetur 
+            adipisicing elit. Quasi totam tempore ad impedit
+            ex enim fuga optio repudiandae rerum voluptate quo
+            nobis porro distinctio consequatur, explicabo fugit
+            obcaecati adipisci illum! <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br> <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br>puto el que lo lea<br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br>
+       </p>
     </div>
 
 </body>

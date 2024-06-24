@@ -1,0 +1,32 @@
+<header>
+</header>
+//Para el encabezado
+
+<footer>
+</footer>
+//La barra de abajo esa xd
+
+<nav>
+</nav>
+//Para una barra de navegacion
+
+<main>
+</main>
+//Contenido de la pagina
+
+<section>
+//Para secciones
+
+<article>
+//Para hacer un articulo
+
+<aside>
+Para poner una barra lateral
+
+<div>
+//cualquier cosa xd
+
+<form>
+//Para hacer formularios
+
+
