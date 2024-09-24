@@ -180,3 +180,21 @@ main{
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
 }
 
+
+
+
+
+/* Cursor */
+:root {
+    --cursor-size: 28px;
+    --bg: #a097e2;
+  }
+.cursor-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    border-radius: var(--cursor-size);
+    background: var(--bg);
+  }
