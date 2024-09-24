@@ -1,0 +1,174 @@
+.icon_hover {
+    width: 52px; 
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 8px; 
+    transition: all 0.3s ease-in-out;
+    position: relative; 
+}
+
+.icon_hover:hover {
+    background-color: #d1d1f4; 
+    transform: translateY(-6px);
+}
+
+.icon_hover svg {
+    transition: transform 0.3s ease-in-out;
+}
+
+.icon_hover:hover svg {
+    transform: scale(0.8); 
+}
+
+.icon_hover2 {
+    transition: all 0.3s ease-in-out;
+    position: relative; 
+}
+
+.icon_hover2:hover {
+    transform: translateY(-6px);
+}
+
+
+
+
+/* Generales */
+html {
+    scroll-behavior: smooth;
+}
+body{
+    scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+    scrollbar-width: thin;
+}
+main{
+    scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+    scrollbar-width: thin;
+}
+
+
+
+/*  Querys */
+
+@media (max-width: 1100px) {
+    .aside {
+      display: none;
+    }
+    main {
+        width: 100%;
+        padding-left: 50px;
+    }
+    
+    .nav{
+        width: 100%;
+    }
+    .contacto_link{
+        display: block;
+    }
+    .query_column{
+        flex-direction: column;
+        padding: 0;
+    }
+    .query_column div{
+        width: 80%;
+    }
+    .query_column img{
+        width: 80%;
+    }
+    .query_column section section{
+        width: 50px;
+    }
+  }
+  
+  @media (min-width: 1001px) {
+    .aside {
+      display: block;
+    }
+    .contacto_link{
+        display: none;
+    }
+  }
+
+/*  Animaciones */
+.typing-text {
+    color: #f1f2fc;
+    font-family: monospace;
+    font-size: 24px;
+    border-right: 2px solid;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.shadow_custom {
+    filter: drop-shadow(0 4px 20px rgba(255, 255, 255, 0.5))
+           drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+
+
+/* ScrollBar */
+::-webkit-scrollbar {
+    width: 5px; /* Ancho del scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d1d1f4; /* Color del "pulgar" (la parte que se arrastra) */
+    border-radius: 10px; /* Bordes redondeados para el pulgar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #f1f2fc; /* Color del pulgar al pasar el mouse */
+}
+
+
+
+/* Estilo para el modal */
+/* Estilo para el modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Queda fijo en la pantalla */
+    z-index: 1; /* Se coloca sobre otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Habilitar scroll si es necesario */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro semitransparente */
+    display: flex; /* Flex para centrar contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+/* Estilo para la imagen en el modal */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%; /* Maximo ancho de la imagen en el modal */
+    max-height: 80%; /* Maximo alto de la imagen en el modal */
+    animation: scaleIn 0.5s ease; /* Aplicar la animación */
+}
+
+/* Animación de escalado */
+@keyframes scaleIn {
+    from {
+        transform: scale(0); /* Comienza en 0 tamaño */
+    }
+    to {
+        transform: scale(1); /* Termina en tamaño normal */
+    }
+}
+
+/* Estilo para el botón de cerrar */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white; /* Color del texto del botón */
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
