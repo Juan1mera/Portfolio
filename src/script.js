@@ -41,20 +41,24 @@ window.onload = function() {
 };
 
 // Abrir modal
-// Obtener los elementos
+// Obtener los elementos del modal
 var modal = document.getElementById("myModal");
-var img = document.getElementById("myImage");
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 
 // Asegúrate de que el modal esté oculto inicialmente
-modal.style.display = "none"; 
+modal.style.display = "none";
 
-// Cuando se hace clic en la imagen, se muestra el modal y se asigna la imagen al modal
-img.onclick = function() {
-    modal.style.display = "block"; // Mostrar el modal
-    modalImg.src = this.src; // Asigna la imagen al modal
-    captionText.innerHTML = this.alt; // Asigna el texto alternativo si es necesario
+// Obtener todas las imágenes con la clase "img-zoom"
+var images = document.getElementsByClassName("img-zoom");
+
+// Iterar sobre las imágenes y añadir el evento onclick a cada una
+for (var i = 0; i < images.length; i++) {
+    images[i].onclick = function() {
+        modal.style.display = "block"; // Mostrar el modal
+        modalImg.src = this.src; // Asignar la imagen al modal
+        captionText.innerHTML = this.alt; // Asignar el texto alternativo
+    }
 }
 
 // Cuando se hace clic en el botón de cerrar, se oculta el modal
@@ -69,3 +73,4 @@ window.onclick = function(event) {
         modal.style.display = "none"; // Ocultar el modal
     }
 }
+

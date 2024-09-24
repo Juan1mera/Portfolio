@@ -48,7 +48,9 @@ main{
     scrollbar-width: thin;
 }
 
-
+.contacto_link{
+    display: none;
+}
 
 /*  Querys */
 
@@ -80,16 +82,22 @@ main{
     .query_column section section{
         width: 50px;
     }
-  }
-  
-  @media (min-width: 1001px) {
-    .aside {
-      display: block;
+    .query_column1{
+        padding: 0;
     }
-    .contacto_link{
-        display: none;
+
+}
+
+#contacto {
+    display: none;
+}
+@media (max-width: 1100px) {
+    #contacto {
+        display: flex;
     }
-  }
+}
+
+
 
 /*  Animaciones */
 .typing-text {
