@@ -9,15 +9,15 @@
   <link href="./src/output.css" rel="stylesheet">
   <link href="./src/styles.css" rel="stylesheet">
 </head>
-<body class="h-full flex bg-dark">
+<body class="h-full flex bg-dark ">
 
 
     <aside class="flex flex-col gap-y-4 justify-start items-center w-2/6 p-4 h-[100vh] aside">
         <div class="bg-purpleLight2 mt-[10%] rounded-3xl flex justify-center items-center flex-col p-10 max-w-[80%] fixed">
             <img src="./img/Profile.jpg" alt="Perfil" class="w-52 h-62 object-cover rounded-2xl -mt-48 ">
 
-            <h2 class="text-xl font-bold text-purpele">Juan Jose Mera</h2>
-            <h3 class="bg-purpleLight text-purpele font-normal p-2 rounded-xl hover:scale-105 hover:-translate-y-1 transition-transform duration-300 ease-in-out">Software Engineer Student</h3>
+            <h2 data-i18n="name" class="text-xl font-bold text-purpele">Juan Jose Mera</h2>
+            <h3 data-i18n="profession" class="bg-purpleLight text-purpele font-normal p-2 rounded-xl hover:scale-105 hover:-translate-y-1 transition-transform duration-300 ease-in-out">Futuro Ingeniero de Software</h3>
 
             <div class="flex flex-row gap-4 mt-3 mb-3">
                 <a href="https://github.com/Juan1mera" target="_blank" class="icon_hover" aria-label="GitHub">
@@ -55,7 +55,7 @@
                           </svg>
                     </div>
                     <div>
-                        <h5 class="text-dark ">Telefono</h5>
+                        <h5 data-i18n="telefono" class="text-dark ">Telefono</h5>
                         <p class="text-purpele text-sm">+7 980 389 3016</p>
                     </div>
                 </a> <!-- Fin de la fila -->
@@ -69,7 +69,7 @@
                           </svg>
                     </div>
                     <div>
-                        <h5 class="text-dark ">Email</h5>
+                        <h5 data-i18n="email" class="text-dark ">Email</h5>
                         <p class="text-purpele text-sm">juan1mera2barrera@gmail.com</p>
                         <p class="text-purpele text-sm">devorateampj@gmail.com</p>
                     </div>
@@ -84,7 +84,7 @@
                           </svg>
                     </div>
                     <div>
-                        <h5 class="text-dark ">Ubicación</h5>
+                        <h5 data-i18n="ubi" class="text-dark ">Ubicación</h5>
                         <p class="text-purpele text-sm">Popayan, Cauca</p>
                     </div>
                 </a> <!-- Fin de la fila -->
@@ -96,30 +96,46 @@
 
     </aside>
 
-    <main class="flex-1 flex flex-col w-3/6 main">
-        <nav class="flex w-[70%] justify-evenly m-0  backdrop-blur-lg nav  p-4 ">
-            <a href="#me" class="text-light text-base font-medium hover:text-accent">Sobre Mi</a>
-            <a href="#estudios" class="text-light text-base font-medium hover:text-accent">Estudios</a>
-            <a href="#proyectos" class="text-light text-base font-medium hover:text-accent">Proyectos</a>
-            <a href="#contacto" class="text-light text-base font-medium hover:text-accent contacto_link">Contacto</a>
+    <main class="flex-1 flex flex-col w-3/6 main ">
+        <nav class="flex w-[70%] justify-evenly m-0  backdrop-blur-lg nav  p-4 items-center ">
+            <a data-i18n="aboutme" href="#me" class="text-light text-base font-medium hover:text-accent">Sobre Mi</a>
+            <a data-i18n="estudios" href="#estudios" class="text-light text-base font-medium hover:text-accent">Estudios</a>
+            <a data-i18n="proyectos" href="#proyectos" class="text-light text-base font-medium hover:text-accent">Proyectos</a>
+            <a data-i18n="contacto" href="#contacto" class="text-light text-base font-medium hover:text-accent contacto_link">Contacto</a>
+            <div class="radio-input">
+                <label>
+                    <input value="russian" name="value-radio" id="russian" type="radio" />
+                    <span>🇷🇺</span>
+                </label>
+                <label>
+                    <input value="spanish" name="value-radio" id="spanish" type="radio" />
+                    <span>🇨🇴</span>
+                </label>
+                <label>
+                    <input value="english" name="value-radio" id="english" type="radio" />
+                    <span>🇺🇸</span>
+                </label>
+                <span class="selection"></span>
+            </div>
+            
         </nav>
         
         
         <div class="pl-2 flex-1 flex flex-col  mt-40 mb-40">
             <div class="flex items-center gap-2">
-                <h1 id="me" class="text-6xl font-semibold text-white">Hola! Soy Juan</h1>
-                <a class="bg-purpleLight3 font-light p-1 rounded-xl text-purple-950 icon_hover2">#Disponible</a>
+                <h1 data-i18n="hello" id="me" class="text-6xl font-semibold text-white">Hola! Soy Juan</h1>
+                <a data-i18n="disponible" class="bg-purpleLight3 font-light p-1 rounded-xl text-purple-950 icon_hover2">#Disponible</a>
             </div>
             <div id="typewriter" class="typing-text h-[40px]"> </div>
-            <p class="text-white font-medium w-[80%] text-lg">Estudiante de 
-                <span class="text-purpleLight3">Ingeniería de Software</span> y 
-                <span class="text-purpleLight3">Full Stack Developer</span> 
+            <p data-i18n="description" class="text-white font-medium w-[80%] text-lg">Estudiante de 
+                <span data-i18n="ingeSoft" class="text-purpleLight3">Ingeniería de Software</span> y 
+                <span data-i18n="FullStack" class="text-purpleLight3">Full Stack Developer</span> 
                 en Colombia. Tengo 
-                <span class="text-purpleLight3">17 años </span>  y me especializo en crear aplicaciones funcionales que no comprometen la experiencia del usuario. Sin experiencia laboral pero con un fuerte deseo de seguir aprendiendo.
+                <span data-i18n="edad" class="text-purpleLight3">17 años </span>  y me especializo en crear aplicaciones funcionales que no comprometen la experiencia del usuario. Sin experiencia laboral pero con un fuerte deseo de seguir aprendiendo.
             </p>
             
 
-            <h2 class="text-4xl font-semibold text-white mt-96">Tecnologias</h2>
+            <h2 data-i18n="tecnologias" class="text-4xl font-semibold text-white mt-96">Tecnologias</h2>
             <section class="w-[80%] flex flex-wrap gap-4 items-center">
 
                 <div class="icon_hover2">
@@ -157,7 +173,7 @@
                 
             </section> <!--  Fin de la seccion-->
 
-            <h2 class="text-4xl font-semibold text-white mt-10">Herramientas</h2>
+            <h2 data-i18n="herramientas" class="text-4xl font-semibold text-white mt-10">Herramientas</h2>
             <section class="w-[80%] flex flex-wrap gap-4 items-center">
                 <div class="icon_hover2">
                     <img src="https://img.icons8.com/ios-glyphs/48/FFFFFF/github.png" />
@@ -185,7 +201,7 @@
                 </div>
             </section><!--  Fin de la seccion-->
 
-            <h2 class="text-4xl font-semibold text-white mt-10">Aprendiendo</h2>
+            <h2 data-i18n="aprendiendo" class="text-4xl font-semibold text-white mt-10">Aprendiendo</h2>
             <section class="w-[80%] flex flex-wrap gap-4 items-center">
                 <div class="icon_hover2">
                     <img src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png" />
@@ -202,23 +218,23 @@
             </section><!--  Fin de la seccion-->
 
 
-            <h1 id="estudios" class="text-5xl font-semibold text-white mt-80">Estudios</h1>
+            <h1 data-i18n="estudios" id="estudios" class="text-5xl font-semibold text-white mt-80">Estudios</h1>
             <section class="flex flex-wrap gap-x-4 p-10 query_column">
                 <div class="w-[40%]">
-                    <h2 class="text-xl font-semibold text-purpleLight mt-10">Universidad Estatal de Belgorod Rusia(BelGu)</h2>
-                    <p class="text-sm font-semibold text-purpleLight3">- Ingenieria en Software y tecnologías de la información</p>
-                    <p class="text-sm font-semibold text-purpleLight3">- Tercer Semetre</p>
+                    <h2 data-i18n="uni" class="text-xl font-semibold text-purpleLight mt-10">Universidad Estatal de Belgorod Rusia(BelGu)</h2>
+                    <p data-i18n="carrera" class="text-sm font-semibold text-purpleLight3">- Ingenieria en Software y tecnologías de la información</p>
+                    <p data-i18n="semestre" class="text-sm font-semibold text-purpleLight3">- Tercer Semetre</p>
                 </div>
                 <img class="w-[40%] shadow_custom rounded-xl" src="./img/uni.png" />
             </section> <!-- Seccion de Estudios-->
 
 
-            <h1 id="proyectos" class="text-5xl font-semibold text-white mt-40">Proyectos</h1>
+            <h1 data-i18n="proyectos" id="proyectos" class="text-5xl font-semibold text-white mt-40">Proyectos</h1>
             <section class="flex flex-wrap gap-x-5 p-10 query_column">
                 <img class="w-[40%] shadow_custom rounded-xl icon_hover2 img-zoom" src="./img/distriferca.png" id="myImage" />
                 <div class="w-[40%]">
-                    <h2 class="text-xl font-semibold text-purpleLight3 mt-10">Gestión de Inventario y Ganancias</h2>
-                    <p class="text-sm font-semibold text-purpleLight2">- Una aplicación web diseñada para permitir a la empresa gestionar de manera eficiente su inventario, así como realizar registros de ventas, compras y gastos, entre otros.</p>                    
+                    <h2 data-i18n="title_inventario"  class="text-xl font-semibold text-purpleLight3 mt-10">Gestión de Inventario y Ganancias</h2>
+                    <p data-i18n="description_inventario" class="text-sm font-semibold text-purpleLight2">- Una aplicación web diseñada para permitir a la empresa gestionar de manera eficiente su inventario, así como realizar registros de ventas, compras y gastos, entre otros.</p>                    
                     <section class="w-[80%] flex flex-wrap items-center">
                         <section class="icon_hover2">
                             <img src="https://img.icons8.com/color/32/000000/html-5.png" alt="HTML" />
@@ -242,7 +258,7 @@
 
             <section class="flex flex-wrap gap-x-4 p-10 query_column1 items-center ">
                 <div class="w-[40%]">
-                    <h2 class="text-xl font-semibold text-purpleLight3 mt-10 flex items-center">
+                    <h2 data-i18n="title_podekex" class="text-xl font-semibold text-purpleLight3 mt-10 flex items-center">
                         Pokedex App
                         <a href="https://github.com/Juan1mera/Aprendiendo-React-Native" 
                            target="_blank" 
@@ -257,7 +273,7 @@
                         </a>
                       </h2>
                       
-                    <p class="text-sm font-semibold text-purpleLight2">- Una aplicacion creada con fin educativo usando la PokeApi para mostrar todos los pokemons, Estadisticas, movimientos etc</p>                    
+                    <p data-i18n="description_podedex" class="text-sm font-semibold text-purpleLight2">- Una aplicacion creada con fin educativo usando la PokeApi para mostrar todos los pokemons, Estadisticas, movimientos etc</p>                    
                     <section class="w-[80%] flex flex-wrap items-center">
                         <section class="icon_hover2">
                             <img src="https://img.icons8.com/color/32/000000/react-native.png" alt="React Native" />
@@ -284,9 +300,9 @@
                     <img src="./img/AnimaliaInfo.png" id="myImage" class="w-full h-auto img-zoom" />
                 </div>
                 <div class="w-[40%]">
-                    <h2 class="text-xl font-semibold text-purpleLight3 mt-10 flex items-center">Animalia</h2>
+                    <h2 data-i18n="title_animalia" class="text-xl font-semibold text-purpleLight3 mt-10 flex items-center">Animalia</h2>
                       
-                    <p class="text-sm font-semibold text-purpleLight2">
+                    <p data-i18n="description_animalia" class="text-sm font-semibold text-purpleLight2">
                         - Aplicación en desarrollo. Una plataforma diseñada para ganaderos, veterinarias y centros de adopción, que les permitirá gestionar el registro de los datos de los animales, y publicarlos para su adopción o venta.
                     </p>
                                         

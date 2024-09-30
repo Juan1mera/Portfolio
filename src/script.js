@@ -88,8 +88,9 @@ let cursorCircles;
 let cursorHistory = Array(TAIL_LENGTH).fill({ x: 0, y: 0 });
 
 function onMouseMove(event) {
-  mouseX = event.clientX;
-  mouseY = event.clientY;
+  // Obtén la posición actual del mouse en el documento, incluyendo el scroll
+  mouseX = event.clientX + window.scrollX;
+  mouseY = event.clientY + window.scrollY;
 }
 
 function initCursor() {
@@ -107,31 +108,214 @@ function getCursorSize() {
 }
 
 function updateCursor() {
-    cursorHistory.shift();
-    cursorHistory.push({ x: mouseX, y: mouseY });
-  
-    const cursorSize = getCursorSize(); // Obtener el tamaño del cursor
-  
-    for (let i = 0; i < TAIL_LENGTH; i++) {
-      let current = cursorHistory[i];
-      let next = cursorHistory[i + 1] || cursorHistory[TAIL_LENGTH - 1];
-  
-      let xDiff = next.x - current.x;
-      let yDiff = next.y - current.y;
-  
-      current.x += xDiff * 0.35;
-      current.y += yDiff * 0.35;
-  
-      // Resta la mitad del tamaño del cursor para centrarlo
-      cursorCircles[i].style.transform = `translate(${current.x - (cursorSize / 2)}px, ${current.y - (cursorSize / 2)}px) scale(${i / TAIL_LENGTH})`;  
-    }
-    requestAnimationFrame(updateCursor);
+  cursorHistory.shift();
+  cursorHistory.push({ x: mouseX, y: mouseY });
+
+  const cursorSize = getCursorSize(); // Obtener el tamaño del cursor
+
+  for (let i = 0; i < TAIL_LENGTH; i++) {
+    let current = cursorHistory[i];
+    let next = cursorHistory[i + 1] || cursorHistory[TAIL_LENGTH - 1];
+
+    let xDiff = next.x - current.x;
+    let yDiff = next.y - current.y;
+
+    current.x += xDiff * 0.35;
+    current.y += yDiff * 0.35;
+
+    // Resta la mitad del tamaño del cursor para centrarlo
+    cursorCircles[i].style.transform = `translate(${current.x - (cursorSize / 2)}px, ${current.y - (cursorSize / 2)}px) scale(${i / TAIL_LENGTH})`;  
   }
-  
+  requestAnimationFrame(updateCursor);
+}
 
 document.addEventListener('mousemove', onMouseMove, false);
 
 initCursor();
 updateCursor();
+
+
+//  Cambio de idioma
+
+const translations = {
+  english: {
+    aboutme: "About Me",
+    estudios: "Studies",
+    proyectos: "Projects",
+    contacto: "Contact",
+    name: "Juan Jose Mera",
+    profession: "Software Engineer Student",
+    telefono: "Phone",
+    email: "Email",
+    ubi: "Location",
+    hello: "Hi! I'm Juan",
+    disponible: "#Available",
+    description: "Student of oftware Engineering and Full Stack Developer in Colombia. I am 17 and I specialize in creating functional applications without compromising user experience. No work experience but with a strong desire to keep learning.",
+    tecnologias: "Technologies",
+    herramientas: "Tools",
+    aprendiendo: "Learning",
+    uni: "Belgorod State University(BelGu)",
+    carrera: "- Software Engineering and Information Technologies",
+    semestre: "- Third Semester",
+    title_inventario: "Inventory and Profit Management",
+    description_inventario: "A web application designed to allow the company to efficiently manage its inventory, as well as to record sales, purchases, and expenses, among other things.",
+    title_podekex: "Pokedex App",
+    description_podedex: "An application created with the purpose of education using the PokeApi to display all the Pokemons, Statistics, movements etc",
+    title_animalia: "Animalia",
+    description_animalia: "Application in development. A platform designed for winners, veterinarians and adoption centers, which will allow the registration of the data of the animals, and publish them for adoption or sale.",
+  },
+  spanish: {
+    aboutme: "Sobre Mi",
+    estudios: "Estudios",
+    proyectos: "Proyectos",
+    contacto: "Contacto",
+    name: "Juan Jose Mera",
+    profession: "Futuro Ingeniero de Software",
+    telefono: "Teléfono",
+    email: "Gmail",
+    ubi: "Ubicación",
+    hello: "¡Hola! Soy Juan",
+    disponible: "#Disponible",
+    description: "Estudiante de ingeniería de software y desarrollador Full Stack en Colombia. Soy 17 y especializo en crear aplicaciones funcionales sin comprometer la experiencia del usuario. Sin experiencia laboral pero con un fuerte deseo de seguir aprendiendo.",
+    tecnologias: "Tecnologías",
+    herramientas: "Herramientas",
+    aprendiendo: "Aprendiendo",
+    uni: "Universidad Estatal de Belgorod Rusia(BelGu)",
+    carrera: "- Ingeniería en Software y Tecnologías de la Información",
+    semestre: "- Tercer Semestre",
+    title_inventario: "Gestión de Inventario y Ganancias",
+    description_inventario: "Una aplicación web diseñada para permitir a la empresa gestionar de manera eficiente su inventario, así como realizar registros de ventas, compras y gastos, entre otros.",
+    title_podekex: "Pokedex App",
+    description_podedex: "Una aplicación creada con fin educativo usando la PokeApi para mostrar todos los pokemons, Estadisticas, movimientos etc",
+    title_animalia: "Animalia",
+    description_animalia: "Aplicación en desarrollo. Una plataforma diseñada para ganaderos, veterinarias y centros de adopción, que les permitirá gestionar el registro de los datos de los animales, y publicarlos para su adopción o venta.",
+  },
+  russian: {
+    aboutme: "О меня",
+    estudios: "Исследования",
+    proyectos: "Проекты",
+    contacto: "Контакты",
+    name: "Хуан Хосе Мера",
+    profession: "Студент факультета программной инженерии",
+    telefono: "Телефон",
+    email: "Почта",
+    ubi: "Местонахождение",
+    hello: "Привет! Я Хуан",
+    disponible: "#Доступно",
+    description: "Студент факультета программной инженерии и разработчик Full Stack в Колумбии. Мне 17 лет, и я специализируюсь на создании функциональных приложений без ущерба для пользовательского опыта. Без опыта работы, но с большим желанием продолжать учиться.",
+    tecnologias: "Технологии",
+    herramientas: "Инструменты",  
+    aprendiendo: "Обучение ",
+    uni: "Белгородский государственный университет(БелГУ)",
+    carrera: "- Инженерия программного обеспечения и информационных технологий",
+    semestre: "- Третий семестр",
+    title_inventario: "Управление инвентарем и прибылями",
+    description_inventario: "Веб-приложение, разработанное для позволения компании эффективно управлять своим инвентарем, а также записывать продажи, покупки и расходы, в т.ч. другие вещи.",
+    title_podekex: "Pokedex App",
+    description_podedex: "Приложение, созданное с целью обучения, используя PokeApi, чтобы отобразить все Pokemons, статистику, движения и т.д.",
+    title_animalia: "Анималия",
+    description_animalia: "Приложение в разработке. Платформа, разработанная для победителей, ветеринаров и центров прибыли, которые позволят зарегистрировать данные животных и публиковать их для прибыли или продажи.",
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  const userLanguage = detectUserLanguage();
+  updatePageLanguage(userLanguage);
+  
+  // Selecciona el botón de radio correspondiente
+  document.querySelector(`input[value="${userLanguage}"]`).checked = true;
+});
+
+document.querySelectorAll('input[name="value-radio"]').forEach((radio) => {
+  radio.addEventListener('change', (event) => {
+    const selectedLanguage = event.target.value;
+    updatePageLanguage(selectedLanguage);
+  });
+});
+
+function detectUserLanguage() {
+  const userLang = navigator.language || navigator.userLanguage;
+  
+  if (userLang.startsWith('en')) {
+    return 'english'; // Inglés
+  } else if (userLang.startsWith('ru')) {
+    return 'russian'; // Ruso
+  } else {
+    return 'spanish'; // Por defecto español
+  }
+}
+
+function updatePageLanguage(language) {
+  // Obtén todas las etiquetas que tengan el atributo data-i18n
+  document.querySelectorAll('[data-i18n]').forEach((element) => {
+    const translationKey = element.getAttribute('data-i18n');
+    element.innerHTML = translations[language][translationKey]; // Usa innerHTML para el contenido con HTML
+  });
+}
+
+
+
+// document.querySelectorAll('input[name="value-radio"]').forEach((radio) => {
+//   radio.addEventListener('change', (event) => {
+//     const selectedLanguage = event.target.value;
+//     updatePageLanguage(selectedLanguage);
+//   });
+// });
+
+// async function updatePageLanguage(language) {
+//   const elements = document.querySelectorAll('[data-i18n]');
+//   const desescribirPromises = [];
+
+//   // Paso 1: Desescribir todos los textos simultáneamente
+//   elements.forEach((element) => {
+//     desescribirPromises.push(desescribir(element));
+//   });
+
+//   // Espera a que todos los textos se desescriban
+//   await Promise.all(desescribirPromises);
+
+//   // Paso 2: Escribir todos los textos simultáneamente
+//   elements.forEach((element) => {
+//     const translationKey = element.getAttribute('data-i18n');
+//     const newText = translations[language][translationKey];
+//     escribir(element, newText);
+//   });
+// }
+
+// function desescribir(element) {
+//   return new Promise((resolve) => {
+//     const currentText = element.textContent;
+//     let length = currentText.length;
+
+//     const interval = setInterval(() => {
+//       if (length > 0) {
+//         element.textContent = currentText.slice(0, length - 1); // Elimina un carácter a la vez
+//         length--;
+//       } else {
+//         clearInterval(interval);
+//         resolve();
+//       }
+//     }, 50); // Velocidad de desescribir (50ms por carácter)
+//   });
+// }
+
+// function escribir(element, newText) {
+//   return new Promise((resolve) => {
+//     let index = 0;
+
+//     const interval = setInterval(() => {
+//       if (index < newText.length) {
+//         element.textContent += newText.charAt(index); // Añade un carácter a la vez
+//         index++;
+//       } else {
+//         clearInterval(interval);
+//         resolve();
+//       }
+//     }, 100); // Velocidad de escribir (100ms por carácter)
+//   });
+// }
+
+
+
 
 
