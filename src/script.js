@@ -149,6 +149,7 @@ const translations = {
     email: "Email",
     ubi: "Location",
     hello: "Hi! I'm Juan",
+    frasePro: "If you can imagine it, I can program it",
     disponible: "#Available",
     description: "Student of oftware Engineering and Full Stack Developer in Colombia. I am 17 and I specialize in creating functional applications without compromising user experience. No work experience but with a strong desire to keep learning.",
     tecnologias: "Technologies",
@@ -163,6 +164,7 @@ const translations = {
     description_podedex: "An application created with the purpose of education using the PokeApi to display all the Pokemons, Statistics, movements etc",
     title_animalia: "Animalia",
     description_animalia: "Application in development. A platform designed for winners, veterinarians and adoption centers, which will allow the registration of the data of the animals, and publish them for adoption or sale.",
+    verMas: "View More Projects",
   },
   spanish: {
     aboutme: "Sobre Mi",
@@ -175,6 +177,7 @@ const translations = {
     email: "Gmail",
     ubi: "Ubicación",
     hello: "¡Hola! Soy Juan",
+    frasePro: "Si puedes imaginarlo, Puedo Programarlo",
     disponible: "#Disponible",
     description: "Estudiante de ingeniería de software y desarrollador Full Stack en Colombia. Soy 17 y especializo en crear aplicaciones funcionales sin comprometer la experiencia del usuario. Sin experiencia laboral pero con un fuerte deseo de seguir aprendiendo.",
     tecnologias: "Tecnologías",
@@ -189,6 +192,7 @@ const translations = {
     description_podedex: "Una aplicación creada con fin educativo usando la PokeApi para mostrar todos los pokemons, Estadisticas, movimientos etc",
     title_animalia: "Animalia",
     description_animalia: "Aplicación en desarrollo. Una plataforma diseñada para ganaderos, veterinarias y centros de adopción, que les permitirá gestionar el registro de los datos de los animales, y publicarlos para su adopción o venta.",
+    verMas: "Ver más proyectos",
   },
   russian: {
     aboutme: "О меня",
@@ -201,6 +205,7 @@ const translations = {
     email: "Почта",
     ubi: "Местонахождение",
     hello: "Привет! Я Хуан",
+    frasePro: "Если вы можете себе это представить, я могу это запрограммировать",
     disponible: "#Доступно",
     description: "Студент факультета программной инженерии и разработчик Full Stack в Колумбии. Мне 17 лет, и я специализируюсь на создании функциональных приложений без ущерба для пользовательского опыта. Без опыта работы, но с большим желанием продолжать учиться.",
     tecnologias: "Технологии",
@@ -215,6 +220,7 @@ const translations = {
     description_podedex: "Приложение, созданное с целью обучения, используя PokeApi, чтобы отобразить все Pokemons, статистику, движения и т.д.",
     title_animalia: "Анималия",
     description_animalia: "Приложение в разработке. Платформа, разработанная для победителей, ветеринаров и центров прибыли, которые позволят зарегистрировать данные животных и публиковать их для прибыли или продажи.",
+    verMas: "Посмотреть больше проектов",
   }
 };
 
@@ -316,6 +322,14 @@ function updatePageLanguage(language) {
 // }
 
 
+document.getElementById('verMasBtn').addEventListener('click', function(e) {
+  e.preventDefault(); // Evitar la redirección inmediata
 
+  // Aplicar la clase que activa la animación
+  document.body.classList.add('slide-out');
 
-
+  // Esperar a que la animación termine (1 segundo) antes de redirigir
+  setTimeout(() => {
+      window.location.href = this.href; // Redirigir a projects.html
+  }, 1000); // El tiempo coincide con la duración de la animación (1s)
+});
