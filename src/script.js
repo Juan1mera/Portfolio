@@ -165,6 +165,7 @@ const translations = {
     title_animalia: "Animalia",
     description_animalia: "Application in development. A platform designed for winners, veterinarians and adoption centers, which will allow the registration of the data of the animals, and publish them for adoption or sale.",
     verMas: "View More Projects",
+    udemy: "Udemy React Native Course",
   },
   spanish: {
     aboutme: "Sobre Mi",
@@ -193,6 +194,8 @@ const translations = {
     title_animalia: "Animalia",
     description_animalia: "Aplicación en desarrollo. Una plataforma diseñada para ganaderos, veterinarias y centros de adopción, que les permitirá gestionar el registro de los datos de los animales, y publicarlos para su adopción o venta.",
     verMas: "Ver más proyectos",
+    udemy: "Udemy Curso de React Native",
+
   },
   russian: {
     aboutme: "О меня",
@@ -221,6 +224,7 @@ const translations = {
     title_animalia: "Анималия",
     description_animalia: "Приложение в разработке. Платформа, разработанная для победителей, ветеринаров и центров прибыли, которые позволят зарегистрировать данные животных и публиковать их для прибыли или продажи.",
     verMas: "Посмотреть больше проектов",
+    udemy: "Udemy Курс React Native",
   }
 };
 
