@@ -272,6 +272,7 @@ function detectUserLanguage() {
 }
 
 // Actualizar el contenido de la página al cambiar de idioma
+
 function updatePageLanguage(language) {
   document.querySelectorAll('[data-i18n]').forEach((element) => {
     const translationKey = element.getAttribute('data-i18n');
