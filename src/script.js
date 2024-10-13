@@ -1,11 +1,14 @@
+// Variables globales para el efecto de máquina de escribir
 let index = 0;
 let charIndex = 0;
 let currentText = '';
 let isDeleting = false;
 
+// Función para el efecto de máquina de escribir
 function type() {
     const typewriterElement = document.getElementById("typewriter");
 
+    // Textos a mostrar en el efecto de máquina de escribir
     const texts = [
         " Software Engineer Student",
         " Full Stack Developer",
@@ -22,63 +25,68 @@ function type() {
         typewriterElement.innerHTML = currentText.substring(0, charIndex);
     }
 
+    // Velocidad de escritura y borrado
     let typingSpeed = isDeleting ? 50 : 100; 
 
+    // Pausa al finalizar una palabra antes de borrar
     if (!isDeleting && charIndex === currentText.length) {
         typingSpeed = 5000;
         isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
+    } 
+    // Cambiar al siguiente texto al terminar de borrar
+    else if (isDeleting && charIndex === 0) {
         isDeleting = false;
-        index = (index + 1) % texts.length;
+        index = (index + 1) % texts.length; // Ciclar entre los textos
         typingSpeed = 500;
     }
 
+    // Ejecutar la función de nuevo después de un tiempo
     setTimeout(type, typingSpeed);
 }
 
+// Ejecutar el efecto de máquina de escribir cuando se cargue la página
 window.onload = function() {
     setTimeout(type, 500); 
 };
 
-// Abrir modal
-// Obtener los elementos del modal
+// --- Modal de imágenes ---
+
+// Obtener el modal y los elementos para mostrar la imagen ampliada
 var modal = document.getElementById("myModal");
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 
-// Asegúrate de que el modal esté oculto inicialmente
+// Inicialmente el modal está oculto
 modal.style.display = "none";
 
-// Obtener todas las imágenes con la clase "img-zoom"
+// Obtener todas las imágenes con la clase "img-zoom" para abrir el modal
 var images = document.getElementsByClassName("img-zoom");
 
-// Iterar sobre las imágenes y añadir el evento onclick a cada una
+// Añadir evento onclick para mostrar el modal con la imagen seleccionada
 for (var i = 0; i < images.length; i++) {
     images[i].onclick = function() {
-        modal.style.display = "block"; // Mostrar el modal
-        modalImg.src = this.src; // Asignar la imagen al modal
+        modal.style.display = "block"; // Mostrar modal
+        modalImg.src = this.src; // Asignar la imagen seleccionada
         captionText.innerHTML = this.alt; // Asignar el texto alternativo
-    }
+    };
 }
 
-// Cuando se hace clic en el botón de cerrar, se oculta el modal
+// Cerrar el modal cuando se haga clic en la 'X'
 var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
-    modal.style.display = "none"; // Ocultar el modal
-}
+    modal.style.display = "none"; // Ocultar modal
+};
 
-// También cerrar el modal al hacer clic fuera de la imagen
+// Cerrar el modal al hacer clic fuera de la imagen
 window.onclick = function(event) {
     if (event.target == modal) {
-        modal.style.display = "none"; // Ocultar el modal
+        modal.style.display = "none"; // Ocultar modal
     }
-}
+};
 
+// --- Cursor personalizado ---
 
-
-// Cursor
-
-const TAIL_LENGTH = 20;
+const TAIL_LENGTH = 20; // Longitud de la cola del cursor
 const cursor = document.getElementById('cursor');
 
 let mouseX = 0;
@@ -87,55 +95,60 @@ let mouseY = 0;
 let cursorCircles;
 let cursorHistory = Array(TAIL_LENGTH).fill({ x: 0, y: 0 });
 
+// Obtener la posición del ratón cuando se mueva
 function onMouseMove(event) {
-  // Obtén la posición actual del mouse en el documento, incluyendo el scroll
-  mouseX = event.clientX + window.scrollX;
-  mouseY = event.clientY + window.scrollY;
+    mouseX = event.clientX + window.scrollX;
+    mouseY = event.clientY + window.scrollY;
 }
 
+// Inicializar el cursor con varios círculos para crear el efecto de cola
 function initCursor() {
-  for (let i = 0; i < TAIL_LENGTH; i++) {
-    let div = document.createElement('div');
-    div.classList.add('cursor-circle');
-    cursor.append(div);
-  }
-  cursorCircles = Array.from(document.querySelectorAll('.cursor-circle'));
+    for (let i = 0; i < TAIL_LENGTH; i++) {
+        let div = document.createElement('div');
+        div.classList.add('cursor-circle');
+        cursor.append(div);
+    }
+    cursorCircles = Array.from(document.querySelectorAll('.cursor-circle'));
 }
 
+// Obtener el tamaño del cursor
 function getCursorSize() {
-  const computedStyle = getComputedStyle(document.documentElement);
-  return parseFloat(computedStyle.getPropertyValue('--cursor-size'));
+    const computedStyle = getComputedStyle(document.documentElement);
+    return parseFloat(computedStyle.getPropertyValue('--cursor-size'));
 }
 
+// Actualizar la posición del cursor y su efecto de cola
 function updateCursor() {
-  cursorHistory.shift();
-  cursorHistory.push({ x: mouseX, y: mouseY });
+    cursorHistory.shift();
+    cursorHistory.push({ x: mouseX, y: mouseY });
 
-  const cursorSize = getCursorSize(); // Obtener el tamaño del cursor
+    const cursorSize = getCursorSize(); // Obtener el tamaño del cursor
 
-  for (let i = 0; i < TAIL_LENGTH; i++) {
-    let current = cursorHistory[i];
-    let next = cursorHistory[i + 1] || cursorHistory[TAIL_LENGTH - 1];
+    // Mover cada círculo para crear el efecto de cola
+    for (let i = 0; i < TAIL_LENGTH; i++) {
+        let current = cursorHistory[i];
+        let next = cursorHistory[i + 1] || cursorHistory[TAIL_LENGTH - 1];
 
-    let xDiff = next.x - current.x;
-    let yDiff = next.y - current.y;
+        let xDiff = next.x - current.x;
+        let yDiff = next.y - current.y;
 
-    current.x += xDiff * 0.35;
-    current.y += yDiff * 0.35;
+        current.x += xDiff * 0.35;
+        current.y += yDiff * 0.35;
 
-    // Resta la mitad del tamaño del cursor para centrarlo
-    cursorCircles[i].style.transform = `translate(${current.x - (cursorSize / 2)}px, ${current.y - (cursorSize / 2)}px) scale(${i / TAIL_LENGTH})`;  
-  }
-  requestAnimationFrame(updateCursor);
+        // Mover el círculo actual con su escala
+        cursorCircles[i].style.transform = `translate(${current.x - (cursorSize / 2)}px, ${current.y - (cursorSize / 2)}px) scale(${i / TAIL_LENGTH})`;  
+    }
+    requestAnimationFrame(updateCursor); // Animar constantemente
 }
 
+// Iniciar la detección del movimiento del ratón
 document.addEventListener('mousemove', onMouseMove, false);
 
+// Inicializar y actualizar el cursor
 initCursor();
 updateCursor();
 
-
-//  Cambio de idioma
+// --- Cambio de idioma ---
 
 const translations = {
   english: {
@@ -228,14 +241,16 @@ const translations = {
   }
 };
 
+// Detectar el idioma del usuario al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
   const userLanguage = detectUserLanguage();
   updatePageLanguage(userLanguage);
-  
-  // Selecciona el botón de radio correspondiente
+
+  // Marcar el botón de radio del idioma seleccionado
   document.querySelector(`input[value="${userLanguage}"]`).checked = true;
 });
 
+// Cambiar el idioma cuando el usuario selecciona otro en el radio button
 document.querySelectorAll('input[name="value-radio"]').forEach((radio) => {
   radio.addEventListener('change', (event) => {
     const selectedLanguage = event.target.value;
@@ -243,6 +258,7 @@ document.querySelectorAll('input[name="value-radio"]').forEach((radio) => {
   });
 });
 
+// Detectar el idioma del navegador
 function detectUserLanguage() {
   const userLang = navigator.language || navigator.userLanguage;
   
@@ -251,80 +267,19 @@ function detectUserLanguage() {
   } else if (userLang.startsWith('ru')) {
     return 'russian'; // Ruso
   } else {
-    return 'spanish'; // Por defecto español
+    return 'spanish'; // Español por defecto
   }
 }
 
+// Actualizar el contenido de la página al cambiar de idioma
 function updatePageLanguage(language) {
-  // Obtén todas las etiquetas que tengan el atributo data-i18n
   document.querySelectorAll('[data-i18n]').forEach((element) => {
     const translationKey = element.getAttribute('data-i18n');
-    element.innerHTML = translations[language][translationKey]; // Usa innerHTML para el contenido con HTML
+    element.innerHTML = translations[language][translationKey];
   });
 }
 
-
-
-// document.querySelectorAll('input[name="value-radio"]').forEach((radio) => {
-//   radio.addEventListener('change', (event) => {
-//     const selectedLanguage = event.target.value;
-//     updatePageLanguage(selectedLanguage);
-//   });
-// });
-
-// async function updatePageLanguage(language) {
-//   const elements = document.querySelectorAll('[data-i18n]');
-//   const desescribirPromises = [];
-
-//   // Paso 1: Desescribir todos los textos simultáneamente
-//   elements.forEach((element) => {
-//     desescribirPromises.push(desescribir(element));
-//   });
-
-//   // Espera a que todos los textos se desescriban
-//   await Promise.all(desescribirPromises);
-
-//   // Paso 2: Escribir todos los textos simultáneamente
-//   elements.forEach((element) => {
-//     const translationKey = element.getAttribute('data-i18n');
-//     const newText = translations[language][translationKey];
-//     escribir(element, newText);
-//   });
-// }
-
-// function desescribir(element) {
-//   return new Promise((resolve) => {
-//     const currentText = element.textContent;
-//     let length = currentText.length;
-
-//     const interval = setInterval(() => {
-//       if (length > 0) {
-//         element.textContent = currentText.slice(0, length - 1); // Elimina un carácter a la vez
-//         length--;
-//       } else {
-//         clearInterval(interval);
-//         resolve();
-//       }
-//     }, 50); // Velocidad de desescribir (50ms por carácter)
-//   });
-// }
-
-// function escribir(element, newText) {
-//   return new Promise((resolve) => {
-//     let index = 0;
-
-//     const interval = setInterval(() => {
-//       if (index < newText.length) {
-//         element.textContent += newText.charAt(index); // Añade un carácter a la vez
-//         index++;
-//       } else {
-//         clearInterval(interval);
-//         resolve();
-//       }
-//     }, 100); // Velocidad de escribir (100ms por carácter)
-//   });
-// }
-
+// --- Animación de redirección ---
 
 document.getElementById('verMasBtn').addEventListener('click', function(e) {
   e.preventDefault(); // Evitar la redirección inmediata
@@ -332,8 +287,19 @@ document.getElementById('verMasBtn').addEventListener('click', function(e) {
   // Aplicar la clase que activa la animación
   document.body.classList.add('slide-out');
 
-  // Esperar a que la animación termine (1 segundo) antes de redirigir
+  // Esperar a que la animación termine antes de redirigir
   setTimeout(() => {
-      window.location.href = this.href; // Redirigir a projects.html
-  }, 1000); // El tiempo coincide con la duración de la animación (1s)
+      window.location.href = this.href; // Redirigir
+  }, 1000); // Coincidir con la duración de la animación (1s)
 });
+
+// --- Animación al cargar la página ---
+
+window.addEventListener('load', function() {
+  const container = document.getElementById('container');
+  container.classList.remove('hidden_animation');
+  container.classList.add('show');
+});
+
+
+

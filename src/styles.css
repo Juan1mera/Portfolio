@@ -53,38 +53,69 @@ main{
 }
 
 /*  Querys */
-
-@media (max-width: 1200px) {
-    .aside {
-      display: none;
-    }
+@media (max-width: 750px) {
     main {
-        width: 100%;
-        padding-left: 50px;
-    }
-    
-    .nav{
-        width: 100%;
-    }
-    .contacto_link{
-        display: block;
-    }
-    .query_column{
-        flex-direction: column;
-        padding: 0;
-    }
-    .query_column div{
-        width: 80%;
-    }
-    .query_column img{
-        width: 80%;
-    }
-    .query_column section section{
-        width: 50px;
-    }
-    .query_column1{
-        padding: 0;
-    }
+      margin-top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+  }
+
+  .query_no_mt{
+    margin: 0;
+  }
+  .nav{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 0;
+  }
+  .center_container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .contacto_link{
+      display: block;
+  }
+  .query_column{
+      flex-direction: column;
+      padding: 0;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+  .query_column div{
+      width: 80%;
+  }
+  .query_column img{
+      width: 80%;
+  }
+  .query_column section section{
+      width: 50px;
+  }
+  .query_column1{
+    flex-direction: column-reverse;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .query_column1 div{
+      width: 80%;
+  }
+  .query_column1 img{
+      width: 80%;
+  }
+  .query_column1 section section{
+      width: 50px;
+  }
+  }
+
+  @media (max-width: 1200px) {
+      .aside {
+        display: none;
+      }
+
 
 }
 
@@ -101,23 +132,46 @@ main{
 
 /*  Animaciones */
 .typing-text {
-    color: #f1f2fc;
-    font-family: monospace;
-    font-size: 24px;
-    border-right: 2px solid;
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
+  color: #f1f2fc;
+  font-family: monospace;
+  font-size: 24px; /* Tamaño de fuente fijo */
+  border-right: 2px solid; /* Cursor estilo máquina de escribir */
+  display: inline-block; /* El contenedor se ajusta al contenido */
+  white-space: nowrap; /* Evita que el texto salte de línea */
+  overflow: hidden; /* Oculta el texto que sobrepasa el contenedor */
+  max-width: 100%; /* Evita que el texto sobresalga del contenedor en pantallas pequeñas */
 }
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 600px) {
+  .typing-text {
+      font-size: 18px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+  }
+}
+
+/* Contenedor del texto */
+.text-tech-container {
+  width: 100%;  /* El ancho del contenedor se ajusta al 100% del contenedor padre */
+  max-width: 100%; /* Evita que el contenedor supere el tamaño de la pantalla */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde horizontalmente */
+}
+
+/* Texto del efecto máquina de escribir */
 .text-tech {
-    color: #f1f2fc;
-    font-family: monospace;
-    font-size: 24px;
-    border-right: 2px solid;
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
+  color: #f1f2fc;
+  font-family: monospace;
+  font-size: 24px; 
+  border-right: 2px solid; 
+  display: inline-block;
+  white-space: nowrap; 
+  overflow: hidden; 
 }
+@media (max-width: 600px) {
+  .text-tech {
+    font-size: 16px; 
+  }
+}
+
 
 .shadow_custom {
     filter: drop-shadow(0 4px 20px rgba(255, 255, 255, 0.5))
