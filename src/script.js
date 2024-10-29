@@ -193,7 +193,7 @@ const translations = {
     hello: "¡Hola! Soy Juan",
     frasePro: "Si puedes imaginarlo, Puedo Programarlo",
     disponible: "#Disponible",
-    description: "Estudiante de ingeniería de software y desarrollador Full Stack en Colombia. Soy 17 y especializo en crear aplicaciones funcionales sin comprometer la experiencia del usuario. Sin experiencia laboral pero con un fuerte deseo de seguir aprendiendo.",
+    description: "Estudiante de ingeniería de software y desarrollador Full Stack en Colombia. Tengo 17 y especializo en crear aplicaciones funcionales sin comprometer la experiencia del usuario. Sin experiencia laboral pero con un fuerte deseo de seguir aprendiendo.",
     tecnologias: "Tecnologías",
     herramientas: "Herramientas",
     aprendiendo: "Aprendiendo",
