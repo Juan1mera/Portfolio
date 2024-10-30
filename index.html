@@ -12,7 +12,7 @@
 <body class="h-full flex bg-dark ">
 
 
-    <aside id="container" class=" hidden_animation flex  flex-col gap-y-4 justify-start items-center w-2/6 p-4 h-[100vh] aside">
+    <aside id="presentation" class="flex flex-col items-center w-2/6 p-4  aside ">
         <div class="bg-purpleLight2 mt-[10%] rounded-3xl flex justify-center items-center flex-col p-10 max-w-[80%] fixed">
             <img src="./img/Profile.jpg" alt="Perfil" class="w-52 h-62 object-cover rounded-2xl -mt-48 ">
 
@@ -97,7 +97,7 @@
     </aside>
 
     <main class="flex-1 flex flex-col w-3/6 main ">
-        <nav class="flex w-[70%] justify-evenly m-0  backdrop-blur-lg nav  p-4 items-center ">
+        <nav id="nav" class="flex w-[70%] justify-evenly m-0  backdrop-blur-lg nav  p-4 items-center ">
             <a data-i18n="aboutme" href="#me" class="text-light text-base font-medium hover:text-accent">Sobre Mi</a>
             <a data-i18n="estudios" href="#estudios" class="text-light text-base font-medium hover:text-accent">Estudios</a>
             <a data-i18n="proyectos" href="#proyectos" class="text-light text-base font-medium hover:text-accent">Proyectos</a>
@@ -121,7 +121,7 @@
         </nav>
         
         
-        <div class="pl-2 flex-1 flex flex-col  mt-40 mb-40 query_no_mt">
+        <div id="content" class="pl-2 flex-1 flex flex-col  mt-40 mb-40 query_no_mt">
             <div class="flex items-center gap-2">
                 <h1 data-i18n="hello" id="me" class="text-6xl font-semibold text-white"></h1>
                 <a data-i18n="disponible" class="bg-purpleLight3 font-light p-1 rounded-xl text-purple-950 icon_hover2">#Disponible</a>
@@ -239,6 +239,7 @@
             </section> <!-- Seccion de Estudios-->
 
             <h1 data-i18n="proyectos" id="proyectos" class="text-5xl font-semibold text-white mt-40 center_container">Proyectos</h1>
+
             <section class="flex flex-wrap gap-x-5 p-10 query_column items-center">
                 <img class="w-[40%] shadow_custom rounded-xl icon_hover2 img-zoom" src="./img/distriferca.png" id="myImage" />
                 <div class="w-[40%]">
@@ -335,7 +336,7 @@
             </section> <!-- Seccion de Proyecto-->
 
             <section class="w-full text-center">
-                <a id="verMasBtn" data-i18n="verMas" href="projects.html" class="btn-shine">Ver mas Proyectos</a>
+                <a id="verMasBtn" data-i18n="verMas" href="#" class="btn-shine">Ver mas Proyectos</a>
             </section>
 
             <article id="contacto" class="center_container">
@@ -425,6 +426,98 @@
 
         </div>
 
+        <div id="section_proyects" class="hidden pl-2 flex-1  flex-col  mt-40 mb-40 query_no_mt grid grid-cols-3 gap-y-28">
+
+            <div class=" flex w-80 flex-col rounded-xl bg-purpleLight2 ">
+                <div class="relative mx-4 -mt-6 h-40  from-purpele">
+                  <img src="./img/distriferca.png" alt="Distriferca" class="absolute inset-0 w-full h-full object-cover imagen rounded-xl">
+                </div>
+                <div class="p-6">
+                  <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-purpele antialiased">
+                   Tailwind card
+                  </h5>
+                  <p class="block text-base font-light leading-relaxed ">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc felis ligula. 
+                  </p>
+                </div>
+                <div class="p-6 pt-0 flex flex-wrap gap-x-5 ">
+                        <section class="icon_hover2">
+                            <img src="https://img.icons8.com/color/32/000000/html-5.png" alt="HTML" />
+                        </section>
+                        <section class="icon_hover2">
+                            <img src="https://img.icons8.com/color/32/000000/sass.png" alt="SASS" />
+                        </section>
+                        <section class="icon_hover2">
+                            <img src="https://img.icons8.com/color/32/000000/javascript.png" alt="JavaScript" />
+                        </section>
+                        <section class="icon_hover2">
+                            <img src="https://img.icons8.com/officel/32/000000/php-logo.png" alt="PHP" />
+                        </section>
+                        <section class="icon_hover2">
+                            <img src="https://img.icons8.com/color/32/000000/mysql-logo.png" alt="MySQL" />
+                        </section>
+                </div>
+            </div>
+
+              <div class="relative flex w-80 flex-col rounded-xl bg-purpleLight2 bg-clip-border text-gray-700 shadow-md">
+                <div class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
+                  <img src="./img/distriferca.png" alt="Distriferca" class="absolute inset-0 w-full h-full object-cover imagen">
+                </div>
+                <div class="p-6">
+                  <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+                   Tailwind card
+                  </h5>
+                  <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc felis ligula. 
+                  </p>
+                </div>
+                <div class="p-6 pt-0">
+                  <button data-ripple-light="true" type="button" class="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                    Read More
+                  </button>
+                </div>
+            </div>
+
+            <div class="relative flex w-80 flex-col rounded-xl bg-purpleLight2 bg-clip-border text-gray-700 shadow-md">
+                <div class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
+                  <img src="./img/distriferca.png" alt="Distriferca" class="absolute inset-0 w-full h-full object-cover imagen">
+                </div>
+                <div class="p-6">
+                  <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+                   Tailwind card
+                  </h5>
+                  <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc felis ligula. 
+                  </p>
+                </div>
+                <div class="p-6 pt-0">
+                  <button data-ripple-light="true" type="button" class="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                    Read More
+                  </button>
+                </div>
+            </div>
+
+            <div class="relative flex w-80 flex-col rounded-xl bg-purpleLight2 bg-clip-border text-gray-700 shadow-md">
+                <div class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
+                  <img src="./img/distriferca.png" alt="Distriferca" class="absolute inset-0 w-full h-full object-cover imagen">
+                </div>
+                <div class="p-6">
+                  <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+                   Tailwind card
+                  </h5>
+                  <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc felis ligula. 
+                  </p>
+                </div>
+                <div class="p-6 pt-0">
+                  <button data-ripple-light="true" type="button" class="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                    Read More
+                  </button>
+                </div>
+              </div>
+
+
+        </div>
 
 
     </main>
@@ -439,6 +532,8 @@
 </body>
 
 <script type="module" src="./src/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+<script type="module" src="./src/gsap.js"></script>
 
 
 </html>

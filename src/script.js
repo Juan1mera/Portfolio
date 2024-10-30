@@ -86,7 +86,7 @@ window.onclick = function(event) {
 
 // --- Cursor personalizado ---
 
-const TAIL_LENGTH = 20; // Longitud de la cola del cursor
+const TAIL_LENGTH = 60; // Longitud de la cola del cursor
 const cursor = document.getElementById('cursor');
 
 let mouseX = 0;
@@ -281,26 +281,22 @@ function updatePageLanguage(language) {
 }
 
 // --- Animación de redirección ---
+document.getElementById('verMasBtn').addEventListener('click', function () {
+  gsap.to('#content', {
+    opacity: 0,
+    duration: 0.5,
+    onComplete: function () {
+      document.getElementById('content').classList.add('hidden');
+    },
+  });
 
-document.getElementById('verMasBtn').addEventListener('click', function(e) {
-  e.preventDefault(); // Evitar la redirección inmediata
-
-  // Aplicar la clase que activa la animación
-  document.body.classList.add('slide-out');
-
-  // Esperar a que la animación termine antes de redirigir
-  setTimeout(() => {
-      window.location.href = this.href; // Redirigir
-  }, 1000); // Coincidir con la duración de la animación (1s)
+  const proyectos = document.getElementById('section_proyects');
+  proyectos.classList.remove('hidden');
+  
+  gsap.fromTo(
+    proyectos,
+    { opacity: 0, y: 50 }, 
+    { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' } 
+  );
 });
-
-// --- Animación al cargar la página ---
-
-window.addEventListener('load', function() {
-  const container = document.getElementById('container');
-  container.classList.remove('hidden_animation');
-  container.classList.add('show');
-});
-
-
 

@@ -1,14 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link rel="icon" href="./img/logo.png" type="image/png">
+    <link rel="shortcut icon" href="./img/logo.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
     <link href="./src/output.css" rel="stylesheet">
-
-    
 </head>
-<body class="bg-dark">
-    
+
+<body class="h-full flex bg-dark p-10 flex-col">
+
+    <nav id="nav" class="flex w-[70%] justify-evenly m-0 mb-20  backdrop-blur-lg nav  p-4 items-center ">
+        <a data-i18n="aboutme" href="#me" class="text-light text-base font-medium hover:text-accent">Sobre Mi</a>
+        <a data-i18n="estudios" href="#estudios" class="text-light text-base font-medium hover:text-accent">Estudios</a>
+        <a data-i18n="proyectos" href="#proyectos" class="text-light text-base font-medium hover:text-accent">Proyectos</a>
+        <a data-i18n="contacto" href="#contacto" class="text-light text-base font-medium hover:text-accent contacto_link">Contacto</a>
+        <div class="radio-input">
+            <label>
+                <input value="russian" name="value-radio" id="russian" type="radio" />
+                <span>🇷🇺</span>
+            </label>
+            <label>
+                <input value="spanish" name="value-radio" id="spanish" type="radio" />
+                <span>🇨🇴</span>
+            </label>
+            <label>
+                <input value="english" name="value-radio" id="english" type="radio" />
+                <span>🇺🇸</span>
+            </label>
+            <span class="selection"></span>
+        </div>
+        
+    </nav>
+
+    <main>
+        <div class="relative flex w-80 flex-col rounded-xl bg-purpleLight2 bg-clip-border text-gray-700 shadow-md">
+            <div class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
+              <img src="./img/distriferca.png" alt="Distriferca" class="absolute inset-0 w-full h-full object-cover imagen">
+            </div>
+            <div class="p-6">
+              <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+               Tailwind card
+              </h5>
+              <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc felis ligula. 
+              </p>
+            </div>
+            <div class="p-6 pt-0">
+              <button data-ripple-light="true" type="button" class="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                Read More
+              </button>
+            </div>
+          </div>
+    </main>
+
+    <div id="cursor"></div>
 </body>
+
+<script type="module" src="./src/scriptProyects.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+
 </html>

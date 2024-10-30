@@ -32,6 +32,14 @@
     transform: translateY(-6px);
 }
 
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
 
 
 

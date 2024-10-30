@@ -1,0 +1,18 @@
+{
+    "es": {
+      "title": "Título del Artículo",
+      "content": "Este es el contenido del artículo.",
+      "imageUrl": "https://ejemplo.com/imagen.jpg"
+    },
+    "en": {
+      "title": "Article Title",
+      "content": "This is the article content.",
+      "imageUrl": "https://example.com/image.jpg"
+    },
+    "fr": {
+      "title": "Titre de l'article",
+      "content": "Ceci est le contenu de l'article.",
+      "imageUrl": "https://exemple.com/image.jpg"
+    }
+  }
+  
