@@ -1,18 +1,86 @@
-{
-    "es": {
-      "title": "Título del Artículo",
-      "content": "Este es el contenido del artículo.",
-      "imageUrl": "https://ejemplo.com/imagen.jpg"
-    },
-    "en": {
-      "title": "Article Title",
-      "content": "This is the article content.",
-      "imageUrl": "https://example.com/image.jpg"
-    },
-    "fr": {
-      "title": "Titre de l'article",
-      "content": "Ceci est le contenu de l'article.",
-      "imageUrl": "https://exemple.com/image.jpg"
-    }
+[
+  {
+    "title": "Gestión de Inventario y Ganancias",
+    "link": "https://github.com/Juan1mera/Aprendiendo-React-Native",
+    "description": "Una aplicación web diseñada para permitir a la empresa gestionar de manera eficiente su inventario, así como realizar registros de ventas, compras y gastos, entre otros.",
+    "image": "./img/distriferca.png",
+    "technologies": [
+      {
+        "name": "HTML",
+        "icon": "https://img.icons8.com/color/32/000000/html-5.png"
+      },
+      {
+        "name": "SASS",
+        "icon": "https://img.icons8.com/color/32/000000/sass.png"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "https://img.icons8.com/color/32/000000/javascript.png"
+      },
+      {
+        "name": "PHP",
+        "icon": "https://img.icons8.com/officel/32/000000/php-logo.png"
+      },
+      {
+        "name": "MySQL",
+        "icon": "https://img.icons8.com/color/32/000000/mysql-logo.png"
+      }
+    ]
+  },
+  {
+    "title": "Pokedex App",
+    "link": "https://github.com/Juan1mera/Aprendiendo-React-Native",
+    "description": "Una aplicación creada con fin educativo usando la PokeApi para mostrar todos los pokemons, Estadisticas, movimientos etc",
+    "image": "./img/pokedex.png",
+    "technologies": [
+      {
+        "name": "React Native",
+        "icon": "https://img.icons8.com/color/32/000000/react-native.png"
+      },
+      {
+        "name": "TypeScript",
+        "icon": "https://img.icons8.com/color/32/000000/typescript.png"
+      },
+      {
+        "name": "PokeApi",
+        "icon": "https://img.icons8.com/color/32/000000/pokemon.png"
+      }
+    ]
+  },
+  {
+    "title": "Animalia",
+    "link": "https://github.com/Juan1mera/Aprendiendo-React-Native",
+    "description": "Aplicación en desarrollo. Una plataforma diseñada para ganaderos, veterinarias y centros de adopción, que les permitirá gestionar el registro de los datos de los animales, y publicarlos para su adopción o venta",
+    "image": "./img/Animalia.png",
+    "technologies": [
+      {
+        "name": "React Native",
+        "icon": "https://img.icons8.com/color/32/000000/react-native.png"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "https://img.icons8.com/color/32/000000/javascript.png"
+      },
+      {
+        "name": "NodeJs",
+        "icon": "https://img.icons8.com/color/32/000000/nodejs.png"
+      },
+      {
+        "name": "FireBase",
+        "icon": "https://img.icons8.com/color/32/000000/firebase.png"
+      }
+    ]
+  },
+  {
+    "title": "SpaceShooter",
+    "link": "https://github.com/Juan1mera/Aprendiendo-React-Native",
+    "description": "Juego echo con python y pygame, Echo con fines educativos y practicos, Avanzando con el poco a poco",
+    "image": "./img/SpaceShooter.png",
+    "technologies": [
+      {
+        "name": "Python",
+        "icon": "https://img.icons8.com/color/48/000000/python.png"
+      }
+    ]
   }
-  
+]

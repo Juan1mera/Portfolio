@@ -49,40 +49,7 @@ window.onload = function() {
     setTimeout(type, 500); 
 };
 
-// --- Modal de imágenes ---
 
-// Obtener el modal y los elementos para mostrar la imagen ampliada
-var modal = document.getElementById("myModal");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-
-// Inicialmente el modal está oculto
-modal.style.display = "none";
-
-// Obtener todas las imágenes con la clase "img-zoom" para abrir el modal
-var images = document.getElementsByClassName("img-zoom");
-
-// Añadir evento onclick para mostrar el modal con la imagen seleccionada
-for (var i = 0; i < images.length; i++) {
-    images[i].onclick = function() {
-        modal.style.display = "block"; // Mostrar modal
-        modalImg.src = this.src; // Asignar la imagen seleccionada
-        captionText.innerHTML = this.alt; // Asignar el texto alternativo
-    };
-}
-
-// Cerrar el modal cuando se haga clic en la 'X'
-var span = document.getElementsByClassName("close")[0];
-span.onclick = function() {
-    modal.style.display = "none"; // Ocultar modal
-};
-
-// Cerrar el modal al hacer clic fuera de la imagen
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none"; // Ocultar modal
-    }
-};
 
 // --- Cursor personalizado ---
 
@@ -179,6 +146,7 @@ const translations = {
     description_animalia: "Application in development. A platform designed for winners, veterinarians and adoption centers, which will allow the registration of the data of the animals, and publish them for adoption or sale.",
     verMas: "View More Projects",
     udemy: "Udemy React Native Course",
+    volver: "Return;",
   },
   spanish: {
     aboutme: "Sobre Mi",
@@ -208,6 +176,7 @@ const translations = {
     description_animalia: "Aplicación en desarrollo. Una plataforma diseñada para ganaderos, veterinarias y centros de adopción, que les permitirá gestionar el registro de los datos de los animales, y publicarlos para su adopción o venta.",
     verMas: "Ver más proyectos",
     udemy: "Udemy Curso de React Native",
+    volver: "Volver",
 
   },
   russian: {
@@ -238,6 +207,7 @@ const translations = {
     description_animalia: "Приложение в разработке. Платформа, разработанная для победителей, ветеринаров и центров прибыли, которые позволят зарегистрировать данные животных и публиковать их для прибыли или продажи.",
     verMas: "Посмотреть больше проектов",
     udemy: "Udemy Курс React Native",
+    volver: "Вернуться",
   }
 };
 
@@ -300,3 +270,133 @@ document.getElementById('verMasBtn').addEventListener('click', function () {
   );
 });
 
+document.getElementById('volverBtn').addEventListener('click', function () {
+  gsap.to('#section_proyects', {
+    opacity: 0,
+    duration: 0.5,
+    onComplete: function () {
+      document.getElementById('section_proyects').classList.add('hidden');
+      
+      // Mostrar #content después de que #section_proyects esté oculto
+      const content = document.getElementById('content');
+      content.classList.remove('hidden');
+      gsap.fromTo(
+        content,
+        { opacity: 0, y: 50 }, 
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' } 
+      );
+    },
+  });
+});
+
+
+// Selecciona el contenedor donde se agregarán los elementos
+const container = document.getElementById('section_proyects');
+
+// SVG icon
+const iconRedirect = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+  <path d="M11 13l9 -9"></path>
+  <path d="M15 4h5v5"></path>
+</svg>`;
+
+// Lee el archivo JSON
+fetch('../proyects.json')
+  .then((response) => response.json())
+  .then((data) => {
+    data.forEach((project) => {
+      const card = document.createElement('div');
+      card.className = 'flex w-80 flex-col rounded-xl bg-purpleLight2 transform transition duration-300 hover:scale-105';
+
+
+      const imageContainer = document.createElement('div');
+      imageContainer.className = 'relative mx-4 -mt-6 h-40 img-zoom';
+
+      const image = document.createElement('img');
+      image.src = project.image;
+      image.alt = project.title;
+      image.className = 'absolute inset-0 w-full h-full object-cover imagen rounded-xl img-zoom';
+      imageContainer.appendChild(image);
+
+      const textContainer = document.createElement('div');
+
+      const content = document.createElement('div');
+      content.className = 'p-6';
+
+      const title = document.createElement('h5');
+      title.className = 'mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-purpele antialiased';
+      title.textContent = project.title;
+
+      const link = document.createElement('a');
+      link.className = 'icon_hover2 ';
+      link.href = project.link;
+      link.innerHTML =  iconRedirect;
+
+      const description = document.createElement('p');
+      description.className = 'block text-base font-light leading-relaxed';
+      description.textContent = project.description;
+
+      textContainer.appendChild(title);
+      textContainer.appendChild(link);
+
+      content.appendChild(textContainer);
+      content.appendChild(description);
+
+      const techContainer = document.createElement('div');
+      techContainer.className = 'p-6 pt-0 flex flex-wrap gap-x-5 justify-end items-end';
+
+      project.technologies.forEach((tech) => {
+        const techSection = document.createElement('section');
+        techSection.className = 'icon_hover2';
+
+        const techIcon = document.createElement('img');
+        techIcon.src = tech.icon;
+        techIcon.alt = tech.name;
+
+        techSection.appendChild(techIcon);
+        techContainer.appendChild(techSection);
+      });
+
+      card.appendChild(imageContainer);
+      card.appendChild(content);
+      card.appendChild(techContainer);
+
+      container.appendChild(card);
+    });
+  })
+  .catch((error) => console.error('Error al cargar el archivo JSON:', error));
+
+// --- Modal de imágenes ---
+
+// Obtener el modal y los elementos para mostrar la imagen ampliada
+var modal = document.getElementById("myModal");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+
+// Inicialmente el modal está oculto
+modal.style.display = "none";
+
+// Obtener todas las imágenes con la clase "img-zoom" para abrir el modal
+var images = document.getElementsByClassName("img-zoom");
+
+// Añadir evento onclick para mostrar el modal con la imagen seleccionada
+for (var i = 0; i < images.length; i++) {
+    images[i].onclick = function() {
+        modal.style.display = "block"; // Mostrar modal
+        modalImg.src = this.src; // Asignar la imagen seleccionada
+        captionText.innerHTML = this.alt; // Asignar el texto alternativo
+    };
+}
+
+// Cerrar el modal cuando se haga clic en la 'X'
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+    modal.style.display = "none"; // Ocultar modal
+};
+
+// Cerrar el modal al hacer clic fuera de la imagen
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none"; // Ocultar modal
+    }
+};
