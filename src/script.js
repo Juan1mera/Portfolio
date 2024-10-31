@@ -263,10 +263,11 @@ document.getElementById('verMasBtn').addEventListener('click', function () {
   const proyectos = document.getElementById('section_proyects');
   proyectos.classList.remove('hidden');
   
+  // Asegúrate de que la opacidad siempre inicie desde 0
   gsap.fromTo(
     proyectos,
-    { opacity: 0, y: 50 }, 
-    { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' } 
+    { opacity: 0, y: 50 },
+    { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }
   );
 });
 
@@ -276,10 +277,11 @@ document.getElementById('volverBtn').addEventListener('click', function () {
     duration: 0.5,
     onComplete: function () {
       document.getElementById('section_proyects').classList.add('hidden');
-      
-      // Mostrar #content después de que #section_proyects esté oculto
+
       const content = document.getElementById('content');
       content.classList.remove('hidden');
+
+      // Asegúrate de que la opacidad siempre inicie desde 0
       gsap.fromTo(
         content,
         { opacity: 0, y: 50 }, 
