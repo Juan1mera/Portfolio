@@ -158,5 +158,53 @@
         "icon": "https://img.icons8.com/color/32/000000/mysql-logo.png"
       }
     ]
+  },
+  {
+    "title": "Blog de una Cafeteria",
+    "link": "#",
+    "description": "Una web para que los clientes puedan ver los posts de la cafeteria y comentar sobre ellos, Leer recetas, Tips y mucho más",
+    "image": "./img/BlogCafe.png",
+    "technologies": [
+      {
+        "name": "HTML",
+        "icon": "https://img.icons8.com/color/32/000000/html-5.png"
+      },
+      {
+        "name": "CSS",
+        "icon": "https://img.icons8.com/color/32/000000/css3.png"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "https://img.icons8.com/color/32/000000/javascript.png"
+      }
+    ]
+  },
+  {
+    "title": "Web de Inmobiliaria",
+    "link": "#",
+    "description": "Una web para que los usuarios puedan ver los apartamentos disponibles, comparar precios, ver el historial de compras, y contactar con el agente de la inmobiliaria",
+    "image": "./img/Inmobiliaria.png",
+    "technologies": [
+      {
+        "name": "HTML",
+        "icon": "https://img.icons8.com/color/32/000000/html-5.png"
+      },
+      {
+        "name": "SASS",
+        "icon": "https://img.icons8.com/color/32/000000/sass.png"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "https://img.icons8.com/color/32/000000/javascript.png"
+      },
+      {
+        "name": "PHP",
+        "icon": "https://img.icons8.com/officel/32/000000/php-logo.png"
+      },
+      {
+        "name": "MySQL",
+        "icon": "https://img.icons8.com/color/32/000000/mysql-logo.png"
+      }
+    ]
   }
 ]

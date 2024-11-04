@@ -1,3 +1,4 @@
+/* ICONOS */
 .icon_hover {
     width: 52px; 
     height: 52px;
@@ -9,42 +10,24 @@
     transition: all 0.3s ease-in-out;
     position: relative; 
 }
-
 .icon_hover:hover {
     background-color: #d1d1f4; 
     transform: translateY(-6px);
 }
-
 .icon_hover svg {
     transition: transform 0.3s ease-in-out;
 }
-
 .icon_hover:hover svg {
     transform: scale(0.8); 
 }
-
 .icon_hover2 {
     transition: all 0.3s ease-in-out;
     position: relative; 
 }
-
-.icon_hover2:hover {
-    transform: translateY(-6px);
+.icon_hover2:hover{ transform: translateY(-6px);
 }
 
-.hidden {
-  display: none;
-}
-
-.block {
-  display: block;
-}
-
-
-
-
-
-/* Generales */
+/* GENERALES */
 html {
     scroll-behavior: smooth;
     cursor: none;
@@ -63,8 +46,18 @@ main{
     overflow-x: hidden;
 }
 
+/* UTILIDADES */
+.hidden {
+    display: none;
+}
+.block {
+  display: block;
+}
 .contacto_link{
     display: none;
+}
+.text_nav{
+
 }
 
 /*  Querys */
@@ -88,8 +81,6 @@ main{
   }
   .center_container{
       display: flex;
-      justify-content: center;
-      align-items: center;
   }
   .contacto_link{
       display: block;
@@ -133,7 +124,9 @@ main{
 
 
 }
-
+.center_container{
+      display: flex;
+}
 #contacto {
     display: none;
 }
@@ -149,34 +142,31 @@ main{
 .typing-text {
   color: #f1f2fc;
   font-family: monospace;
-  font-size: 24px; /* Tamaño de fuente fijo */
-  border-right: 2px solid; /* Cursor estilo máquina de escribir */
-  display: inline-block; /* El contenedor se ajusta al contenido */
-  white-space: nowrap; /* Evita que el texto salte de línea */
-  overflow: hidden; /* Oculta el texto que sobrepasa el contenedor */
-  max-width: 100%; /* Evita que el texto sobresalga del contenedor en pantallas pequeñas */
+  font-size: 24px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 /* Media Query para pantallas pequeñas */
 @media (max-width: 600px) {
   .typing-text {
-      font-size: 18px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+      font-size: 18px;
   }
 }
 
 /* Contenedor del texto */
 .text-tech-container {
-  width: 100%;  /* El ancho del contenedor se ajusta al 100% del contenedor padre */
-  max-width: 100%; /* Evita que el contenedor supere el tamaño de la pantalla */
-  overflow: hidden; /* Oculta cualquier contenido que se desborde horizontalmente */
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
-/* Texto del efecto máquina de escribir */
 .text-tech {
   color: #f1f2fc;
   font-family: monospace;
   font-size: 24px; 
-  border-right: 2px solid; 
   display: inline-block;
   white-space: nowrap; 
   overflow: hidden; 
@@ -191,6 +181,13 @@ main{
 .shadow_custom {
     filter: drop-shadow(0 4px 20px rgba(255, 255, 255, 0.5))
            drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.techonologies_container{
+    width: 80%;
+    display: flex;
+    flex: nowrap;
+
 }
 
 
