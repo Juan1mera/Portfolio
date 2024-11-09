@@ -206,5 +206,17 @@
         "icon": "https://img.icons8.com/color/32/000000/mysql-logo.png"
       }
     ]
+  },
+  {
+    "title": "Pomodoro Timer Desktop",
+    "link": "https://github.com/Juan1mera/Learning-Pygame",
+    "description": "Aplicacion de escritorio para gestionar el pomodoro, con la finalidad de que el usuario pueda gestionar su tiempo de trabajo y el tiempo que le falta para el pomodoro, Usando PyQt, una libreria de python",
+    "image": "./img/PomodoroTimer.png",
+    "technologies": [
+      {
+        "name": "Python",
+        "icon": "https://img.icons8.com/color/32/000000/python.png"
+      }
+    ]
   }
 ]
