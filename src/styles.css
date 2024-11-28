@@ -428,3 +428,14 @@ main{
 .slide-out {
     animation: slideOutRight 1s forwards; /* La animación dura 1 segundo */
 }
+
+
+
+.card-project {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+}
+.card-project p {
+  
+}

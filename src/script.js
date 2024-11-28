@@ -308,7 +308,7 @@ fetch('../proyects.json')
   .then((data) => {
     data.forEach((project) => {
       const card = document.createElement('div');
-      card.className = 'flex w-80 flex-col rounded-xl bg-purpleLight2 transform transition duration-300 hover:scale-105';
+      card.className = 'flex card-project flex-col rounded-xl bg-purpleLight2 transform transition duration-300 hover:scale-105';
 
 
       const imageContainer = document.createElement('div');
@@ -335,7 +335,7 @@ fetch('../proyects.json')
       link.innerHTML =  iconRedirect;
 
       const description = document.createElement('p');
-      description.className = 'block text-base font-light leading-relaxed';
+      description.className = 'block text-xs font-light leading-relaxed';
       description.textContent = project.description;
 
       textContainer.appendChild(title);
