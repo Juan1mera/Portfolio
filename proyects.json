@@ -218,5 +218,33 @@
         "icon": "https://img.icons8.com/color/32/000000/python.png"
       }
     ]
+  },
+  {
+    "name": "Landing Page Para una Peluqueria",
+    "link": "https://github.com/Juan1mera/Landing-Page-Para-una-Peluqueria",
+    "description": "Landing page para una peluqueria, En la que podra mostrar sus clientes, Eventos, Contacto y reservar citas sin nenecidad de hablar con un agente",
+    "image": "./img/LandingPeluqueria.png",
+    "technologies": [
+      {
+        "name": "HTML",
+        "icon": "https://img.icons8.com/color/32/000000/html-5.png"
+      },
+      {
+        "name": "CSS",
+        "icon": "https://img.icons8.com/color/32/000000/css.png"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "https://img.icons8.com/color/32/000000/javascript.png"
+      },
+      {
+        "name": "NestJs",
+        "icon": "https://img.icons8.com/color/32/000000/nestjs.png"
+      },
+      {
+        "name": "SQLite",
+        "icon": "https://img.icons8.com/32/000000/sqlite.png"
+      }
+    ]
   }
 ]
