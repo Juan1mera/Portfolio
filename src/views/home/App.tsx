@@ -1,12 +1,15 @@
 import Dock from '../../components/Dock/Dock'
 import './App.css'
-import { VscHome,VscArchive, VscAccount, VscSettingsGear } from "react-icons/vsc";
+import { BsTelegram, BsLinkedin, BsMailboxFlag, BsGithub, BsDatabaseFill , BsFillPersonFill, BsCameraFill      } from "react-icons/bs";
 function App() {
   const items = [
-    { icon: <VscHome size={18} />, label: 'About', onClick: () => alert('Home!') },
-    { icon: <VscArchive size={18} />, label: 'Projects', onClick: () => alert('Archive!') },
-    { icon: <VscAccount size={18} />, label: 'Galery', onClick: () => alert('Profile!') },
-    { icon: <VscSettingsGear size={18} />, label: 'Contact', onClick: () => alert('Settings!') },
+    { icon: <BsFillPersonFill  size={18} />, label: 'About', onClick: () => alert('About!') },
+    { icon: <BsDatabaseFill    size={18} />, label: 'Projects', onClick: () => alert('Projects!') },
+    { icon: <BsCameraFill   size={18} />, label: 'Galery', onClick: () => alert('Galery!') },
+    { icon: <BsGithub   size={18} />, label: 'Github', onClick: () => alert('Contact!') },
+    { icon: <BsLinkedin    size={18} />, label: 'Linkedin', onClick: () => alert('Contact!') },
+    { icon: <BsTelegram    size={18} />, label: 'Telegram', onClick: () => alert('Contact!') },
+    { icon: <BsMailboxFlag     size={18} />, label: 'Gmail', onClick: () => alert('Contact!') },
   ];
 
   
@@ -14,7 +17,7 @@ function App() {
   <div style={{position: 'fixed', bottom: 0}}>
   <Dock 
     items={items}
-    panelHeight={68}
+    panelHeight={58}
     baseItemSize={50}
     magnification={70}
   />
