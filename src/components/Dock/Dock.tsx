@@ -94,9 +94,18 @@ function DockItem({
       role="button"
       aria-haspopup="true"
     >
-      {Children.map(children, (child) =>
-        cloneElement(child as React.ReactElement, { isHovered })
-      )}
+    {Children.map(children, (child) => {
+      // Verificas que sea un ReactElement
+      if (!React.isValidElement(child)) return child;
+
+      // Aquí le dices a TS que el hijo es un ReactElement que SÍ acepta el prop `isHovered`.
+      // OJO: La clave es <{ isHovered?: MotionValue<number> }>
+      // NO TOCAR, NO SE COMO PERO FUNCIONO
+      return cloneElement(child as React.ReactElement<{ isHovered?: MotionValue<number> }>, {
+        isHovered,
+      });
+    })}
+
     </motion.div>
   );
 }
@@ -104,13 +113,14 @@ function DockItem({
 type DockLabelProps = {
   className?: string;
   children: React.ReactNode;
+  isHovered?: MotionValue<number>;
 };
 
-function DockLabel({ children, className = "", ...rest }: DockLabelProps) {
-  const { isHovered } = rest as { isHovered: MotionValue<number> };
+function DockLabel({ children, className = "", isHovered }: DockLabelProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    if (!isHovered) return;
     const unsubscribe = isHovered.on("change", (latest) => {
       setIsVisible(latest === 1);
     });
@@ -136,6 +146,7 @@ function DockLabel({ children, className = "", ...rest }: DockLabelProps) {
   );
 }
 
+
 type DockIconProps = {
   className?: string;
   children: React.ReactNode;
@@ -151,7 +162,7 @@ export default function Dock({
   spring = { mass: 0.1, stiffness: 150, damping: 12 },
   magnification = 70,
   distance = 200,
-  panelHeight = 58,
+  panelHeight = 68,
   dockHeight = 256,
   baseItemSize = 50,
 }: DockProps) {
