@@ -14,7 +14,7 @@ interface TextPressureProps {
     textColor?: string;
     strokeColor?: string;
     className?: string;
-    minFontSize?: string;
+    minFontSize?: number;
 }
 
 const TextPressure: React.FC<TextPressureProps> = ({
@@ -31,7 +31,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
     textColor = '#FFFFFF',
     strokeColor = '#FF0000',
     className = '',
-    minFontSize = '54px',
+    minFontSize = 54,
 }) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const titleRef = useRef<HTMLHeadingElement | null>(null);
@@ -220,7 +220,10 @@ const TextPressure: React.FC<TextPressureProps> = ({
                 {chars.map((char, i) => (
                     <span
                         key={i}
-                        ref={(el) => (spansRef.current[i] = el)}
+                        ref={(el) => {
+                            spansRef.current[i] = el;
+                          }}
+                          
                         data-char={char}
                         style={{
                             display: 'inline-block',
