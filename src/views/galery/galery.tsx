@@ -1,8 +1,8 @@
 
-function galery() {
+function Galery() {
   return (
     <div>galery</div>
   )
 }
 
-export default galery
+export default Galery
