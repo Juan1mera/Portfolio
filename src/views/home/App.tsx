@@ -6,7 +6,7 @@ import Projects from '../projects/Projects';
 import About from '../about/About';
 import Home from './Home';
 import Contact from '../contact/Contact';
-import Galery from '../galery/Galery';
+import Galery from '../gallery/Galery';
 function App() {
 
   const homeRef = useRef<HTMLElement>(null);
