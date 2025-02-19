@@ -5,8 +5,8 @@ import { BsTelegram, BsLinkedin, BsMailboxFlag, BsGithub, BsDatabaseFill, BsFill
 import Projects from '../projects/Projects';
 import About from '../about/About';
 import Home from './Home';
-import Galery from '../galery/Galery';
 import Contact from '../contact/Contact';
+import Galery from '../galery/Galery';
 function App() {
 
   const homeRef = useRef<HTMLElement>(null);
