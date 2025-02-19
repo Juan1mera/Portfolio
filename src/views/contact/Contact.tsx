@@ -1,7 +1,10 @@
+import SplitText from "../../components/SplitText"
 
 function Contact() {
   return (
-    <div>Contact</div>
+    <div>
+      <SplitText text="Contacto" />
+    </div>
   )
 }
 
