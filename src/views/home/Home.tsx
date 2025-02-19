@@ -1,5 +1,6 @@
 
 import FadeContent from '../../components/FadeContent'
+import SplitText from '../../components/SplitText'
 import TextPressure from '../../components/TextPressure'
 import '../../styles/global.css'
 import './Home.css'
@@ -15,9 +16,10 @@ function Home() {
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum magnam voluptatum recusandae minima perspiciatis? Illum vero laborum aspernatur veniam quis, quisquam corporis totam doloremque minima sed. Culpa perspiciatis quasi non! Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, ipsam enim eius corporis alias quis corrupti! Cum minus tempora aut commodi minima impedit? Repellendus tempore, cupiditate ratione dolores laudantium molestiae.
           </p>
+          <SplitText  text='Holaaa' />
         </div>
       </div>
-    </div>|
+    </div>
     </FadeContent>
 
   )
