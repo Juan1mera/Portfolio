@@ -28,6 +28,14 @@ html, body, #root {
   overflow: hidden; 
 
 }
+
+::selection {
+  background-color: rgba(117, 114, 191, 0.5); /* Color con transparencia */
+  color: #fff; /* Color del texto */
+  text-shadow: 0 0 8px rgba(117, 114, 191, 0.8); /* Brillo alrededor del texto */
+}
+
+
 ::-webkit-scrollbar {
   width: 5px; 
 }
