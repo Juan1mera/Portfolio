@@ -20,6 +20,9 @@ importers:
       framer-motion:
         specifier: ^12.4.2
         version: 12.4.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      gl-matrix:
+        specifier: ^3.4.3
+        version: 3.4.3
       ogl:
         specifier: ^1.0.11
         version: 1.0.11
@@ -893,6 +896,9 @@ packages:
   gensync@1.0.0-beta.2:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
     engines: {node: '>=6.9.0'}
+
+  gl-matrix@3.4.3:
+    resolution: {integrity: sha512-wcCp8vu8FT22BnvKVPjXa/ICBWRq/zjFfdofZy1WSpQZpphblv12/bOQLBC1rMM7SGOFS9ltVmKOHil5+Ml7gA==}
 
   glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
@@ -2115,6 +2121,8 @@ snapshots:
     optional: true
 
   gensync@1.0.0-beta.2: {}
+
+  gl-matrix@3.4.3: {}
 
   glob-parent@5.1.2:
     dependencies:
