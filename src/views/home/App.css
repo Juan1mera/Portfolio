@@ -7,6 +7,20 @@ html, body, #root {
 }
 @import "tailwindcss";
 
+@theme {
+  --purple-50: #f4f5fa;
+  --purple-100: #e5e5f4;
+  --purple-200: #d2d3eb;
+  --purple-300: #b2b5de;
+  --purple-400: #8e90cc;
+  --purple-500: #7572bf;
+  --purple-600: #6860b0;
+  --purple-700: #6054a1;
+  --purple-800: #534984;
+  --purple-900: #3d375e80;
+  --purple-950: #2d2942;
+}
+
 .App {
   position: relative;
   height: 100vh; 
