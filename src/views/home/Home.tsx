@@ -1,6 +1,6 @@
 
 import FadeContent from '../../components/FadeContent'
-import SplitText from '../../components/SplitText'
+import RotatingText from '../../components/RotatingText/RotatingText'
 import TextPressure from '../../components/TextPressure'
 import '../../styles/global.css'
 import './Home.css'
@@ -11,12 +11,22 @@ function Home() {
     <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
     <div className='container'>
       <TextPressure text='Hello World!' />
-      <div >
-        <div style={{ marginTop: '4rem', maxWidth: '60ch' }}>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum magnam voluptatum recusandae minima perspiciatis? Illum vero laborum aspernatur veniam quis, quisquam corporis totam doloremque minima sed. Culpa perspiciatis quasi non! Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, ipsam enim eius corporis alias quis corrupti! Cum minus tempora aut commodi minima impedit? Repellendus tempore, cupiditate ratione dolores laudantium molestiae.
-          </p>
-          <SplitText  text='Holaaa' />
+      <div>
+        <div className='gridContainer'>
+          <div>
+            <h1>¡Hola! Soy Juan</h1>
+            <RotatingText 
+              texts={['xxxx', 'dssss', 'sdddd']}
+              transition={{ duration: 0.8 }}
+              staggerDuration={0.09}
+              color='rgb(255, 255, 255)'
+            />
+          </div>
+          <div>
+            <p>
+            Estudiante de ingeniería de software y desarrollador Full Stack en Colombia. Tengo 17 y especializo en crear aplicaciones funcionales sin comprometer la experiencia del usuario. Sin experiencia laboral pero con un fuerte deseo de seguir aprendiendo.
+            </p>
+          </div> 
         </div>
       </div>
     </div>
