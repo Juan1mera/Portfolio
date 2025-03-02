@@ -1,26 +1,33 @@
 export const items = [
     {
-      image: 'https://picsum.photos/300/300?grayscale',
+      image: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1740920183/LandingPeluqueria.png',
       link: 'https://google.com/',
-      title: 'Item 1',
-      description: 'This is pretty cool, right?'
+      title: 'Landing Peluqueria',
+      description: 'Una paginacion de presentacion y agendar citas para una peluqueria'
     },
     {
-      image: 'https://picsum.photos/400/400?grayscale',
+      image: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1740920089/PokedexApp.png',
       link: 'https://google.com/',
-      title: 'Item 2',
-      description: 'This is pretty cool, right?'
+      title: 'Pokedex',
+      description: 'Esta app te permitira buscar pokemons y ver su informacion'
     },
     {
-      image: 'https://picsum.photos/500/500?grayscale',
+      image: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1740920115/PomodoroTimerPython.png',
       link: 'https://google.com/',
-      title: 'Item 3',
-      description: 'This is pretty cool, right?'
+      title: 'Pomodoro Timer',
+      description: 'App de esctirorio que hara uso del metodo pomodoro echa en python'
     },
     {
-      image: 'https://picsum.photos/600/600?grayscale',
+      image: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1740920311/amigoVetApp.jpg',
+      link: 'https://amigo-vet-web.vercel.app/',
+      title: 'AmigoVet',
+      description: 'Una app en la que podras registrar a tus mascotas o animales de granja, saber todo sobre ellos y ademas poder preguntarle a una IA sobre tu animal!'
+    },
+    {
+      image: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1740920130/SpaceShooterPython.png',
       link: 'https://google.com/',
-      title: 'Item 4',
-      description: 'This is pretty cool, right?'
-    }
+      title: 'Space Shooter',
+      description: 'Un juego de tiro espacial en python'
+    },
+
   ];

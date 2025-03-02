@@ -82,20 +82,26 @@ void main() {
     // Get texture dimensions and calculate aspect ratio
     ivec2 texSize = textureSize(uTex, 0);
     float imageAspect = float(texSize.x) / float(texSize.y);
-    float containerAspect = 1.0; // Assuming square container
+    float containerAspect = 1.0; // Assuming square container (disc)
+
+    // Calculate scale factors for cover
+    vec2 scale;
+    if (imageAspect > containerAspect) {
+        // Image is wider than container: scale Y to fit, crop X
+        scale = vec2(imageAspect / containerAspect, 1.0);
+    } else {
+        // Image is taller than container: scale X to fit, crop Y
+        scale = vec2(1.0, containerAspect / imageAspect);
+    }
+
+    // Adjust UVs for cover: center and scale
+    vec2 st = vec2(vUvs.x, 1.0 - vUvs.y); // Rotate 180°
+    st = (st - 0.5) * scale + 0.5; // Scale and re-center
     
-    // Calculate cover scale factor
-    float scale = max(imageAspect / containerAspect, 
-                     containerAspect / imageAspect);
-    
-    // Rotate 180 degrees and adjust UVs for cover
-    vec2 st = vec2(vUvs.x, 1.0 - vUvs.y);
-    st = (st - 0.5) * scale + 0.5;
-    
-    // Clamp coordinates to prevent repeating
+    // Clamp to avoid repeating
     st = clamp(st, 0.0, 1.0);
     
-    // Map to the correct cell in the atlas
+    // Map to atlas cell
     st = st * cellSize + cellOffset;
     
     outColor = texture(uTex, st);
@@ -1347,13 +1353,14 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
           absolute
           font-black
           [font-size:4rem]
-          left-[1.6em]
-          top-1/2
+          left-[1.5em]
+          top-[20%]
           transform
           translate-x-[20%]
           -translate-y-1/2
           transition-all
           ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
+          max-w-[10ch]
           ${
             isMoving
               ? "opacity-0 pointer-events-none duration-[100ms]"
@@ -1369,10 +1376,10 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
             className={`
           select-none
           absolute
-          max-w-[10ch]
+          max-w-[20ch]
           text-[1.5rem]
-          top-1/2
-          right-[1%]
+          top-[70%]
+          right-[-2%]
           transition-all
           ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
           ${
@@ -1403,7 +1410,7 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
           ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
           ${
             isMoving
-              ? "bottom-[-80px] opacity-0 pointer-events-none duration-[100ms] scale-0 -translate-x-1/2"
+              ? "bottom-[-90px] opacity-0 pointer-events-none duration-[100ms] scale-0 -translate-x-1/2"
               : "bottom-[5.8em] opacity-100 pointer-events-auto duration-[500ms] scale-100 -translate-x-1/2"
           }
         `}
