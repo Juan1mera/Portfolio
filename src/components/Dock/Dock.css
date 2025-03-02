@@ -11,13 +11,13 @@
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     width: fit-content;
     gap: 1rem;
     border-radius: 1rem;
     background-color: #29263c;
     border: 1px solid #222;
-    padding: 0 0.5rem 0.5rem;
+    padding: 1rem;
   }
   
   .dock-item {
@@ -52,5 +52,5 @@
     padding: 0.125rem 0.5rem;
     font-size: 0.75rem;
     color: #fff;
-    transform: translateX(-50%);
+    transform: translateX(-60%);
   }
