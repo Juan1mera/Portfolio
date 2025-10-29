@@ -1,16 +1,22 @@
+import CustomLink from "./ui/CustomLink";
 
 function NavBar() {
   return (
-    <nav>
-      <h5>Juan Mera</h5>
-      <div>
-        <a>Home</a>
-        <a>About</a>
-        <a>arojects</a>
+    <nav className="flex w-full items-center justify-between px-6 py-4">
+      {/* Nombre a la izquierda */}
+      <h5 className="text-lg font-semibold">Juan Mera</h5>
+
+      {/* Enlaces en el centro */}
+      <div className="flex gap-8">
+        <CustomLink text="Home" href="/" />
+        <CustomLink text="About" href="/" />
+        <CustomLink text="Projects" href="/" />
       </div>
-      <a href="">Let's Talk</a>
+
+      {/* Botón a la derecha */}
+      <CustomLink text="Let's Talk"href="/" />
     </nav>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;
