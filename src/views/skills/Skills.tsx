@@ -5,7 +5,7 @@ import { techLogos } from "../../constants/techLogos";
 function Skills() {
   return (
     <section className="bg-background-black py-16">
-      <h3 className="pl-8 md:pl-20 font-bold text-3xl mb-8">Skills</h3>
+      <h3 className="pl-8 md:pl-20 font-light text-3xl mb-8">Skills</h3>
       <div className="w-full overflow-hidden">
         <LogoLoop
           logos={techLogos}
