@@ -1,13 +1,13 @@
 // src/components/NavBar.tsx
+// import { WebColors } from "../constants/colors";
 import StaggeredMenu from "./StaggeredMenu";
 
 function NavBar() {
-
   const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
-    { label: 'About', ariaLabel: 'Learn about us', link: '/about' },
-    { label: 'Services', ariaLabel: 'View our services', link: '/services' },
-    { label: 'Contact', ariaLabel: 'Get in touch', link: '/contact' }
+    { label: 'About', ariaLabel: 'Learn about us', link: '#about' },
+    { label: 'Works', ariaLabel: 'View our works', link: '#works' },
+    { label: 'Contact', ariaLabel: 'Get in touch', link: '#contact' }
   ];
 
   const socialItems = [
@@ -18,10 +18,9 @@ function NavBar() {
 
   const centerItems = [
     { text: 'Home', href: '/' },
-    { text: 'About', href: '/' },
-    { text: 'Projects', href: '/' }
+    { text: 'About', href: '/about' },
+    { text: 'Works', href: '/works' }
   ];
-
 
   return (
     <StaggeredMenu
@@ -30,16 +29,14 @@ function NavBar() {
       socialItems={socialItems}
       displaySocials={true}
       displayItemNumbering={true}
-      menuButtonColor="#fff"
-      openMenuButtonColor="#fff"
+      menuButtonColor="#C9C4B3"
+      openMenuButtonColor="#C9C4B3"
       changeMenuColorOnOpen={true}
-      colors={['#B19EEF', '#5227FF']}
+      // colors={[WebColors.PurpleLight, WebColors.PurpleLightLight ]}
       logoText="Juan Mera"
-      accentColor="#ff6b6b"
+      accentColor="#30651B"
       isFixed={true}
       centerItems={centerItems}
-      onMenuOpen={() => console.log('Menu opened')}
-      onMenuClose={() => console.log('Menu closed')}
     />
   );
 }

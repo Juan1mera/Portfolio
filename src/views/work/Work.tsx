@@ -9,7 +9,7 @@ function Work() {
   ];
 
   return (
-    <section className="w-full  py-16">
+    <section className="w-full  py-16" id="works">
       <h3 className="pl-8 md:pl-20 font-bold text-3xl mb-8 text-white">Work</h3>
       <div className="w-full h-[600px] overflow-hidden">
         <FlowingMenu items={demoItems} />
