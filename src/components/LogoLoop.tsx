@@ -48,7 +48,7 @@ const cx = (...parts: Array<string | false | null | undefined>) => parts.filter(
 const useResizeObserver = (
   callback: () => void,
   elements: Array<React.RefObject<Element | null>>,
-  deps: React.DependencyList
+  // deps: React.DependencyList
 ) => {
   useEffect(() => {
     if (!window.ResizeObserver) {
@@ -70,13 +70,13 @@ const useResizeObserver = (
     return () => {
       observers.forEach(observer => observer?.disconnect());
     };
-  }, [callback, elements, ...deps]);
+  }, [callback, elements,]);
 };
 
 const useImageLoader = (
   seqRef: React.RefObject<HTMLUListElement | null>,
   onLoad: () => void,
-  deps: React.DependencyList
+  // deps: React.DependencyList
 ) => {
   useEffect(() => {
     const images = seqRef.current?.querySelectorAll('img') ?? [];
@@ -108,7 +108,7 @@ const useImageLoader = (
         img.removeEventListener('error', handleImageLoad);
       });
     };
-  }, [onLoad, seqRef, ...deps]);
+  }, [onLoad, seqRef]);
 };
 
 const useAnimationLoop = (
@@ -213,8 +213,10 @@ export const LogoLoop = React.memo<LogoLoopProps>(
       }
     }, []);
 
-    useResizeObserver(updateDimensions, [containerRef, seqRef], [logos, gap, logoHeight]);
-    useImageLoader(seqRef, updateDimensions, [logos, gap, logoHeight]);
+    // useResizeObserver(updateDimensions, [containerRef, seqRef], [logos, gap, logoHeight]);
+    useResizeObserver(updateDimensions, [containerRef, seqRef]);
+    // useImageLoader(seqRef, updateDimensions, [logos, gap, logoHeight]);
+    useImageLoader(seqRef, updateDimensions);
     useAnimationLoop(trackRef, targetVelocity, seqWidth, isHovered, pauseOnHover);
 
     const cssVariables = useMemo(
@@ -307,7 +309,7 @@ export const LogoLoop = React.memo<LogoLoopProps>(
           <li
             key={key}
             role="listitem"
-            className="flex-none mr-(--logoloop-gap) text-(length:--logoloop-logoHeight) leading-none overflow-visible"
+            className="flex-none mr-(--logoloop-gap) text-(--logoloop-logoHeight) leading-none overflow-visible"
           >
             {link}
           </li>

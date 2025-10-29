@@ -1,7 +1,6 @@
 import FlowingMenu from "../../components/FlowingMenu";
 
 function Work() {
-
   const demoItems = [
     { link: '#', text: 'Mojave', image: 'https://picsum.photos/600/400?random=1' },
     { link: '#', text: 'Sonoma', image: 'https://picsum.photos/600/400?random=2' },
@@ -9,12 +8,14 @@ function Work() {
     { link: '#', text: 'Sequoia', image: 'https://picsum.photos/600/400?random=4' }
   ];
 
-
   return (
-  <div style={{ height: '600px', position: 'relative' }}>
-    <FlowingMenu items={demoItems} />
-  </div>
-  )
+    <section className="w-full  py-16">
+      <h3 className="pl-8 md:pl-20 font-bold text-3xl mb-8 text-white">Work</h3>
+      <div className="w-full h-[600px] overflow-hidden">
+        <FlowingMenu items={demoItems} />
+      </div>
+    </section>
+  );
 }
 
-export default Work
+export default Work;
