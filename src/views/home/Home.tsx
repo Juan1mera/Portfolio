@@ -4,10 +4,10 @@ function Home() {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col justify-start items-center gap-6 pt-44 w-full px-6 md:px-0"
+      className="flex flex-col justify-start items-center gap-8 pt-52 pb-96 w-full px-6 md:px-0"
     >
       {/* Línea 1: Alineada a la IZQUIERDA */}
-      <div className="w-full px-20 flex items-end gap-3 flex-wrap justify-start">
+      <div className="w-full px-20 flex items-center gap-3 flex-wrap justify-start">
         <BlurText
           text="I'm a"
           className="p-2 md:text-6xl text-3xl "
@@ -25,7 +25,7 @@ function Home() {
       </div>
 
       {/* Línea 2: Alineada a la DERECHA */}
-      <div className="w-full px-20 flex items-end gap-3 flex-wrap justify-end">
+      <div className="w-full px-20 flex items-center gap-3 flex-wrap justify-end">
         <BlurText
           text="DEVELOPER"
           className="font-extrabold text-5xl md:text-9xl text-purple-light"

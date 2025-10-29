@@ -284,7 +284,7 @@ export const LogoLoop = React.memo<LogoLoopProps>(
               )}
             >
               {content}
-              <span className="text-[0px] group-hover:text-sm duration-300 font-bold pb-2.5">
+              <span className="text-[0px] group-hover:text-sm duration-300 font-bold ">
                 {hoverText}
               </span>
             </div>
