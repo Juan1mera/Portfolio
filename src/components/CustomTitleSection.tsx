@@ -19,7 +19,7 @@ export const CustomTitleSection: React.FC<CustomTitleSectionProps> = ({
           <BlurText
             key={idx}
             text={word}
-            className={`font-extrabold text-5xl md:text-9xl ${
+            className={`font-extrabold text-4xl md:text-8xl ${
               purpleWord === word ? "text-purple-light" : ""
             }`}
             animateBy="words"
@@ -35,7 +35,7 @@ export const CustomTitleSection: React.FC<CustomTitleSectionProps> = ({
           <BlurText
             key={idx}
             text={word}
-            className={`font-extrabold text-5xl md:text-9xl ${
+            className={`font-extrabold text-4xl md:text-8xl ${
               purpleWord === word ? "text-purple-light" : ""
             }`}
             animateBy="words"

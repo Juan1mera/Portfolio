@@ -10,14 +10,14 @@ function Home() {
       <div className="w-full px-20 flex items-center gap-3 flex-wrap justify-start">
         <BlurText
           text="I'm a"
-          className="p-2 md:text-6xl text-3xl "
+          className="p-2 md:text-4xl text-2xl "
           animateBy="words"
           delay={300}
           direction="top"
         />
         <BlurText
           text="FULL-STACK"
-          className="font-extrabold text-5xl md:text-9xl text-purple-light"
+          className="font-extrabold text-4xl md:text-8xl text-purple-light"
           animateBy="words"
           delay={300}
           direction="top"
@@ -28,14 +28,14 @@ function Home() {
       <div className="w-full px-20 flex items-center gap-3 flex-wrap justify-end">
         <BlurText
           text="DEVELOPER"
-          className="font-extrabold text-5xl md:text-9xl text-purple-light"
+          className="font-extrabold text-4xl md:text-8xl text-purple-light"
           animateBy="words"
           delay={300}
           direction="top"
         />
         <BlurText
           text="with experience"
-          className="text-3xl md:text-6xl "
+          className="text-2xl md:text-4xl "
           animateBy="words"
           delay={300}
           direction="top"
@@ -46,14 +46,14 @@ function Home() {
       <div className="w-full px-20 flex items-center gap-3 flex-wrap justify-center">
         <BlurText
           text="in"
-          className="text-3xl md:text-6xl "
+          className="text-2xl md:text-4xl "
           animateBy="words"
           delay={300}
           direction="top"
         />
         <BlurText
           text="WEB, APPS & GAMING"
-          className="font-extrabold text-5xl md:text-9xl "
+          className="font-extrabold text-4xl md:text-8xl "
           animateBy="words"
           delay={300}
           direction="top"

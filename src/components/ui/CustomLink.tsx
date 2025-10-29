@@ -39,7 +39,7 @@ const StyledWrapper = styled.div`
     align-items: center;
     gap: 0.5rem;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 20px;
     text-decoration: none;
     color: ${WebColors.TextColor};
     position: relative;
