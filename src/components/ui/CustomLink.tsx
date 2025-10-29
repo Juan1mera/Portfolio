@@ -5,7 +5,7 @@ import { WebColors } from '../../constants/colors';
 interface CustomLinkProps {
   href: string;
   text: string;
-  className?: string; 
+  className?: string;
 }
 
 const CustomLink: React.FC<CustomLinkProps> = ({ href, text, className }) => {
@@ -30,9 +30,10 @@ const CustomLink: React.FC<CustomLinkProps> = ({ href, text, className }) => {
 
 const StyledWrapper = styled.div`
   a {
-    padding: 0;
+    padding: 0.5rem 1rem;
     margin: 0;
-    border: none;
+    border: 2px solid ${WebColors.TextColor};
+    border-radius: 24px; /* Borde redondeado */
     background: none;
     cursor: pointer;
     display: inline-flex;
@@ -43,54 +44,27 @@ const StyledWrapper = styled.div`
     text-decoration: none;
     color: ${WebColors.TextColor};
     position: relative;
-    transition: color 0.3s ease-out;
+    transition: 
+      color 0.3s ease-out,
+      border-color 0.3s ease-out;
 
     /* Subrayado animado */
-    &::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      left: 0;
-      bottom: -7px;
-      height: 2px;
-      background: ${WebColors.PurpleLight};
-      transition: width 0.3s ease-out;
-    }
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   width: 0;
+    //   left: 1rem; /* Ajustar según el padding */
+    //   bottom: -7px;
+    //   height: 2px;
+    //   background: ${WebColors.PurpleLight};
+    //   transition: width 0.3s ease-out;
+    // }
 
-    /* Texto con efecto de pintado de izquierda a derecha */
+    /* Texto con efecto de pintado */
     span {
       position: relative;
-      background: linear-gradient(
-        to right,
-        ${WebColors.PurpleLight},
-        ${WebColors.PurpleLight}
-      );
-      background-size: 0% 100%;
-      background-repeat: no-repeat;
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      transition: background-size 0.3s ease-out;
-      /* Color original visible antes del hover */
       color: ${WebColors.TextColor};
-      -webkit-text-fill-color: ${WebColors.TextColor};
-    }
-
-    /* Hover: activar animaciones */
-    &:hover {
-      span {
-        background-size: 100% 100%;
-        -webkit-text-fill-color: transparent; /* Asegura que se vea el gradiente */
-      }
-
-      &::after {
-        width: 100%;
-      }
-
-      .icon {
-        transform: translateX(4px);
-        stroke: ${WebColors.PurpleLight};
-      }
+      transition: color 0.3s ease-out;
     }
 
     /* Ícono */
@@ -98,7 +72,38 @@ const StyledWrapper = styled.div`
       width: 15px;
       height: 15px;
       stroke: ${WebColors.TextColor};
-      transition: transform 0.2s ease-out 0.1s, stroke 0.3s ease-out;
+      transition: 
+        transform 0.2s ease-out 0.1s,
+        stroke 0.3s ease-out;
+    }
+
+    /* Hover: activar animaciones */
+    &:hover {
+      color: ${WebColors.PurpleLight};
+      border-color: ${WebColors.PurpleLight};
+
+      span {
+        background: linear-gradient(
+          to right,
+          ${WebColors.PurpleLight},
+          ${WebColors.PurpleLight}
+        );
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent; /* Solo en hover */
+      }
+
+      &::after {
+        width: calc(100% - 2rem); /* Ajustar al padding */
+      }
+
+      .icon {
+        transform: translateX(4px);
+        stroke: ${WebColors.PurpleLight};
+      }
     }
   }
 `;
