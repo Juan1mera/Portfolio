@@ -1,3 +1,4 @@
+import { CustomTitleSection } from "../../components/CustomTitleSection";
 import FlowingMenu from "../../components/FlowingMenu";
 
 function Work() {
@@ -9,8 +10,17 @@ function Work() {
   ];
 
   return (
-    <section className="w-full  py-16" id="works">
-      <h3 className="pl-8 md:pl-20 font-bold text-3xl mb-8 text-white">Work</h3>
+    <section 
+      id="works"
+      className="flex flex-col justify-start items-end gap-8 w-full"
+    >
+      <div className="mr-28">
+        <CustomTitleSection
+          topTexts={["CHECK", "OUT"]}
+          bottomTexts={["MY", "WORK"]}
+          purpleWord="MY"
+        />
+      </div>
       <div className="w-full h-[600px] overflow-hidden">
         <FlowingMenu items={demoItems} />
       </div>
