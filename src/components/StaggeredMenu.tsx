@@ -64,7 +64,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   const panelRef = useRef<HTMLDivElement>(null);
   const preLayersRef = useRef<HTMLDivElement>(null);
   const preLayerElsRef = useRef<HTMLElement[]>([]);
-  const overlayRef = useRef<HTMLDivElement>(null); // Nuevo: overlay para cerrar
+  const overlayRef = useRef<HTMLDivElement>(null); 
 
   const plusHRef = useRef<HTMLSpanElement>(null);
   const plusVRef = useRef<HTMLSpanElement>(null);
@@ -447,7 +447,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           --sm-bg: ${WebColors.Background};
           --sm-text: ${WebColors.TextColor};
           --sm-purple: ${WebColors.PurpleLight};
-          --sm-green: #30651B;
+          --sm-green: ${WebColors.PurpleLight};
         }
 
         .sm-overlay {

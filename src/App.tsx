@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <main className="pt-20">
+      <main className="pt-20 scroll-smooth">
         <Home />
         <Skills />
         <About />

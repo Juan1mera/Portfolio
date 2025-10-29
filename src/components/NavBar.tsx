@@ -4,22 +4,20 @@ import StaggeredMenu from "./StaggeredMenu";
 
 function NavBar() {
   const menuItems = [
-    { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
+    { label: 'Home', ariaLabel: 'Go to home page', link: '#home' },
     { label: 'About', ariaLabel: 'Learn about us', link: '#about' },
     { label: 'Works', ariaLabel: 'View our works', link: '#works' },
     { label: 'Contact', ariaLabel: 'Get in touch', link: '#contact' }
   ];
 
   const socialItems = [
-    { label: 'Twitter', link: 'https://twitter.com' },
-    { label: 'GitHub', link: 'https://github.com' },
+    { label: 'Buy me a Coffe', link: 'buymeacoffee.com/meradev' },
+    { label: 'Github', link: 'https://github.com' },
     { label: 'LinkedIn', link: 'https://linkedin.com' }
   ];
 
   const centerItems = [
-    { text: 'Home', href: '/' },
-    { text: 'About', href: '/about' },
-    { text: 'Works', href: '/works' }
+    { text: "Let's Talk", href: '/' },
   ];
 
   return (
@@ -34,7 +32,7 @@ function NavBar() {
       changeMenuColorOnOpen={true}
       // colors={[WebColors.PurpleLight, WebColors.PurpleLightLight ]}
       logoText="Juan Mera"
-      accentColor="#30651B"
+      accentColor="#6950b2"
       isFixed={true}
       centerItems={centerItems}
     />
