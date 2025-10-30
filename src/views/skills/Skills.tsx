@@ -4,8 +4,8 @@ import { techLogos, frameworksLogos, toolsLogos } from "../../constants/techLogo
 function Skills() {
   return (
     <>
-      <section className="bg-background-black py-16">
-        <h3 className="pl-8 md:pl-20 font-light text-3xl mb-8">Technologies</h3>
+      <section className="bg-background-black py-5">
+        <h3 className="pl-8 md:pl-20 font-light text-3xl">Technologies</h3>
         <div className="w-full overflow-hidden">
           <LogoLoop
             logos={techLogos}
@@ -19,13 +19,13 @@ function Skills() {
         </div>
       </section>
       
-      <section className="bg-background-black py-16">
-        <h3 className="pl-8 md:pl-20 font-light text-3xl mb-8">Frameworks</h3>
+      <section className="bg-background-black py-5">
+        <h3 className="pl-8 md:pl-20 font-light text-3xl">Frameworks</h3>
         <div className="w-full overflow-hidden">
           <LogoLoop
             logos={frameworksLogos}
             speed={90}
-            direction="left"
+            direction="right"
             logoHeight={48}
             gap={40}
             pauseOnHover
@@ -34,8 +34,8 @@ function Skills() {
         </div>
       </section>
       
-      <section className="bg-background-black py-16">
-        <h3 className="pl-8 md:pl-20 font-light text-3xl mb-8">Tools</h3>
+      <section className="bg-background-black py-5">
+        <h3 className="pl-8 md:pl-20 font-light text-3xl">Tools</h3>
         <div className="w-full overflow-hidden">
           <LogoLoop
             logos={toolsLogos}
