@@ -1,13 +1,9 @@
 import { CustomTitleSection } from "../../components/CustomTitleSection";
-import FlowingMenu from "../../components/FlowingMenu";
+import AppSection from "./AppSection";
+import GameSection from "./GameSection";
+import WebSection from "./WebSection";
 
 function Work() {
-  const demoItems = [
-    { link: '#', text: 'Mojave', image: 'https://picsum.photos/600/400?random=1' },
-    { link: '#', text: 'Sonoma', image: 'https://picsum.photos/600/400?random=2' },
-    { link: '#', text: 'Monterey', image: 'https://picsum.photos/600/400?random=3' },
-    { link: '#', text: 'Sequoia', image: 'https://picsum.photos/600/400?random=4' }
-  ];
 
   return (
     <section 
@@ -21,9 +17,9 @@ function Work() {
           purpleWord="MY"
         />
       </div>
-      <div className="w-full h-[600px] overflow-hidden">
-        <FlowingMenu items={demoItems} />
-      </div>
+      <AppSection />
+      <WebSection />
+      <GameSection />
     </section>
   );
 }
