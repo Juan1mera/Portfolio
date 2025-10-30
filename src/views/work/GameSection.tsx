@@ -5,6 +5,7 @@ function GameSection() {
 
     const demoItems = [
     { link: '#', text: 'Mario Clone', image: 'https://picsum.photos/600/400?random=1' },
+    { link: '#', text: 'Space Shooter', image: 'https://picsum.photos/600/400?random=1' },
   ];
 
   return (

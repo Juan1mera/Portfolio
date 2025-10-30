@@ -1,12 +1,11 @@
-// src/views/skills/Skills.tsx
 import LogoLoop from "../../components/LogoLoop";
-import { techLogos, toolsLogos } from "../../constants/techLogos";
+import { techLogos, frameworksLogos, toolsLogos } from "../../constants/techLogos";
 
 function Skills() {
   return (
     <>
       <section className="bg-background-black py-16">
-        <h3 className="pl-8 md:pl-20 font-light text-3xl mb-8">Skills</h3>
+        <h3 className="pl-8 md:pl-20 font-light text-3xl mb-8">Technologies</h3>
         <div className="w-full overflow-hidden">
           <LogoLoop
             logos={techLogos}
@@ -19,6 +18,22 @@ function Skills() {
           />
         </div>
       </section>
+      
+      <section className="bg-background-black py-16">
+        <h3 className="pl-8 md:pl-20 font-light text-3xl mb-8">Frameworks</h3>
+        <div className="w-full overflow-hidden">
+          <LogoLoop
+            logos={frameworksLogos}
+            speed={90}
+            direction="left"
+            logoHeight={48}
+            gap={40}
+            pauseOnHover
+            scaleOnHover
+          />
+        </div>
+      </section>
+      
       <section className="bg-background-black py-16">
         <h3 className="pl-8 md:pl-20 font-light text-3xl mb-8">Tools</h3>
         <div className="w-full overflow-hidden">
@@ -34,7 +49,6 @@ function Skills() {
         </div>
       </section>
     </>
-
   );
 }
 
