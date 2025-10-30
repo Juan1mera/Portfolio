@@ -3,10 +3,17 @@ import FlowingMenu from "../../components/FlowingMenu"
 
 function AppSection() {
 
-  const demoItems = [
-    { link: '#', text: 'AmigoVet', image: 'https://picsum.photos/600/400?random=1' },
-    { link: '#', text: 'PokedexApp', image: 'https://picsum.photos/600/400?random=1' },
-    { link: '#', text: 'WalleApp', image: 'https://picsum.photos/600/400?random=1' },
+  const appProjects = [
+    {
+      title: 'AmigoVet',
+      description: 'App móvil para dueños de mascotas con recordatorios y geolocalización.',
+      role: 'Mobile Developer',
+      year: '2024',
+      technologies: ['React Native', 'Expo', 'Firebase'],
+      image1: 'https://picsum.photos/600/400?random=7',
+      linkViewProject: 'https://play.google.com/store/apps/details?id=com.amigovet',
+    },
+    // ... más proyectos
   ];
 
   return (
@@ -18,7 +25,7 @@ function AppSection() {
         delay={300}
         direction="top"
       />
-      <FlowingMenu items={demoItems} />
+      <FlowingMenu items={appProjects} />
     </div>
   )
 }

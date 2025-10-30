@@ -3,10 +3,20 @@ import FlowingMenu from '../../components/FlowingMenu';
 
 function GameSection() {
 
-    const demoItems = [
-    { link: '#', text: 'Mario Clone', image: 'https://picsum.photos/600/400?random=1' },
-    { link: '#', text: 'Space Shooter', image: 'https://picsum.photos/600/400?random=1' },
-  ];
+// GameSection.tsx
+const gameProjects = [
+  {
+    title: 'Mario Clone',
+    description: 'Recreación 2D del clásico con mecánicas mejoradas.',
+    role: 'Game Developer',
+    year: '2023',
+    technologies: ['Phaser.js', 'JavaScript'],
+    image1: 'https://picsum.photos/600/400?random=8',
+    image2: 'https://picsum.photos/600/400?random=9',
+    linkViewCode: 'https://github.com/user/mario-clone',
+  },
+  // ...
+];
 
   return (
     <div className="w-full h-[600px] overflow-hidden">
@@ -17,7 +27,7 @@ function GameSection() {
           delay={300}
           direction="top"
         />
-        <FlowingMenu items={demoItems} />
+        <FlowingMenu items={gameProjects} />
     </div>
   )
 }
