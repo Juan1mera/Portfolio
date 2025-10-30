@@ -17,7 +17,7 @@ function AppSection() {
   ];
 
   return (
-    <div className="w-full h-[600px] overflow-hidden">
+    <div className="w-full">
       <BlurText
         text="APPS"
         className="font-extrabold text-2xl md:text-4xl pl-10"
