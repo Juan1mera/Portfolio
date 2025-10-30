@@ -49,14 +49,14 @@ function Home() {
           className="text-2xl md:text-4xl "
           animateBy="words"
           delay={300}
-          direction="top"
+          direction="bottom"
         />
         <BlurText
           text="WEB, APPS & GAMING"
           className="font-extrabold text-4xl md:text-8xl "
           animateBy="words"
           delay={300}
-          direction="top"
+          direction="bottom"
         />
       </div>
     </section>
