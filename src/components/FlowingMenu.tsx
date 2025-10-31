@@ -249,7 +249,7 @@ export const ProjectPanel: React.FC<ProjectPanelProps> = ({ data }) => {
             {images.map((img, i) => (
               <div
                 key={i}
-                className="aspect-video bg-cover bg-center rounded-lg shadow-md"
+                className="aspect-video bg-contain bg-no-repeat"
                 style={{ backgroundImage: `url(${img})` }}
               />
             ))}
