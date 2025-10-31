@@ -5,6 +5,7 @@
   --color-background: #171717;
   --color-background-black: #090909;
   --color-text-color: #C9C4B3;
+  --color-text-light: #eeede6;
   --color-green: #30651B;
   --color-purple: #392F5A;
   --color-purple-light: #6950b2;
@@ -27,6 +28,7 @@
 
 ::selection {
   background-color: #090909;
+  color: #C9C4B3;
 }
 
 /* a {

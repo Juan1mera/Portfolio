@@ -1,6 +1,8 @@
 // src/components/FlowingMenu.tsx
 import React from 'react';
 import { gsap } from 'gsap';
+import CustomLink from './ui/CustomLink';
+import LinkProject from '../views/work/LinkProject';
 
 interface ProjectData {
   title: string;
@@ -162,7 +164,7 @@ const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>(
     const repeatedMarqueeContent = React.useMemo(() => {
       return Array.from({ length: 3 }).map((_, idx) => (
         <React.Fragment key={idx}>
-          <span className="text-[#060010] uppercase font-normal text-[4vh] leading-[1.2] px-[1vw] py-[1vh]">
+          <span className="text-background uppercase font-normal text-[4vh] leading-[1.2] px-[1vw] py-[1vh]">
             {text}
           </span>
           {images[idx % images.length] && (
@@ -186,7 +188,7 @@ const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>(
         {/* Texto principal (se oculta en hover y cuando está abierto) */}
         <div 
           ref={textRef}
-          className="flex items-center justify-center h-24 md:h-28 relative uppercase font-semibold text-white text-3xl md:text-5xl transition-colors"
+          className="flex items-center justify-center h-24 md:h-28 relative uppercase font-semibold text-text-color text-3xl md:text-5xl transition-colors"
         >
           {text}
           <span className="ml-4 text-lg">{isOpen ? '−' : '+'}</span>
@@ -194,7 +196,7 @@ const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>(
 
         {/* Marquee (visible en hover y cuando está abierto) */}
         <div
-          className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none bg-white"
+          className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none bg-text-light"
           ref={marqueeRef}
           style={{ transform: 'translateY(101%)' }}
         >
@@ -220,27 +222,26 @@ export const ProjectPanel: React.FC<ProjectPanelProps> = ({ data }) => {
   const images = [data.image1, data.image2, data.image3].filter(Boolean);
 
   return (
-    <div className="bg-white text-[#060010] p-6 md:p-10">
+    <div className="bg-text-light text-background p-6 md:p-10">
       <div className="max-w-7xl mx-auto">
-        <h3 className="text-3xl md:text-4xl font-bold mb-4">{data.title}</h3>
-        <p className="text-lg mb-6 text-gray-700">{data.description}</p>
+        <h3 className="text-3xl md:text-4xl font-bold mb-4 ">{data.title}</h3>
+        <p className="text-lg mb-6 text-background-black">{data.description}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div>
-            <span className="font-semibold text-sm uppercase text-purple-600">Rol</span>
+            <span className="font-semibold text-sm uppercase text-purple-light">Rol</span>
             <p className="mt-1">{data.role}</p>
           </div>
           <div>
-            <span className="font-semibold text-sm uppercase text-purple-600">Año</span>
+            <span className="font-semibold text-sm uppercase text-purple-light">Year</span>
             <p className="mt-1">{data.year}</p>
           </div>
           <div>
-            <span className="font-semibold text-sm uppercase text-purple-600">Tecnologías</span>
             <div className="flex flex-wrap gap-2 mt-2">
               {data.technologies.map((tech, i) => (
                 <span
                   key={i}
-                  className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm"
+                  className="px-3 py-1 bg-purple-100 text-purple-light rounded-full text-sm"
                 >
                   {tech}
                 </span>
@@ -263,24 +264,16 @@ export const ProjectPanel: React.FC<ProjectPanelProps> = ({ data }) => {
 
         <div className="flex gap-4 flex-wrap">
           {data.linkViewProject && (
-            <a
+            <LinkProject 
+              text='View Project'
               href={data.linkViewProject}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition"
-            >
-              Ver Proyecto
-            </a>
+            />
           )}
           {data.linkViewCode && (
-            <a
+            <LinkProject 
+              text='View Code'
               href={data.linkViewCode}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 border border-purple-600 text-purple-600 font-medium rounded-lg hover:bg-purple-50 transition"
-            >
-              Ver Código
-            </a>
+            />
           )}
         </div>
       </div>
