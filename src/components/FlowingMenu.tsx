@@ -19,7 +19,7 @@ interface FlowingMenuProps {
   items: ProjectData[];
 }
 
-const FlowingMenu: React.FC<FlowingMenuProps> = ({ items }) => {
+export const FlowingMenu: React.FC<FlowingMenuProps> = ({ items }) => {
   const [openIndex, setOpenIndex] = React.useState<number | null>(null);
   const panelRefs = React.useRef<(HTMLDivElement | null)[]>([]);
   const itemRefs = React.useRef<(HTMLDivElement | null)[]>([]);
@@ -38,22 +38,17 @@ const FlowingMenu: React.FC<FlowingMenuProps> = ({ items }) => {
         ease: 'power3.inOut',
         onComplete: () => {
           setOpenIndex(null);
-          // Restaurar estado normal del item
-          gsap.to(item, { backgroundColor: 'transparent', color: '#fff' });
         },
       });
     } else {
       // CERRAR ANTERIOR
       if (openIndex !== null && panelRefs.current[openIndex]) {
         const prevPanel = panelRefs.current[openIndex];
-        const prevItem = itemRefs.current[openIndex];
         gsap.to(prevPanel, { height: 0, opacity: 0, duration: 0.5, ease: 'power3.inOut' });
-        if (prevItem) gsap.to(prevItem, { backgroundColor: 'transparent', color: '#fff' });
       }
 
       // ABRIR NUEVO
       setOpenIndex(index);
-      gsap.set(item, { backgroundColor: '#fff', color: '#060010' });
       gsap.fromTo(
         panel,
         { height: 0, opacity: 0 },
@@ -73,14 +68,14 @@ const FlowingMenu: React.FC<FlowingMenuProps> = ({ items }) => {
         {items.map((item, idx) => (
           <div key={idx} className="border-b border-white/20">
             <MenuItem
-              ref={(el) => (itemRefs.current[idx] = el)}
+              ref={(el) => { itemRefs.current[idx] = el; }}
               text={item.title}
               images={[item.image1, item.image2, item.image3].filter(Boolean) as string[]}
               isOpen={openIndex === idx}
               onClick={() => togglePanel(idx)}
             />
             <div
-              ref={(el) => (panelRefs.current[idx] = el)}
+              ref={(el) => { panelRefs.current[idx] = el; }}
               className="overflow-hidden"
               style={{ height: 0 }}
             >
@@ -93,7 +88,7 @@ const FlowingMenu: React.FC<FlowingMenuProps> = ({ items }) => {
   );
 };
 
-// === MENU ITEM CON MARQUEE AL HOVER (solo si está cerrado) ===
+// === MENU ITEM CON MARQUEE AL HOVER ===
 interface MenuItemProps {
   text: string;
   images: string[];
@@ -105,6 +100,7 @@ const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>(
   ({ text, images, isOpen, onClick }, ref) => {
     const marqueeRef = React.useRef<HTMLDivElement>(null);
     const marqueeInnerRef = React.useRef<HTMLDivElement>(null);
+    const textRef = React.useRef<HTMLDivElement>(null);
     const animationDefaults = { duration: 0.6, ease: 'expo' };
 
     const findClosestEdge = (
@@ -119,7 +115,7 @@ const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>(
     };
 
     const handleMouseEnter = (ev: React.MouseEvent<HTMLDivElement>) => {
-      if (isOpen || !marqueeRef.current || !marqueeInnerRef.current) return;
+      if (isOpen || !marqueeRef.current || !marqueeInnerRef.current || !textRef.current) return;
 
       const rect = ev.currentTarget.getBoundingClientRect();
       const edge = findClosestEdge(
@@ -132,11 +128,12 @@ const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>(
       const tl = gsap.timeline({ defaults: animationDefaults });
       tl.set(marqueeRef.current, { y: edge === 'top' ? '-101%' : '101%' })
         .set(marqueeInnerRef.current, { y: edge === 'top' ? '101%' : '-101%' })
-        .to([marqueeRef.current, marqueeInnerRef.current], { y: '0%' });
+        .to(textRef.current, { opacity: 0 }, 0)
+        .to([marqueeRef.current, marqueeInnerRef.current], { y: '0%' }, 0);
     };
 
     const handleMouseLeave = (ev: React.MouseEvent<HTMLDivElement>) => {
-      if (isOpen || !marqueeRef.current || !marqueeInnerRef.current) return;
+      if (isOpen || !marqueeRef.current || !marqueeInnerRef.current || !textRef.current) return;
 
       const rect = ev.currentTarget.getBoundingClientRect();
       const edge = findClosestEdge(
@@ -147,9 +144,20 @@ const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>(
       );
 
       const tl = gsap.timeline({ defaults: animationDefaults });
-      tl.to(marqueeRef.current, { y: edge === 'top' ? '-101%' : '101%' })
-        .to(marqueeInnerRef.current, { y: edge === 'top' ? '101%' : '-101%' }, 0);
+      tl.to(marqueeRef.current, { y: edge === 'top' ? '-101%' : '101%' }, 0)
+        .to(marqueeInnerRef.current, { y: edge === 'top' ? '101%' : '-101%' }, 0)
+        .to(textRef.current, { opacity: 1 }, 0);
     };
+
+    // Efecto para mantener el marquee visible cuando está abierto
+    React.useEffect(() => {
+      if (isOpen && marqueeRef.current && marqueeInnerRef.current && textRef.current) {
+        gsap.to(textRef.current, { opacity: 0, duration: 0.3 });
+        gsap.to([marqueeRef.current, marqueeInnerRef.current], { y: '0%', duration: 0.6, ease: 'expo' });
+      } else if (!isOpen && textRef.current) {
+        gsap.to(textRef.current, { opacity: 1, duration: 0.3 });
+      }
+    }, [isOpen]);
 
     const repeatedMarqueeContent = React.useMemo(() => {
       return Array.from({ length: 3 }).map((_, idx) => (
@@ -175,27 +183,28 @@ const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>(
         onMouseLeave={handleMouseLeave}
         onClick={onClick}
       >
-        {/* Texto principal */}
-        <div className="flex items-center justify-center h-24 md:h-32 relative uppercase font-semibold text-white text-3xl md:text-5xl transition-colors">
+        {/* Texto principal (se oculta en hover y cuando está abierto) */}
+        <div 
+          ref={textRef}
+          className="flex items-center justify-center h-24 md:h-28 relative uppercase font-semibold text-white text-3xl md:text-5xl transition-colors"
+        >
           {text}
           <span className="ml-4 text-lg">{isOpen ? '−' : '+'}</span>
         </div>
 
-        {/* Marquee (solo visible si NO está abierto) */}
-        {!isOpen && (
-          <div
-            className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none bg-white"
-            ref={marqueeRef}
-            style={{ transform: 'translateY(101%)' }}
-          >
-            <div className="h-full w-max flex items-center" ref={marqueeInnerRef}>
-              <div className="flex items-center h-full w-max will-change-transform animate-marquee">
-                {repeatedMarqueeContent}
-                {repeatedMarqueeContent} {/* Seamless loop */}
-              </div>
+        {/* Marquee (visible en hover y cuando está abierto) */}
+        <div
+          className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none bg-white"
+          ref={marqueeRef}
+          style={{ transform: 'translateY(101%)' }}
+        >
+          <div className="h-full w-max flex items-center" ref={marqueeInnerRef}>
+            <div className="flex items-center h-full w-max will-change-transform animate-marquee">
+              {repeatedMarqueeContent}
+              {repeatedMarqueeContent}
             </div>
           </div>
-        )}
+        </div>
       </div>
     );
   }
@@ -207,7 +216,7 @@ interface ProjectPanelProps {
   data: ProjectData;
 }
 
-const ProjectPanel: React.FC<ProjectPanelProps> = ({ data }) => {
+export const ProjectPanel: React.FC<ProjectPanelProps> = ({ data }) => {
   const images = [data.image1, data.image2, data.image3].filter(Boolean);
 
   return (
@@ -279,4 +288,3 @@ const ProjectPanel: React.FC<ProjectPanelProps> = ({ data }) => {
   );
 };
 
-export default FlowingMenu;

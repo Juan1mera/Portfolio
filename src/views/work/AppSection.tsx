@@ -1,5 +1,5 @@
 import BlurText from "../../components/BlurText";
-import FlowingMenu from "../../components/FlowingMenu"
+import { FlowingMenu } from "../../components/FlowingMenu";
 
 function AppSection() {
 
