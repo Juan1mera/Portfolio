@@ -1,15 +1,20 @@
 // src/components/FlowingMenu.tsx
 import React from 'react';
 import { gsap } from 'gsap';
-import CustomLink from './ui/CustomLink';
 import LinkProject from '../views/work/LinkProject';
+import IconTech from './IconTech';
+
+interface TechItem {
+  name: string;
+  icon: React.ReactNode;
+}
 
 interface ProjectData {
   title: string;
   description: string;
   role: string;
   year: string;
-  technologies: string[];
+  technologies: TechItem[];
   image1?: string;
   image2?: string;
   image3?: string;
@@ -32,7 +37,6 @@ export const FlowingMenu: React.FC<FlowingMenuProps> = ({ items }) => {
     if (!panel || !item) return;
 
     if (openIndex === index) {
-      // CERRAR
       gsap.to(panel, {
         height: 0,
         opacity: 0,
@@ -43,13 +47,11 @@ export const FlowingMenu: React.FC<FlowingMenuProps> = ({ items }) => {
         },
       });
     } else {
-      // CERRAR ANTERIOR
       if (openIndex !== null && panelRefs.current[openIndex]) {
         const prevPanel = panelRefs.current[openIndex];
         gsap.to(prevPanel, { height: 0, opacity: 0, duration: 0.5, ease: 'power3.inOut' });
       }
 
-      // ABRIR NUEVO
       setOpenIndex(index);
       gsap.fromTo(
         panel,
@@ -90,7 +92,7 @@ export const FlowingMenu: React.FC<FlowingMenuProps> = ({ items }) => {
   );
 };
 
-// === MENU ITEM CON MARQUEE AL HOVER ===
+// === MENU ITEM (sin cambios) ===
 interface MenuItemProps {
   text: string;
   images: string[];
@@ -151,7 +153,6 @@ const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>(
         .to(textRef.current, { opacity: 1 }, 0);
     };
 
-    // Efecto para mantener el marquee visible cuando está abierto
     React.useEffect(() => {
       if (isOpen && marqueeRef.current && marqueeInnerRef.current && textRef.current) {
         gsap.to(textRef.current, { opacity: 0, duration: 0.3 });
@@ -185,7 +186,6 @@ const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>(
         onMouseLeave={handleMouseLeave}
         onClick={onClick}
       >
-        {/* Texto principal (se oculta en hover y cuando está abierto) */}
         <div 
           ref={textRef}
           className="flex items-center justify-center h-24 md:h-28 relative uppercase font-semibold text-text-color text-3xl md:text-5xl transition-colors"
@@ -194,7 +194,6 @@ const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>(
           <span className="ml-4 text-lg">{isOpen ? '−' : '+'}</span>
         </div>
 
-        {/* Marquee (visible en hover y cuando está abierto) */}
         <div
           className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none bg-text-light"
           ref={marqueeRef}
@@ -213,7 +212,7 @@ const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>(
 );
 MenuItem.displayName = 'MenuItem';
 
-// === PANEL DE DETALLE ===
+// === PROJECT PANEL (actualizado con IconTech) ===
 interface ProjectPanelProps {
   data: ProjectData;
 }
@@ -224,7 +223,7 @@ export const ProjectPanel: React.FC<ProjectPanelProps> = ({ data }) => {
   return (
     <div className="bg-text-light text-background p-6 md:p-10">
       <div className="max-w-7xl mx-auto">
-        <h3 className="text-3xl md:text-4xl font-bold mb-4 ">{data.title}</h3>
+        <h3 className="text-3xl md:text-4xl font-bold mb-4">{data.title}</h3>
         <p className="text-lg mb-6 text-background-black">{data.description}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -239,12 +238,7 @@ export const ProjectPanel: React.FC<ProjectPanelProps> = ({ data }) => {
           <div>
             <div className="flex flex-wrap gap-2 mt-2">
               {data.technologies.map((tech, i) => (
-                <span
-                  key={i}
-                  className="px-3 py-1 bg-purple-100 text-purple-light rounded-full text-sm"
-                >
-                  {tech}
-                </span>
+                <IconTech key={i} icon={tech.icon} name={tech.name} />
               ))}
             </div>
           </div>
@@ -264,20 +258,13 @@ export const ProjectPanel: React.FC<ProjectPanelProps> = ({ data }) => {
 
         <div className="flex gap-4 flex-wrap">
           {data.linkViewProject && (
-            <LinkProject 
-              text='Project'
-              href={data.linkViewProject}
-            />
+            <LinkProject text='Project' href={data.linkViewProject} />
           )}
           {data.linkViewCode && (
-            <LinkProject 
-              text='GitHub'
-              href={data.linkViewCode}
-            />
+            <LinkProject text='GitHub' href={data.linkViewCode} />
           )}
         </div>
       </div>
     </div>
   );
 };
-
