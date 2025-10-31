@@ -13,6 +13,7 @@
 }
 
 :root {
+  overflow-x: hidden;
   font-family: "Zalando Sans SemiExpanded", sans-serif;
   line-height: 1.5;
   font-weight: 400;
