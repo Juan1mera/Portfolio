@@ -265,13 +265,13 @@ export const ProjectPanel: React.FC<ProjectPanelProps> = ({ data }) => {
         <div className="flex gap-4 flex-wrap">
           {data.linkViewProject && (
             <LinkProject 
-              text='View Project'
+              text='Project'
               href={data.linkViewProject}
             />
           )}
           {data.linkViewCode && (
             <LinkProject 
-              text='View Code'
+              text='GitHub'
               href={data.linkViewCode}
             />
           )}

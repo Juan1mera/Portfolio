@@ -4,12 +4,13 @@ import { WebColors } from '../../constants/colors';
 interface Props {
   href: string;
   text: string;
+  className?: string;
 }
 
-const LinkProject: React.FC<Props> = ({ href, text }) => {
+const LinkProject: React.FC<Props> = ({ href, text, className }) => {
   return (
     <StyledWrapper>
-      <a className="learn-more" href={href} >
+      <a className={`learn-more ${className || ''}`} href={href}>
         <span className="circle" aria-hidden="true">
           <span className="icon arrow" />
         </span>
@@ -35,7 +36,8 @@ const StyledWrapper = styled.div`
   }
 
   a.learn-more {
-   width: 13rem;
+   width: auto;
+   min-width: 10rem;
    height: auto;
   }
 
@@ -93,6 +95,7 @@ const StyledWrapper = styled.div`
    line-height: 1.6;
    text-align: center;
    text-transform: uppercase;
+   white-space: nowrap;
   }
 
   a:hover .circle {
