@@ -1,3 +1,4 @@
+import { SiMongodb, SiNodedotjs, SiReact, SiTailwindcss } from 'react-icons/si';
 import BlurText from '../../components/BlurText';
 import { FlowingMenu } from '../../components/FlowingMenu';
 
@@ -10,7 +11,12 @@ const gameProjects = [
     description: 'Recreación 2D del clásico con mecánicas mejoradas.',
     role: 'Game Developer',
     year: '2023',
-    technologies: ['Phaser.js', 'JavaScript'],
+    technologies: [
+      { name: 'React', icon: <SiReact /> },
+      { name: 'Node.js', icon: <SiNodedotjs /> },
+      { name: 'MongoDB', icon: <SiMongodb /> },
+      { name: 'Tailwind', icon: <SiTailwindcss /> },
+    ],
     image1: 'https://picsum.photos/600/400?random=8',
     image2: 'https://picsum.photos/600/400?random=9',
     linkViewCode: 'https://github.com/user/mario-clone',
@@ -20,7 +26,12 @@ const gameProjects = [
     description: 'Recreación 2D del clásico con mecánicas mejoradas.',
     role: 'Game Developer',
     year: '2023',
-    technologies: ['Phaser.js', 'JavaScript'],
+    technologies: [
+      { name: 'React', icon: <SiReact /> },
+      { name: 'Node.js', icon: <SiNodedotjs /> },
+      { name: 'MongoDB', icon: <SiMongodb /> },
+      { name: 'Tailwind', icon: <SiTailwindcss /> },
+    ],
     image1: 'https://picsum.photos/600/400?random=8',
     image2: 'https://picsum.photos/600/400?random=9',
     linkViewCode: 'https://github.com/user/mario-clone',

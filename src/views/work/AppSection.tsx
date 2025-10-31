@@ -1,3 +1,4 @@
+import { SiMongodb, SiNodedotjs, SiReact, SiTailwindcss } from "react-icons/si";
 import BlurText from "../../components/BlurText";
 import { FlowingMenu } from "../../components/FlowingMenu";
 
@@ -9,11 +10,15 @@ function AppSection() {
       description: 'App móvil para dueños de mascotas con recordatorios y geolocalización.',
       role: 'Mobile Developer',
       year: '2024',
-      technologies: ['React Native', 'Expo', 'Firebase'],
+      technologies: [
+        { name: 'React', icon: <SiReact /> },
+        { name: 'Node.js', icon: <SiNodedotjs /> },
+        { name: 'MongoDB', icon: <SiMongodb /> },
+        { name: 'Tailwind', icon: <SiTailwindcss /> },
+      ],
       image1: 'https://picsum.photos/600/400?random=7',
       linkViewProject: 'https://play.google.com/store/apps/details?id=com.amigovet',
     },
-    // ... más proyectos
   ];
 
   return (
