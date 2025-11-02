@@ -23,7 +23,9 @@ import {
   SiVite,
   SiNestjs,
   SiAstro,
-  SiDocker
+  SiDocker,
+  SiSpringboot,
+  SiAmazonwebservices
 } from 'react-icons/si';
 
 export const techLogos = [
@@ -123,6 +125,12 @@ export const techLogos = [
     href: "https://dotnet.microsoft.com/en-us/languages/csharp",
     hoverText: "C#" 
   },
+  { 
+    node: <SiSpringboot className="w-12 h-12" />, 
+    title: "Spring Boot", 
+    href: "https://dotnet.microsoft.com/en-us/languages/csharp",
+    hoverText: "Spring Boot" 
+  },
 ];
 
 export const frameworksLogos = [
@@ -198,6 +206,12 @@ export const toolsLogos = [
   { 
     node: <SiDocker className="w-12 h-12" />, 
     title: "Docker", 
+    href: "https://www.docker.com",
+    hoverText: "Docker" 
+  },
+  { 
+    node: <SiAmazonwebservices className="w-12 h-12" />, 
+    title: "Amazon Web Services", 
     href: "https://www.docker.com",
     hoverText: "Docker" 
   },
