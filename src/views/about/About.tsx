@@ -19,19 +19,11 @@ function About() {
       {/* Párrafo centrado */}
       <div className="min-w-screen flex items-center justify-center">
         <p className="text-2xl leading-relaxed max-w-5xl">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat.
+          I'm Juan José Mera Barrera, 18 years old, and currently in my fifth semester of Applied Informatics and Information Technologies at Belgorod State National Research University (BelGU), Russia. I've been passionate about programming since I was 10, starting with robotics using Arduino and later shifting my full focus to software development.
           <br /><br />
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          I’m obsessed with crafting beautiful, intuitive, and user-friendly interfaces while optimizing performance in both web applications and servers. I have two years of hands-on programming experience, though no formal work history yet.
           <br /><br />
-          Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam
-          varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus
-          magna felis sollicitudin mauris. Integer in mauris eu nibh euismod
-          gravida.
+          I’m eager to join a team where I can contribute my best, collaborate effectively, and help drive innovative projects forward.
         </p>
       </div>
 
