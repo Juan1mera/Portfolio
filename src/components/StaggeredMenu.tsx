@@ -4,6 +4,7 @@ import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import CustomLink from './ui/CustomLink';
 import { WebColors } from '../constants/colors';
+import LogoSvg from './LogoSvg';
 
 export interface StaggeredMenuItem {
   label: string;
@@ -346,9 +347,16 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           {logoUrl ? (
             <img src={logoUrl} alt="Logo" className="sm-logo-img" />
           ) : (
-            <span className="sm-logo-text text-2xl font-bold text-white transition-colors duration-300">
-              {logoText}
-            </span>
+              <div className="flex items-center">
+                <LogoSvg className="h-7 w-auto mr-2" /> 
+                <span
+                  className="text-2xl font-bold whitespace-nowrap"
+                  style={{ lineHeight: 1 }}
+                >
+                  {logoText}
+                </span>
+              </div>
+
           )}
         </div>
 
