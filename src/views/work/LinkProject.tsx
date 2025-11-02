@@ -10,7 +10,7 @@ interface Props {
 const LinkProject: React.FC<Props> = ({ href, text, className }) => {
   return (
     <StyledWrapper>
-      <a className={`learn-more ${className || ''}`} href={href}>
+      <a target="_blank" className={`learn-more ${className || ''}`} href={href}>
         <span className="circle" aria-hidden="true">
           <span className="icon arrow" />
         </span>
