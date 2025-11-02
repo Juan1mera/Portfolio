@@ -7,7 +7,7 @@ function WebSection() {
   const webProjects = [
     {
       title: 'AmigoVet Web',
-      description: 'Plataforma veterinaria para gestión de citas, historiales clínicos y telemedicina.',
+      description: 'Website for the presentation of the "AmigoVet" mobile application in order to showcase its functionalities, previous versions and everything related.',
       role: 'Frontend Developer',
       year: '2025',
       technologies: [
@@ -21,8 +21,8 @@ function WebSection() {
       linkViewCode: 'https://github.com/Juan1mera/AmigoVet-Web',
     },
     {
-      title: 'Zentry',
-      description: 'Dashboard administrativo para gestión de usuarios y reportes en tiempo real.',
+      title: 'Zentry Clon',
+      description: 'Zentry is a company that works with artificial intelligence. This 2024 clone of the Zentry website was created to practice using front-end development, animations with GSAP, and CEO.',
       role: 'Frontend Developer',
       year: '2024',
       technologies: [
@@ -36,8 +36,8 @@ function WebSection() {
       linkViewCode: 'https://github.com/Juan1mera/Clon-Zentry'
     },
     {
-      title: 'Administración Pro',
-      description: 'Sistema ERP ligero para pequeñas empresas.',
+      title: 'Data management',
+      description: 'Management system for data from multiple points of sale, where each point of sale can add only data from its own point of sale, and the administrator can view, modify, and generate monthly reports in Excel.',
       role: 'Full-Stack Developer',
       year: '2024',
       technologies: [
