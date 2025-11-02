@@ -8,7 +8,7 @@ function GameSection() {
 const gameProjects = [
   {
     title: 'Mario Clone',
-    description: 'Recreación 2D del clásico con distintos assets',
+    description: 'A platform game with multiple levels, similar to the 1985 Mario game, using sprites taken from the internet, made entirely in Python with the PyGame library.',
     role: 'Game Developer',
     year: '2023',
     technologies: [
@@ -21,7 +21,7 @@ const gameProjects = [
   },
   {
     title: 'Space Shooter',
-    description: 'Recreación 2D del clásico con mecánicas mejoradas.',
+    description: 'A game with two difficulty levels, where the difficulty increases as time progresses in each level, made entirely in Python using the PyGame library.',
     role: 'Game Developer',
     year: '2023',
     technologies: [
