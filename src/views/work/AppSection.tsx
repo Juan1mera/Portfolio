@@ -1,23 +1,27 @@
-import { SiMongodb, SiNodedotjs, SiReact, SiTailwindcss } from "react-icons/si";
+import { SiFlutter, SiNestjs, SiSqlite, SiSupabase } from "react-icons/si";
 import BlurText from "../../components/BlurText";
 import { FlowingMenu } from "../../components/FlowingMenu";
+
 
 function AppSection() {
 
   const appProjects = [
     {
       title: 'AmigoVet',
-      description: 'App móvil para dueños de mascotas con recordatorios y geolocalización.',
-      role: 'Mobile Developer',
-      year: '2024',
+      description: 'Mobile application for the care of your pets, where you can keep all the information about your pet as if it were its virtual ID card.',
+      role: 'Full-Stack Developer',
+      year: '2025(In Progress)',
       technologies: [
-        { name: 'React', icon: <SiReact /> },
-        { name: 'Node.js', icon: <SiNodedotjs /> },
-        { name: 'MongoDB', icon: <SiMongodb /> },
-        { name: 'Tailwind', icon: <SiTailwindcss /> },
+        { name: 'Flutter', icon: <SiFlutter /> },
+        { name: 'SupaBase', icon: <SiSupabase /> },
+        { name: 'SQLite', icon: <SiSqlite /> },
+        { name: 'NestJs', icon: <SiNestjs /> },
       ],
-      image1: 'https://picsum.photos/600/400?random=7',
-      linkViewProject: 'https://play.google.com/store/apps/details?id=com.amigovet',
+      image1: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AmigoVetApp/Mockup1.webp',
+      image2: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AmigoVetApp/Mockup2.webp',
+      image3: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AmigoVetApp/Mockup3.webp',
+      linkViewProject: 'https://www.amigovet.app/',
+      linkViewCode: 'https://github.com/AmigoVet',
     },
   ];
 

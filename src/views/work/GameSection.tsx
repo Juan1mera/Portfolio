@@ -1,4 +1,4 @@
-import { SiMongodb, SiNodedotjs, SiReact, SiTailwindcss } from 'react-icons/si';
+import {SiPython } from 'react-icons/si';
 import BlurText from '../../components/BlurText';
 import { FlowingMenu } from '../../components/FlowingMenu';
 
@@ -8,33 +8,29 @@ function GameSection() {
 const gameProjects = [
   {
     title: 'Mario Clone',
-    description: 'Recreación 2D del clásico con mecánicas mejoradas.',
+    description: 'Recreación 2D del clásico con distintos assets',
     role: 'Game Developer',
     year: '2023',
     technologies: [
-      { name: 'React', icon: <SiReact /> },
-      { name: 'Node.js', icon: <SiNodedotjs /> },
-      { name: 'MongoDB', icon: <SiMongodb /> },
-      { name: 'Tailwind', icon: <SiTailwindcss /> },
+      { name: 'Python', icon: <SiPython /> },
     ],
-    image1: 'https://picsum.photos/600/400?random=8',
-    image2: 'https://picsum.photos/600/400?random=9',
-    linkViewCode: 'https://github.com/user/mario-clone',
+    image1: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/CluckSoulsGame/Page1.webp',
+    image2: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/CluckSoulsGame/Page2.webp',
+    image3: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/CluckSoulsGame/Page3.webp',
+    linkViewCode: 'https://github.com/Juan1mera/CluckSouls',
   },
   {
-    title: 'Mario Clone',
+    title: 'Space Shooter',
     description: 'Recreación 2D del clásico con mecánicas mejoradas.',
     role: 'Game Developer',
     year: '2023',
     technologies: [
-      { name: 'React', icon: <SiReact /> },
-      { name: 'Node.js', icon: <SiNodedotjs /> },
-      { name: 'MongoDB', icon: <SiMongodb /> },
-      { name: 'Tailwind', icon: <SiTailwindcss /> },
+      { name: 'Python', icon: <SiPython /> },
     ],
-    image1: 'https://picsum.photos/600/400?random=8',
-    image2: 'https://picsum.photos/600/400?random=9',
-    linkViewCode: 'https://github.com/user/mario-clone',
+    image1: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/SpaceShooterGame/Page1.webp',
+    image2: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/SpaceShooterGame/Page2.webp',
+    image3: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/SpaceShooterGame/Page3.webp',
+    linkViewCode: 'https://github.com/Juan1mera/Learning-Pygame/tree/main/space%20shooter',
   },
 ];
 

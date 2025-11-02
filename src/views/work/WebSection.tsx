@@ -1,53 +1,54 @@
 // src/sections/WebSection.tsx
+import { SiGsk, SiNestjs, SiReact, SiSass, SiSupabase, SiVite } from 'react-icons/si';
 import BlurText from '../../components/BlurText';
 import { FlowingMenu } from '../../components/FlowingMenu';
-import { SiReact, SiNodedotjs, SiMongodb, SiTailwindcss, SiVuedotjs, SiChartdotjs, SiFirebase, SiNextdotjs, SiPrisma, SiPostgresql } from 'react-icons/si';
 
 function WebSection() {
   const webProjects = [
     {
       title: 'AmigoVet Web',
       description: 'Plataforma veterinaria para gestión de citas, historiales clínicos y telemedicina.',
-      role: 'Full Stack Developer',
-      year: '2024',
+      role: 'Frontend Developer',
+      year: '2025',
       technologies: [
         { name: 'React', icon: <SiReact /> },
-        { name: 'Node.js', icon: <SiNodedotjs /> },
-        { name: 'MongoDB', icon: <SiMongodb /> },
-        { name: 'Tailwind', icon: <SiTailwindcss /> },
+        { name: 'Vite', icon: <SiVite /> },
       ],
-      image1: 'https://picsum.photos/600/400?random=1',
-      image2: 'https://picsum.photos/600/400?random=2',
-      linkViewProject: 'https://amigovet.com',
-      linkViewCode: 'https://github.com/user/amigovet-web',
+      image1: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AmigoVetWeb/Home.png',
+      image2: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AmigoVetWeb/Home2.png',
+      image3: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AmigoVetWeb/Progress.png',
+      linkViewProject: 'https://amigovet.app',
+      linkViewCode: 'https://github.com/Juan1mera/AmigoVet-Web',
     },
     {
       title: 'Zentry',
       description: 'Dashboard administrativo para gestión de usuarios y reportes en tiempo real.',
       role: 'Frontend Developer',
-      year: '2023',
+      year: '2024',
       technologies: [
-        { name: 'Vue.js', icon: <SiVuedotjs /> },
-        { name: 'Chart.js', icon: <SiChartdotjs /> },
-        { name: 'Firebase', icon: <SiFirebase /> },
+        { name: 'React', icon: <SiReact /> },
+        { name: 'React', icon: <SiGsk /> },
       ],
-      image1: 'https://picsum.photos/600/400?random=3',
-      linkViewProject: 'https://zentry.app',
+      image1: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/ZentryWeb/Page1.webp',
+      image2: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/ZentryWeb/Page2.webp',
+      image3: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/ZentryWeb/Page3.webp',
+      linkViewProject: 'https://clon-zentry.vercel.app/',
+      linkViewCode: 'https://github.com/Juan1mera/Clon-Zentry'
     },
     {
       title: 'Administración Pro',
       description: 'Sistema ERP ligero para pequeñas empresas.',
-      role: 'Lead Developer',
+      role: 'Full-Stack Developer',
       year: '2024',
       technologies: [
-        { name: 'Next.js', icon: <SiNextdotjs /> },
-        { name: 'Prisma', icon: <SiPrisma /> },
-        { name: 'PostgreSQL', icon: <SiPostgresql /> },
+        { name: 'React', icon: <SiReact /> },
+        { name: 'SASS', icon: <SiSass /> },
+        { name: 'NestJs', icon: <SiNestjs /> },
+        { name: 'Supabase', icon: <SiSupabase /> },
       ],
-      image1: 'https://picsum.photos/600/400?random=4',
-      image2: 'https://picsum.photos/600/400?random=5',
-      image3: 'https://picsum.photos/600/400?random=6',
-      linkViewCode: 'https://github.com/user/admin-pro',
+      image1: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AdminWeb/Page1.webp',
+      image2: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AdminWeb/Page2.webp',
+      image3: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AdminWeb/Page3.webp',
     },
   ];
 
