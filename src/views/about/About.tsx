@@ -28,7 +28,7 @@ function About() {
       </div>
 
       <div className="min-w-screen flex items-center justify-center">
-        <CustomLink text="Let's Talk" href="" />
+        <CustomLink text="Let's Talk" href="#footer" />
       </div>
 
     </div>

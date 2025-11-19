@@ -53,7 +53,7 @@ const socialLinks: SocialLink[] = [
 
 export default function Footer() {
   return (
-    <StyledFooter>
+    <StyledFooter id="footer">
       <div className="footer-container"> 
         <div className="social-column">
           {socialLinks.map(({ href, label, text }) => (

@@ -28,6 +28,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 ::selection {
   background-color: #090909;
   color: #C9C4B3;

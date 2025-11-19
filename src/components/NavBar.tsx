@@ -17,7 +17,7 @@ function NavBar() {
   ];
 
   const centerItems = [
-    { text: "Let's Talks", href: '/' },
+    { text: "Let's Talks", href: '#footer' },
   ];
 
   return (
