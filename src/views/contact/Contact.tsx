@@ -2,34 +2,26 @@ import { useState } from "react";
 import { CustomTitleSection } from "../../components/CustomTitleSection";
 
 function Contact() {
-  // Estado separado para email
+  // Email
   const [emailCopied, setEmailCopied] = useState(false);
   const email = "mera.dev.co@gmail.com";
 
-  // Estado separado para teléfono
+  // Teléfono
   const [phoneCopied, setPhoneCopied] = useState(false);
   const phone = "+7 915 572 78-34";
 
-  // Función para copiar email
+  const cvPath = "/cv/Juan_Mera_ Engineer_CV.pdf"; 
+
   const handleCopyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(email);
-      setEmailCopied(true);
-      setTimeout(() => setEmailCopied(false), 2000);
-    } catch (err) {
-      console.error("Error al copiar email: ", err);
-    }
+    await navigator.clipboard.writeText(email);
+    setEmailCopied(true);
+    setTimeout(() => setEmailCopied(false), 2000);
   };
 
-  // Función para copiar teléfono
   const handleCopyPhone = async () => {
-    try {
-      await navigator.clipboard.writeText(phone);
-      setPhoneCopied(true);
-      setTimeout(() => setPhoneCopied(false), 2000);
-    } catch (err) {
-      console.error("Error al copiar teléfono: ", err);
-    }
+    await navigator.clipboard.writeText(phone);
+    setPhoneCopied(true);
+    setTimeout(() => setPhoneCopied(false), 2000);
   };
 
   return (
@@ -45,32 +37,63 @@ function Contact() {
 
       <div className="w-full max-w-4xl flex flex-col sm:flex-row items-center justify-around gap-12 px-6">
         {/* Email */}
-        <div className="text-center sm:text-start">
-          <button
-            onClick={handleCopyEmail}
-            className="text-2xl font-semibold border-b-2 border-transparent hover:border-current transition-colors duration-200 focus:outline-none"
-          >
-            {emailCopied ? "¡Copied!" : email}
-          </button>
-          <p className="font-light text-sm mt-1">
-            {emailCopied ? "Paste wherever you want" : "Click to copy!"}
-          </p>
-        </div>
+        <CopyButton
+          text={email}
+          copied={emailCopied}
+          onCopy={handleCopyEmail}
+          label="Click to copy!"
+          copiedLabel="¡Copied! Paste wherever you want"
+        />
 
-        {/* Phone */}
+        {/* Teléfono */}
+        <CopyButton
+          text={phone}
+          copied={phoneCopied}
+          onCopy={handleCopyPhone}
+          label="Click to copy!"
+          copiedLabel="¡Copied! Paste wherever you want"
+        />
+
+        {/* Descarga de CV */}
         <div className="text-center sm:text-start">
-          <button
-            onClick={handleCopyPhone}
-            className="text-2xl font-semibold border-b-2 border-transparent hover:border-current transition-colors duration-200 focus:outline-none"
+          <a
+            href={cvPath}
+            target="_blank"         
+            rel="noopener noreferrer"
+            className="text-2xl font-semibold border-b-2 border-transparent hover:border-current transition-colors duration-200 focus:outline-none inline-block"
           >
-            {phoneCopied ? "¡Copied!" : phone}
-          </button>
+            Download CV
+          </a>
           <p className="font-light text-sm mt-1">
-            {phoneCopied ? "Paste wherever you want" : "Click to copy!"}
+            PDF • 2025
           </p>
         </div>
       </div>
     </section>
+  );
+}
+
+type CopyButtonProps = {
+  text: string;
+  copied: boolean;
+  onCopy: () => void;
+  label: string;
+  copiedLabel: string;
+};
+
+function CopyButton({ text, copied, onCopy, label, copiedLabel }: CopyButtonProps) {
+  return (
+    <div className="text-center sm:text-start">
+      <button
+        onClick={onCopy}
+        className="text-2xl font-semibold border-b-2 border-transparent hover:border-current transition-colors duration-200 focus:outline-none"
+      >
+        {copied ? "¡Copied!" : text}
+      </button>
+      <p className="font-light text-sm mt-1">
+        {copied ? copiedLabel : label}
+      </p>
+    </div>
   );
 }
 
