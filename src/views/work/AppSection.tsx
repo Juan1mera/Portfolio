@@ -43,6 +43,22 @@ function AppSection() {
       linkViewProject: 'https://github.com/BusTrack-App/Uber-Clone-Flutter',
       linkViewCode: 'https://github.com/BusTrack-App/Spring-Boot-Uber-Clone',
     },
+    {
+      title: 'Chainly',
+      description: 'A mobile application built in Flutter, designed for managing personal finances. It allows the registration of multiple wallets, whether bank accounts or cash, each with its own currency. It also enables the recording of cash outflows, inflows, and transfers between cards of different currencies using an API.',
+      role: 'Full-Stack Developer',
+      year: '2025',
+      technologies: [
+        { name: 'Flutter', icon: <SiFlutter /> },
+        { name: 'Dart', icon: <SiDart /> },
+        { name: 'Supabase', icon: <SiSupabase /> },
+        { name: 'SQLite', icon: <SiSqlite /> },
+      ],
+      image1: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/WalletApp/Mockup1.webp',
+      image2: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/WalletApp/Mockup2.webp',
+      image3: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/WalletApp/Mockup3.webp',
+      linkViewCode: 'https://github.com/Juan1mera/WalletApp',
+    },
   ];
 
   return (
