@@ -1,15 +1,13 @@
-// src/components/FlowingMenu.tsx
 import React from 'react';
 import { gsap } from 'gsap';
-import LinkProject from '../views/work/LinkProject';
-import IconTech from './IconTech';
+import { ProjectMenuPanel } from './ProjectMenuPanel';
 
 interface TechItem {
   name: string;
   icon: React.ReactNode;
 }
 
-interface ProjectData {
+export interface ProjectData {
   title: string;
   description: string;
   role: string;
@@ -83,7 +81,7 @@ export const FlowingMenu: React.FC<FlowingMenuProps> = ({ items }) => {
               className="overflow-hidden"
               style={{ height: 0 }}
             >
-              <ProjectPanel data={item} />
+              <ProjectMenuPanel data={item} />
             </div>
           </div>
         ))}
@@ -211,60 +209,3 @@ const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>(
   }
 );
 MenuItem.displayName = 'MenuItem';
-
-// === PROJECT PANEL (actualizado con IconTech) ===
-interface ProjectPanelProps {
-  data: ProjectData;
-}
-
-export const ProjectPanel: React.FC<ProjectPanelProps> = ({ data }) => {
-  const images = [data.image1, data.image2, data.image3].filter(Boolean);
-
-  return (
-    <div className="bg-text-light text-background p-6 md:p-10">
-      <div className="max-w-7xl mx-auto">
-        <h3 className="text-3xl md:text-4xl font-bold mb-4">{data.title}</h3>
-        <p className="text-lg mb-6 text-background-black">{data.description}</p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div>
-            <span className="font-semibold text-sm uppercase text-purple-light">Rol</span>
-            <p className="mt-1">{data.role}</p>
-          </div>
-          <div>
-            <span className="font-semibold text-sm uppercase text-purple-light">Year</span>
-            <p className="mt-1">{data.year}</p>
-          </div>
-          <div>
-            <div className="flex flex-wrap gap-2 mt-2">
-              {data.technologies.map((tech, i) => (
-                <IconTech key={i} icon={tech.icon} name={tech.name} />
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {images.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            {images.map((img, i) => (
-              <div
-                key={i}
-                className="aspect-video bg-contain bg-no-repeat"
-                style={{ backgroundImage: `url(${img})` }}
-              />
-            ))}
-          </div>
-        )}
-
-        <div className="flex gap-4 flex-wrap">
-          {data.linkViewProject && (
-            <LinkProject text='Project' href={data.linkViewProject} />
-          )}
-          {data.linkViewCode && (
-            <LinkProject text='GitHub' href={data.linkViewCode} />
-          )}
-        </div>
-      </div>
-    </div>
-  );
-};
