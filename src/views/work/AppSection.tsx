@@ -57,7 +57,7 @@ function AppSection() {
       image1: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/WalletApp/Mockup1.webp',
       image2: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/WalletApp/Mockup2.webp',
       image3: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/WalletApp/Mockup3.webp',
-      linkViewCode: 'https://github.com/Juan1mera/WalletApp',
+      linkViewCode: 'https://github.com/Juan1mera/Chainly',
     },
   ];
 
