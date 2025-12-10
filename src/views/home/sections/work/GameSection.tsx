@@ -1,6 +1,6 @@
 import {SiPython } from 'react-icons/si';
-import BlurText from '../../components/BlurText';
-import { FlowingMenu } from '../../components/FlowingMenu';
+import BlurText from '../../../../components/BlurText';
+import { FlowingMenu } from '../../../../components/FlowingMenu';
 
 function GameSection() {
 

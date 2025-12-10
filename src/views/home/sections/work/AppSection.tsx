@@ -1,6 +1,6 @@
 import { SiDart, SiFlutter, SiGooglemaps, SiMysql, SiNestjs, SiSocketdotio, SiSpring, SiSqlite, SiSupabase } from "react-icons/si";
-import BlurText from "../../components/BlurText";
-import { FlowingMenu } from "../../components/FlowingMenu";
+import BlurText from "../../../../components/BlurText";
+import { FlowingMenu } from "../../../../components/FlowingMenu";
 
 
 function AppSection() {

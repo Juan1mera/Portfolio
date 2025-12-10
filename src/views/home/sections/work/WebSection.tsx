@@ -1,7 +1,6 @@
-// src/sections/WebSection.tsx
 import { SiGsk, SiNestjs, SiReact, SiSass, SiSupabase, SiVite } from 'react-icons/si';
-import BlurText from '../../components/BlurText';
-import { FlowingMenu } from '../../components/FlowingMenu';
+import BlurText from '../../../../components/BlurText';
+import { FlowingMenu } from '../../../../components/FlowingMenu';
 
 function WebSection() {
   const webProjects = [

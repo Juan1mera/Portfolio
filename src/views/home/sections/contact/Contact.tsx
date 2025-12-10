@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CustomTitleSection } from "../../components/CustomTitleSection";
+import { CustomTitleSection } from "../../../../components/CustomTitleSection";
 
 function Contact() {
   // Email

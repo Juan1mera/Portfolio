@@ -1,7 +1,7 @@
 import React from "react";
 import IconTech from "./IconTech";
 import type { ProjectData } from "./FlowingMenu";
-import LinkProject from "../views/work/LinkProject";
+import LinkProject from "../views/home/sections/work/LinkProject";
 
 interface ProjectMenuPanelProps {
   data: ProjectData;

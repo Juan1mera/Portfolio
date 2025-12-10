@@ -1,5 +1,5 @@
-import { CustomTitleSection } from "../../components/CustomTitleSection";
-import CustomLink from "../../components/ui/CustomLink";
+import { CustomTitleSection } from "../../../../components/CustomTitleSection";
+import CustomLink from "../../../../components/ui/CustomLink";
 
 function About() {
   return (

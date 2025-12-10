@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { WebColors } from '../../constants/colors';
+import { WebColors } from '../../../../constants/colors';
 
 interface Props {
   href: string;

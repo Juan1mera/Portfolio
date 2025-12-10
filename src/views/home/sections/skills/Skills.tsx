@@ -1,5 +1,5 @@
-import LogoLoop from "../../components/LogoLoop";
-import { techLogos, frameworksLogos, toolsLogos } from "../../constants/techLogos";
+import LogoLoop from "../../../../components/LogoLoop";
+import { frameworksLogos, techLogos, toolsLogos } from "../../../../constants/techLogos";
 
 function Skills() {
   return (

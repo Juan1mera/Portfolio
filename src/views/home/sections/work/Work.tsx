@@ -1,4 +1,4 @@
-import { CustomTitleSection } from "../../components/CustomTitleSection";
+import { CustomTitleSection } from "../../../../components/CustomTitleSection";
 import AppSection from "./AppSection";
 import GameSection from "./GameSection";
 import WebSection from "./WebSection";
