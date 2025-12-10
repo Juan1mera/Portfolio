@@ -76,6 +76,10 @@ export default function Footer() {
             Made with <FaHeart color={WebColors.PurpleLight} /> by{" "}
             <span className="name">Juan Mera</span>
           </div>
+
+          <div className="copyright mt-8 text-sm opacity-70">
+            © {new Date().getFullYear()} Juan Mera. Todos los derechos reservados.
+          </div>
         </div>
       </div>
     </StyledFooter>
