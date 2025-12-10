@@ -1,19 +1,18 @@
-// src/components/NavBar.tsx
 // import { WebColors } from "../constants/colors";
 import StaggeredMenu from "./StaggeredMenu";
 
 function NavBar() {
   const menuItems = [
-    { label: 'Home', ariaLabel: 'Go to home page', link: '#home' },
+    { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
     { label: 'About', ariaLabel: 'Learn about us', link: '#about' },
     { label: 'Works', ariaLabel: 'View our works', link: '#works' },
     { label: 'Contact', ariaLabel: 'Get in touch', link: '#contact' }
   ];
 
   const socialItems = [
-    { label: 'Buy me a Coffe', link: 'buymeacoffee.com/meradev' },
-    { label: 'Github', link: 'https://github.com' },
-    { label: 'LinkedIn', link: 'https://linkedin.com' }
+    { label: 'Buy me a Coffee', link: 'https://buymeacoffee.com/meradev' },
+    { label: 'Support', link: '/support' },
+    { label: 'Terms', link: '/terms' }
   ];
 
   const centerItems = [

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 // src/components/StaggeredMenu.tsx
 import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
 import CustomLink from './ui/CustomLink';
 import { WebColors } from '../constants/colors';
@@ -61,6 +62,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 }: StaggeredMenuProps) => {
   const [open, setOpen] = useState(false);
   const openRef = useRef(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const panelRef = useRef<HTMLDivElement>(null);
   const preLayersRef = useRef<HTMLDivElement>(null);
@@ -94,17 +97,85 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     }
   }, []);
 
+  const closeMenu = useCallback(() => {
+    if (busyRef.current || !openRef.current) return;
+    busyRef.current = true;
+
+    const panel = panelRef.current;
+    const layers = preLayerElsRef.current;
+    if (!panel) return;
+
+    const offscreen = position === 'left' ? -100 : 100;
+
+    openTlRef.current?.kill();
+
+    const tl = gsap.timeline({
+      onComplete: () => {
+        busyRef.current = false;
+        onMenuClose?.();
+      }
+    });
+
+    closeTlRef.current = tl;
+
+    tl.to(panel, { xPercent: offscreen, duration: 0.5, ease: 'power4.in' }, 0);
+
+    layers.reverse().forEach((el, i) => {
+      tl.to(el, { xPercent: offscreen, duration: 0.4, ease: 'power4.in' }, i * 0.05);
+    });
+
+    spinTweenRef.current?.kill();
+    spinTweenRef.current = gsap.timeline();
+    spinTweenRef.current.to(iconRef.current, { rotate: 0, duration: 0.3, ease: 'power2.out' });
+    spinTweenRef.current.to(plusVRef.current, { rotate: 90, duration: 0.3, ease: 'power2.out' }, 0);
+
+    textCycleAnimRef.current?.kill();
+    textCycleAnimRef.current = gsap.to(textInnerRef.current, { yPercent: 0, duration: 0.3, ease: 'power2.out' });
+
+    if (changeMenuColorOnOpen) {
+      colorTweenRef.current?.kill();
+      colorTweenRef.current = gsap.to(toggleBtnRef.current, { color: menuButtonColor, duration: 0.3 });
+    }
+
+    setOpen(false);
+    openRef.current = false;
+  }, [position, changeMenuColorOnOpen, menuButtonColor, onMenuClose]);
+
   // Manejar clics en enlaces
   const handleLinkClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
     e.preventDefault();
-    const hash = new URL(link, window.location.href).hash;
-    if (hash) {
-      scrollToHash(hash);
-    } else if (link.startsWith('/')) {
-      window.location.href = link;
+    
+    // Si es una ruta interna de React Router (empieza con / pero no es hash)
+    if (link.startsWith('/') && !link.includes('#')) {
+      navigate(link);
+      closeMenu();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
-  }, [scrollToHash]);
+    
+    // Si es un hash (scroll dentro de la página)
+    const hash = new URL(link, window.location.href).hash;
+    if (hash) {
+      // Si estamos en otra página, primero navega al home
+      if (location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          scrollToHash(hash);
+        }, 100);
+      } else {
+        scrollToHash(hash);
+      }
+      closeMenu();
+    }
+  }, [navigate, location.pathname, scrollToHash, closeMenu]);
+
+  // Manejar click del logo
+  const handleLogoClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    navigate('/');
+    closeMenu();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [navigate, closeMenu]);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -254,50 +325,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     openRef.current = true;
   }, [buildOpenTimeline, changeMenuColorOnOpen, openMenuButtonColor, onMenuOpen]);
 
-  const closeMenu = useCallback(() => {
-    if (busyRef.current || !openRef.current) return;
-    busyRef.current = true;
-
-    const panel = panelRef.current;
-    const layers = preLayerElsRef.current;
-    if (!panel) return;
-
-    const offscreen = position === 'left' ? -100 : 100;
-
-    openTlRef.current?.kill();
-
-    const tl = gsap.timeline({
-      onComplete: () => {
-        busyRef.current = false;
-        onMenuClose?.();
-      }
-    });
-
-    closeTlRef.current = tl;
-
-    tl.to(panel, { xPercent: offscreen, duration: 0.5, ease: 'power4.in' }, 0);
-
-    layers.reverse().forEach((el, i) => {
-      tl.to(el, { xPercent: offscreen, duration: 0.4, ease: 'power4.in' }, i * 0.05);
-    });
-
-    spinTweenRef.current?.kill();
-    spinTweenRef.current = gsap.timeline();
-    spinTweenRef.current.to(iconRef.current, { rotate: 0, duration: 0.3, ease: 'power2.out' });
-    spinTweenRef.current.to(plusVRef.current, { rotate: 90, duration: 0.3, ease: 'power2.out' }, 0);
-
-    textCycleAnimRef.current?.kill();
-    textCycleAnimRef.current = gsap.to(textInnerRef.current, { yPercent: 0, duration: 0.3, ease: 'power2.out' });
-
-    if (changeMenuColorOnOpen) {
-      colorTweenRef.current?.kill();
-      colorTweenRef.current = gsap.to(toggleBtnRef.current, { color: menuButtonColor, duration: 0.3 });
-    }
-
-    setOpen(false);
-    openRef.current = false;
-  }, [position, changeMenuColorOnOpen, menuButtonColor, onMenuClose]);
-
   const toggleMenu = useCallback(() => {
     open ? closeMenu() : openMenu();
   }, [open, openMenu, closeMenu]);
@@ -323,7 +350,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
     const timer = setTimeout(() => {
       document.addEventListener('click', handleOverlayClick);
-    }, 300); // Esperar a que termine la animación
+    }, 300);
 
     return () => {
       clearTimeout(timer);
@@ -339,24 +366,28 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
   return (
     <div className="sm-scope">
-      {/* Overlay para cerrar al hacer clic fuera */}
       {open && <div ref={overlayRef} className="sm-overlay" />}
 
       <header className={headerClasses}>
         <div className="sm-logo">
           {logoUrl ? (
-            <img src={logoUrl} alt="Logo" className="sm-logo-img" />
+            <a href="/" onClick={handleLogoClick}>
+              <img src={logoUrl} alt="Logo" className="sm-logo-img" />
+            </a>
           ) : (
-              <div className="flex items-center">
-                <LogoSvg className="h-7 w-auto mr-2" /> 
-                <span
-                  className="text-2xl font-bold whitespace-nowrap"
-                  style={{ lineHeight: 1 }}
-                >
-                  {logoText}
-                </span>
-              </div>
-
+            <a 
+              href="/" 
+              onClick={handleLogoClick}
+              className="flex items-center cursor-pointer"
+            >
+              <LogoSvg className="h-7 w-auto mr-2" /> 
+              <span
+                className="text-2xl font-bold whitespace-nowrap"
+                style={{ lineHeight: 1 }}
+              >
+                {logoText}
+              </span>
+            </a>
           )}
         </div>
 
@@ -491,6 +522,16 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           pointer-events: auto;
         }
 
+        .sm-scope .sm-logo a {
+          text-decoration: none;
+          color: inherit;
+          transition: opacity 0.3s ease;
+        }
+
+        .sm-scope .sm-logo a:hover {
+          opacity: 0.7;
+        }
+
         .sm-scope .sm-logo-text {
           color: var(--sm-text);
         }
@@ -558,7 +599,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           transform: translate(-50%, -50%);
         }
 
-        /* Ancho aumentado */
         .sm-scope .staggered-menu-panel,
         .sm-scope .sm-prelayers {
           width: min(500px, 50vw);
@@ -617,7 +657,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           gap: 0.75rem;
         }
 
-        /* Más espacio para el número */
         .sm-scope .sm-panel-item {
           position: relative;
           color: var(--sm-text);
@@ -628,7 +667,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           letter-spacing: -1px;
           text-transform: uppercase;
           transition: color 0.3s ease;
-          padding-right: 4.5rem; /* Aumentado */
+          padding-right: 4.5rem;
         }
 
         .sm-scope .sm-panel-item:hover {

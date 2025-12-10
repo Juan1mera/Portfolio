@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Footer from './views/footer/Footer'
 
@@ -9,8 +9,6 @@ import Home from './views/home/Home'
 
 
 function App() {
-  const location = useLocation()
-
   return (
     <>
       {/* NavBar siempre visible */}
@@ -44,8 +42,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      {/* Footer solo en la home */}
-      {location.pathname === '/' && <Footer />}
+       <Footer />
     </>
   )
 }
