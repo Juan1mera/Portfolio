@@ -10,7 +10,7 @@ function Contact() {
   const [phoneCopied, setPhoneCopied] = useState(false);
   const phone = "+7 915 572 78-34";
 
-  const cvPath = "/cv/Juan_Mera_ Engineer_CV.pdf"; 
+  const cvPath = "public/Juan_Mera_ Engineer_CV.pdf"; 
 
   const handleCopyEmail = async () => {
     await navigator.clipboard.writeText(email);
