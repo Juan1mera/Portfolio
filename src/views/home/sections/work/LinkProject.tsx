@@ -84,7 +84,7 @@ const StyledWrapper = styled.div`
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     position: relative;
     display: inline-block;
-    padding: 0.75rem 1.5rem 0.75rem 4rem;
+    padding: 0.75rem 1.5rem 0.75rem 3.5rem;
     color: ${WebColors.Background};
     font-weight: 700;
     line-height: 1.6;
