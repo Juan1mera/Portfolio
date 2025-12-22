@@ -1,4 +1,4 @@
-import { SiAuth0, SiDart, SiFlutter, SiGooglemaps, SiHostinger, SiMysql, SiNestjs, SiNginx, SiSocketdotio, SiSpring, SiSqlite, SiSupabase } from "react-icons/si";
+import { SiAuth0, SiDart, SiFlutter, SiGooglemaps, SiMysql, SiNginx, SiSocketdotio, SiSpring, SiSqlite, SiSupabase } from "react-icons/si";
 import BlurText from "../../../../components/BlurText";
 import { FlowingMenu } from "../../../../components/FlowingMenu";
 
@@ -10,7 +10,7 @@ function AppSection() {
       title: 'AmigoVet',
       description: 'Mobile application for the care of your pets, where you can keep all the information about your pet as if it were its virtual ID card.',
       role: 'Full-Stack Developer',
-      year: '2025(In Progress)',
+      year: '2025',
       technologies: [
         { name: 'Flutter', icon: <SiFlutter /> },
         { name: 'Dart', icon: <SiDart /> },
