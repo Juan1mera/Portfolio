@@ -16,8 +16,10 @@ function WebSection() {
       image1: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AmigoVetWeb/Home.png',
       image2: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AmigoVetWeb/Home2.png',
       image3: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AmigoVetWeb/Progress.png',
-      linkViewProject: 'https://amigovet.app',
-      linkViewCode: 'https://github.com/Juan1mera/AmigoVet-Web',
+      links: [
+        { name: "GitHub", url: "https://github.com/Juan1mera/AmigoVet-Web" },
+        { name: "Web", url: "https://amigovet.app" },
+      ],
     },
     {
       title: 'Zentry Clon',
@@ -31,8 +33,10 @@ function WebSection() {
       image1: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/ZentryWeb/Page1.webp',
       image2: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/ZentryWeb/Page2.webp',
       image3: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/ZentryWeb/Page3.webp',
-      linkViewProject: 'https://clon-zentry.vercel.app/',
-      linkViewCode: 'https://github.com/Juan1mera/Clon-Zentry'
+      links: [
+        { name: "GitHub", url: "https://github.com/Juan1mera/Clon-Zentry" },
+        { name: "Web", url: "https://clon-zentry.vercel.app/" },
+      ],
     },
     {
       title: 'Data management',

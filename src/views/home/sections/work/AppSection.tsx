@@ -1,4 +1,4 @@
-import { SiDart, SiFlutter, SiGooglemaps, SiMysql, SiNestjs, SiSocketdotio, SiSpring, SiSqlite, SiSupabase } from "react-icons/si";
+import { SiAuth0, SiDart, SiFlutter, SiGooglemaps, SiHostinger, SiMysql, SiNestjs, SiNginx, SiSocketdotio, SiSpring, SiSqlite, SiSupabase } from "react-icons/si";
 import BlurText from "../../../../components/BlurText";
 import { FlowingMenu } from "../../../../components/FlowingMenu";
 
@@ -14,18 +14,21 @@ function AppSection() {
       technologies: [
         { name: 'Flutter', icon: <SiFlutter /> },
         { name: 'Dart', icon: <SiDart /> },
-        { name: 'SupaBase', icon: <SiSupabase /> },
         { name: 'SQLite', icon: <SiSqlite /> },
-        { name: 'NestJs', icon: <SiNestjs /> },
+        { name: 'Spring Boot', icon: <SiSpring /> },
+        { name: 'MySQL', icon: <SiMysql /> },
+        { name: 'NGinx', icon: <SiNginx /> },
+        { name: 'Auth0', icon: <SiAuth0 /> },
       ],
       image1: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AmigoVetApp/Mockup1.webp',
       image2: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AmigoVetApp/Mockup2.webp',
       image3: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AmigoVetApp/Mockup3.webp',
-  links: [
-    { name: "Ver Proyecto", url: "https://..." },
-    { name: "GitHub", url: "https://..." },
-    { name: "Documentación", url: "https://..." }
-  ]
+      links: [
+        { name: "GitHub", url: "https://github.com/AmigoVet" },
+        { name: "Web", url: "https://www.amigovet.app/" },
+        { name: "App Store", url: "https://apps.apple.com/co/app/amigovet/id6756260762" },
+        { name: "Google Play", url: "https://play.google.com/store/apps/details?id=com.AmigoVet" },
+      ]
     },
     {
       title: 'GoCab',
@@ -43,8 +46,10 @@ function AppSection() {
       image1: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/GoCabApp/Mockup1.webp',
       image2: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/GoCabApp/Mockup2.webp',
       image3: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/GoCabApp/Mockup3.webp',
-      linkViewProject: 'https://github.com/BusTrack-App/Uber-Clone-Flutter',
-      linkViewCode: 'https://github.com/BusTrack-App/Spring-Boot-Uber-Clone',
+      links: [
+        { name: "Server Code", url: "https://github.com/Juan1mera/GoCab-SpringBoot" },
+        { name: "App Code", url: "https://github.com/Juan1mera/GoCab-Flutter" },
+      ],
     },
     {
       title: 'Chainly',
@@ -60,8 +65,9 @@ function AppSection() {
       image1: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/WalletApp/Mockup1.webp',
       image2: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/WalletApp/Mockup2.webp',
       image3: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/WalletApp/Mockup3.webp',
-      // linkViewCode: 'https://github.com/Juan1mera/Chainly',
-      linkViewProject: 'https://apps.apple.com/co/app/chainly/id6756326431',
+      links: [
+        { name: "App Store", url: "https://apps.apple.com/co/app/chainly/id6756326431" },
+      ],
     },
   ];
 
