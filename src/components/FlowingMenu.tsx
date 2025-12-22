@@ -7,6 +7,11 @@ interface TechItem {
   icon: React.ReactNode;
 }
 
+export interface ProjectLink {
+  name: string;
+  url: string;
+}
+
 export interface ProjectData {
   title: string;
   description: string;
@@ -16,8 +21,7 @@ export interface ProjectData {
   image1?: string;
   image2?: string;
   image3?: string;
-  linkViewProject?: string;
-  linkViewCode?: string;
+  links?: ProjectLink[];
 }
 
 interface FlowingMenuProps {
@@ -90,7 +94,7 @@ export const FlowingMenu: React.FC<FlowingMenuProps> = ({ items }) => {
   );
 };
 
-// === MENU ITEM (sin cambios) ===
+// === MENU ITEM ===
 interface MenuItemProps {
   text: string;
   images: string[];

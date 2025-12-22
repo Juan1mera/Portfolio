@@ -59,14 +59,13 @@ export const ProjectMenuPanel: React.FC<ProjectMenuPanelProps> = ({ data }) => {
             </div>
           )}
 
-          <div className="flex gap-4 flex-wrap">
-            {data.linkViewProject && (
-              <LinkProject text='Project' href={data.linkViewProject} />
-            )}
-            {data.linkViewCode && (
-              <LinkProject text='GitHub' href={data.linkViewCode} />
-            )}
-          </div>
+          {data.links && data.links.length > 0 && (
+            <div className="flex gap-4 flex-wrap">
+              {data.links.map((link, i) => (
+                <LinkProject key={i} text={link.name} href={link.url} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
 

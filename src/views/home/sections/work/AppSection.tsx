@@ -21,8 +21,11 @@ function AppSection() {
       image1: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AmigoVetApp/Mockup1.webp',
       image2: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AmigoVetApp/Mockup2.webp',
       image3: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AmigoVetApp/Mockup3.webp',
-      linkViewProject: 'https://www.amigovet.app/',
-      linkViewCode: 'https://github.com/AmigoVet',
+  links: [
+    { name: "Ver Proyecto", url: "https://..." },
+    { name: "GitHub", url: "https://..." },
+    { name: "Documentación", url: "https://..." }
+  ]
     },
     {
       title: 'GoCab',
