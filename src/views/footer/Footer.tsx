@@ -186,7 +186,7 @@ const StyledFooter = styled.footer`
     align-items: center;
     gap: 0.4rem;
     font-size: 1.5rem;
-    color: ${WebColors.TextLight};
+    color: ${WebColors.TextColor};
     white-space: nowrap;
     padding: 0.5rem 0.8rem;
     border-radius: 6px;
