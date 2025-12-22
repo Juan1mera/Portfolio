@@ -36,7 +36,7 @@ function NotFound() {
 
       {/* Código ASCII art del error (opcional, decorativo) */}
       <div className="hidden md:block">
-        <pre className="text-purple-light text-xs sm:text-sm font-mono opacity-50">
+        <pre className="text-purple-extra-light text-xs sm:text-sm font-mono opacity-50">
 {`
  ███╗   ███╗███████╗██████╗  █████╗ 
  ████╗ ████║██╔════╝██╔══██╗██╔══██╗
