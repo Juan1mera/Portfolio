@@ -24,11 +24,11 @@ const socialLinks: SocialLink[] = [
     label: "Telegram",
     text: "@Juan_Mera1",
   },
-  {
-    href: "https://www.fiverr.com/juanmera589",
-    label: "Fiverr",
-    text: "/juanmera589",
-  },
+  // {
+  //   href: "https://www.fiverr.com/juanmera589",
+  //   label: "Fiverr",
+  //   text: "/juanmera589",
+  // },
   {
     href: "https://www.buymeacoffee.com/meradev",
     label: "Buy Me a Coffee",
