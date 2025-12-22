@@ -506,11 +506,23 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 2rem;
+          padding: 1rem 1rem;
           background: transparent;
           pointer-events: none;
           z-index: 20;
           transition: background 0.3s ease;
+        }
+
+        @media (min-width: 640px) {
+          .sm-scope .staggered-menu-header {
+            padding: 1.5rem 1.5rem;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .sm-scope .staggered-menu-header {
+            padding: 2rem 2rem;
+          }
         }
 
         .sm-scope .staggered-menu-header.open {
@@ -532,6 +544,10 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           opacity: 0.7;
         }
 
+        .sm-scope .sm-logo a span {
+          font-size: clamp(1.25rem, 4vw, 2rem);
+        }
+
         .sm-scope .sm-logo-text {
           color: var(--sm-text);
         }
@@ -540,16 +556,23 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           position: relative;
           display: inline-flex;
           align-items: center;
-          gap: 0.5rem;
+          gap: 0.375rem;
           background: transparent;
           border: none;
           cursor: pointer;
           color: var(--sm-text);
           font-weight: 600;
-          font-size: 1rem;
+          font-size: 0.875rem;
           line-height: 1;
           padding: 0.5rem 0;
           z-index: 30;
+        }
+
+        @media (min-width: 640px) {
+          .sm-scope .sm-toggle {
+            font-size: 1rem;
+            gap: 0.5rem;
+          }
         }
 
         .sm-scope .sm-toggle:focus-visible {
@@ -580,12 +603,20 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
         .sm-scope .sm-icon {
           position: relative;
-          width: 18px;
-          height: 18px;
-          flex: 0 0 18px;
+          width: 16px;
+          height: 16px;
+          flex: 0 0 16px;
           display: inline-flex;
           align-items: center;
           justify-content: center;
+        }
+
+        @media (min-width: 640px) {
+          .sm-scope .sm-icon {
+            width: 18px;
+            height: 18px;
+            flex: 0 0 18px;
+          }
         }
 
         .sm-scope .sm-icon-line {
@@ -599,10 +630,43 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           transform: translate(-50%, -50%);
         }
 
+        .sm-scope .staggered-menu-header nav {
+          display: none;
+        }
+
+        @media (min-width: 768px) {
+          .sm-scope .staggered-menu-header nav {
+            display: flex;
+            gap: 1.5rem;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .sm-scope .staggered-menu-header nav {
+            gap: 2rem;
+          }
+        }
+
         .sm-scope .staggered-menu-panel,
         .sm-scope .sm-prelayers {
-          width: min(500px, 50vw);
-          max-width: 500px;
+          width: 100%;
+          max-width: none;
+        }
+
+        @media (min-width: 768px) {
+          .sm-scope .staggered-menu-panel,
+          .sm-scope .sm-prelayers {
+            width: min(450px, 60vw);
+            max-width: 450px;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .sm-scope .staggered-menu-panel,
+          .sm-scope .sm-prelayers {
+            width: min(500px, 50vw);
+            max-width: 500px;
+          }
         }
 
         .sm-scope .staggered-menu-panel {
@@ -615,10 +679,22 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           -webkit-backdrop-filter: blur(12px);
           display: flex;
           flex-direction: column;
-          padding: 7rem 3rem 2.5rem;
+          padding: 5rem 1.5rem 2rem;
           overflow-y: auto;
           z-index: 10;
           box-shadow: -8px 0 30px rgba(0,0,0,0.3);
+        }
+
+        @media (min-width: 640px) {
+          .sm-scope .staggered-menu-panel {
+            padding: 6rem 2rem 2rem;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .sm-scope .staggered-menu-panel {
+            padding: 7rem 3rem 2.5rem;
+          }
         }
 
         .sm-scope [data-position='left'] .staggered-menu-panel {
@@ -661,13 +737,25 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           position: relative;
           color: var(--sm-text);
           font-weight: 700;
-          font-size: clamp(2.5rem, 6vw, 4rem);
+          font-size: clamp(2rem, 8vw, 4rem);
           cursor: pointer;
           line-height: 1;
           letter-spacing: -1px;
           text-transform: uppercase;
           transition: color 0.3s ease;
-          padding-right: 4.5rem;
+          padding-right: 3rem;
+        }
+
+        @media (min-width: 640px) {
+          .sm-scope .sm-panel-item {
+            padding-right: 3.5rem;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .sm-scope .sm-panel-item {
+            padding-right: 4.5rem;
+          }
         }
 
         .sm-scope .sm-panel-item:hover {
@@ -726,37 +814,35 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         }
 
         .sm-scope .sm-socials-link {
-          font-size: 1.1rem;
+          font-size: 0.95rem;
           font-weight: 500;
           color: #888;
           text-decoration: none;
           transition: color 0.3s ease;
         }
 
+        @media (min-width: 640px) {
+          .sm-scope .sm-socials-link {
+            font-size: 1.1rem;
+          }
+        }
+
         .sm-scope .sm-socials-link:hover {
           color: var(--sm-purple);
         }
-
-        @media (max-width: 768px) {
-          .sm-scope .staggered-menu-panel,
-          .sm-scope .sm-prelayers {
-            width: 100% !important;
-            max-width: none;
-          }
-
-          .sm-scope .staggered-menu-header {
-            padding: 1.5rem;
-          }
-
-          .sm-scope .sm-toggle {
-            font-size: 0.9rem;
-          }
-
-          .sm-scope .sm-panel-item {
-            padding-right: 3.5rem;
-          }
-        }
       `}</style>
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
   );
 };

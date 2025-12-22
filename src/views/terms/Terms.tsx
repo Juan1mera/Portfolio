@@ -4,9 +4,9 @@ function Terms() {
   return (
     <div
       id="terms"
-      className="flex flex-col justify-start items-start gap-8 pt-28 pb-28 w-full px-6 md:px-12"
+      className="flex flex-col justify-start items-start gap-6 sm:gap-8 pt-16 sm:pt-20 md:pt-28 pb-16 sm:pb-20 md:pb-28 w-full px-4 sm:px-6 md:px-12"
     >
-      <div className="ml-28">
+      <div className="ml-4 sm:ml-8 md:ml-16 lg:ml-28">
         <CustomTitleSection
           topTexts={["TERMS", "&"]}
           bottomTexts={["CONDITIONS"]}
@@ -15,10 +15,10 @@ function Terms() {
       </div>
 
       {/* Contenido centrado */}
-      <div className="min-w-screen flex items-center justify-center">
-        <div className="text-lg leading-relaxed max-w-5xl space-y-6">
+      <div className="w-full flex items-center justify-center px-4">
+        <div className="text-base sm:text-lg leading-relaxed max-w-5xl space-y-4 sm:space-y-6">
           <div>
-            <h3 className="text-2xl font-semibold mb-3 text-purple-light">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3 text-purple-light">
               1. Acceptance of Terms
             </h3>
             <p>
@@ -27,7 +27,7 @@ function Terms() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-semibold mb-3 text-purple-light">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3 text-purple-light">
               2. Use License
             </h3>
             <p>
@@ -36,7 +36,7 @@ function Terms() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-semibold mb-3 text-purple-light">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3 text-purple-light">
               3. Disclaimer
             </h3>
             <p>
@@ -45,7 +45,7 @@ function Terms() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-semibold mb-3 text-purple-light">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3 text-purple-light">
               4. Limitations
             </h3>
             <p>
@@ -54,7 +54,7 @@ function Terms() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-semibold mb-3 text-purple-light">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3 text-purple-light">
               5. Revisions and Errata
             </h3>
             <p>
@@ -63,7 +63,7 @@ function Terms() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-semibold mb-3 text-purple-light">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3 text-purple-light">
               6. Links
             </h3>
             <p>
@@ -72,7 +72,7 @@ function Terms() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-semibold mb-3 text-purple-light">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3 text-purple-light">
               7. Modifications
             </h3>
             <p>
@@ -80,7 +80,7 @@ function Terms() {
             </p>
           </div>
 
-          <div className="pt-4 border-t border-gray-700">
+          <div className="pt-3 sm:pt-4 border-t border-gray-700">
             <p className="text-sm font-light">
               Last updated: December 2025
             </p>

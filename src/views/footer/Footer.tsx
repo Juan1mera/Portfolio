@@ -111,8 +111,6 @@ const StyledFooter = styled.footer`
 
   /* === LINKS === */
   .social-link {
-    --hover-bg: ${WebColors.Background};
-    --hover-color: ${WebColors.TextLight};
 
     display: flex;
     align-items: center;
@@ -122,7 +120,6 @@ const StyledFooter = styled.footer`
     padding: 0.5rem 0.9rem;
     font-size: 1.2rem;
     font-weight: 500;
-    color: ${WebColors.TextLight};
     text-decoration: none;
     border-radius: 8px;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);

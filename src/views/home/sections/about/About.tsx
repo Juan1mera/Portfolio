@@ -17,13 +17,13 @@ function About() {
 
 
       {/* Párrafo centrado */}
-      <div className="min-w-screen flex items-center justify-center">
-        <p className="text-2xl leading-relaxed max-w-5xl">
+      <div className="w-full flex items-center justify-center px-4">
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed max-w-5xl">
           I'm Juan José Mera Barrera, 18 years old, and currently in my fifth semester of Applied Informatics and Information Technologies at Belgorod State National Research University (BelGU), Russia. I've been passionate about programming since I was 10, starting with robotics using Arduino and later shifting my full focus to software development.
           <br /><br />
-          I’m obsessed with crafting beautiful, intuitive, and user-friendly interfaces while optimizing performance in both web applications and servers. I have two years of hands-on programming experience, though no formal work history yet.
+          I'm obsessed with crafting beautiful, intuitive, and user-friendly interfaces while optimizing performance in both web applications and servers. I have two years of hands-on programming experience, though no formal work history yet.
           <br /><br />
-          I’m eager to join a team where I can contribute my best, collaborate effectively, and help drive innovative projects forward.
+          I'm eager to join a team where I can contribute my best, collaborate effectively, and help drive innovative projects forward.
         </p>
       </div>
 
