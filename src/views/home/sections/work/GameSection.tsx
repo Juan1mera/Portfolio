@@ -13,9 +13,9 @@ function GameSection() {
       technologies: [
         { name: 'Python', icon: <SiPython /> },
       ],
-      image1: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/CluckSoulsGame/Page1.webp',
-      image2: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/CluckSoulsGame/Page2.webp',
-      image3: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/CluckSoulsGame/Page3.webp',
+      image1: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768443017/Page1_s6c5ju.webp',
+      image2: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768443016/Page2_kwvpqt.webp',
+      image3: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768443018/Page3_upvcht.webp',
       links: [
         { name: "GitHub", url: "https://github.com/Juan1mera/CluckSouls" },
       ],
@@ -28,9 +28,9 @@ function GameSection() {
       technologies: [
         { name: 'Python', icon: <SiPython /> },
       ],
-      image1: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/SpaceShooterGame/Page1.webp',
-      image2: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/SpaceShooterGame/Page2.webp',
-      image3: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/SpaceShooterGame/Page3.webp',
+      image1: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768443057/Page1_jmmhfv.webp',
+      image2: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768443058/Page2_lshqim.webp',
+      image3: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768443059/Page3_j9hwmo.webp',
       links: [
         { name: "GitHub", url: "https://github.com/Juan1mera/Learning-Pygame/tree/main/space%20shooter" },
       ],

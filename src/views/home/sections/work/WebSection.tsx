@@ -13,9 +13,9 @@ function WebSection() {
         { name: 'React', icon: <SiReact /> },
         { name: 'Vite', icon: <SiVite /> },
       ],
-      image1: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AmigoVetWeb/Home.png',
-      image2: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AmigoVetWeb/Home2.png',
-      image3: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AmigoVetWeb/Progress.png',
+      image1: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768444194/Page1_o20xij.webp',
+      image2: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768444195/Page2_vzibml.webp',
+      image3: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768444195/Page3_bcei0t.webp',
       links: [
         { name: "GitHub", url: "https://github.com/Juan1mera/AmigoVet-Web" },
         { name: "Web", url: "https://amigovet.app" },
@@ -30,9 +30,9 @@ function WebSection() {
         { name: 'React', icon: <SiReact /> },
         { name: 'React', icon: <SiGsk /> },
       ],
-      image1: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/ZentryWeb/Page1.webp',
-      image2: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/ZentryWeb/Page2.webp',
-      image3: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/ZentryWeb/Page3.webp',
+      image1: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768442935/Page1_wnhl8m.webp',
+      image2: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768442936/Page2_ufx9ff.webp',
+      image3: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768442937/Page3_dj4lan.webp',
       links: [
         { name: "GitHub", url: "https://github.com/Juan1mera/Clon-Zentry" },
         { name: "Web", url: "https://clon-zentry.vercel.app/" },
@@ -49,9 +49,9 @@ function WebSection() {
         { name: 'NestJs', icon: <SiNestjs /> },
         { name: 'Supabase', icon: <SiSupabase /> },
       ],
-      image1: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AdminWeb/Page1.webp',
-      image2: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AdminWeb/Page2.webp',
-      image3: 'https://dpryofqwatjjupnrzoqz.supabase.co/storage/v1/object/public/Porfolio%20Personal/AdminWeb/Page3.webp',
+      image1: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768442899/Page1_uuqwdl.webp',
+      image2: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768442898/Page2_jolkcb.webp',
+      image3: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768442900/Page3_dxzgq2.webp',
     },
   ];
 
