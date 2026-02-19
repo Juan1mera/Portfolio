@@ -6,9 +6,12 @@ import Support from './views/support/Support'
 import Terms from './views/terms/Terms'
 import NotFound from './views/errors/NotFound'
 import Home from './views/home/Home'
+import { useTheme } from './hooks/useTheme'
 
 
 function App() {
+  useTheme(); // Initialize theme
+
   return (
     <>
       {/* NavBar siempre visible */}
@@ -42,7 +45,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-       <Footer />
+      <Footer />
     </>
   )
 }

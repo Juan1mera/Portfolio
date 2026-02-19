@@ -6,6 +6,7 @@ import { gsap } from 'gsap';
 import CustomLink from './ui/CustomLink';
 import { WebColors } from '../constants/colors';
 import LogoSvg from './LogoSvg';
+import ThemeToggle from './ThemeToggle';
 
 export interface StaggeredMenuItem {
   label: string;
@@ -68,7 +69,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   const panelRef = useRef<HTMLDivElement>(null);
   const preLayersRef = useRef<HTMLDivElement>(null);
   const preLayerElsRef = useRef<HTMLElement[]>([]);
-  const overlayRef = useRef<HTMLDivElement>(null); 
+  const overlayRef = useRef<HTMLDivElement>(null);
 
   const plusHRef = useRef<HTMLSpanElement>(null);
   const plusVRef = useRef<HTMLSpanElement>(null);
@@ -144,7 +145,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   // Manejar clics en enlaces
   const handleLinkClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
     e.preventDefault();
-    
+
     // Si es una ruta interna de React Router (empieza con / pero no es hash)
     if (link.startsWith('/') && !link.includes('#')) {
       navigate(link);
@@ -152,7 +153,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
-    
+
     // Si es un hash (scroll dentro de la página)
     const hash = new URL(link, window.location.href).hash;
     if (hash) {
@@ -375,12 +376,12 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
               <img src={logoUrl} alt="Logo" className="sm-logo-img" />
             </a>
           ) : (
-            <a 
-              href="/" 
+            <a
+              href="/"
               onClick={handleLogoClick}
               className="flex items-center cursor-pointer"
             >
-              <LogoSvg className="h-7 w-auto mr-2" /> 
+              <LogoSvg className="h-7 w-auto mr-2" />
               <span
                 className="text-2xl font-bold whitespace-nowrap"
                 style={{ lineHeight: 1 }}
@@ -477,6 +478,11 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
               </ul>
             </div>
           )}
+
+          <div className="mt-8 pt-6 border-t border-black/10 dark:border-white/10 flex items-center justify-between">
+            <span className="text-sm font-semibold opacity-60 uppercase tracking-wider">Appearance</span>
+            <ThemeToggle />
+          </div>
         </div>
       </aside>
 
