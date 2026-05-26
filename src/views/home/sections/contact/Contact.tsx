@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { CustomTitleSection } from "../../../../components/CustomTitleSection";
+import { useLanguage } from "../../../../context/LanguageContext";
 
 function Contact() {
+  const { t } = useLanguage();
+
   // Email
   const [emailCopied, setEmailCopied] = useState(false);
   const email = "mera.dev.co@gmail.com";
@@ -30,9 +33,9 @@ function Contact() {
       className="flex flex-col justify-start items-center py-40 gap-44 w-full"
     >
       <CustomTitleSection
-        topTexts={["LET'S", "BUILD"]}
-        bottomTexts={["SOMETHING"]}
-        purpleWord="BUILD"
+        topTexts={t.contact.titleTop}
+        bottomTexts={t.contact.titleBottom}
+        purpleWord={t.contact.titlePurple}
       />
 
       <div className="w-full max-w-4xl flex flex-col sm:flex-row items-center justify-around gap-12 px-6">
@@ -41,8 +44,8 @@ function Contact() {
           text={email}
           copied={emailCopied}
           onCopy={handleCopyEmail}
-          label="Click to copy!"
-          copiedLabel="¡Copied! Paste wherever you want"
+          label={t.contact.clickToCopy}
+          copiedLabel={t.contact.copiedText}
         />
 
         {/* Teléfono */}
@@ -50,8 +53,8 @@ function Contact() {
           text={phone}
           copied={phoneCopied}
           onCopy={handleCopyPhone}
-          label="Click to copy!"
-          copiedLabel="¡Copied! Paste wherever you want"
+          label={t.contact.clickToCopy}
+          copiedLabel={t.contact.copiedText}
         />
 
         {/* Descarga de CV */}
@@ -62,10 +65,10 @@ function Contact() {
             rel="noopener noreferrer"
             className="text-2xl font-semibold border-b-2 border-transparent hover:border-current transition-colors duration-200 focus:outline-none inline-block"
           >
-            Download CV
+            {t.contact.downloadCv}
           </a>
-          <p className="font-light text-sm mt-1">
-            PDF • 2025
+          <p className="font-light text-sm mt-1 text-text-color/70">
+            {t.contact.cvDetails}
           </p>
         </div>
       </div>
@@ -82,15 +85,17 @@ type CopyButtonProps = {
 };
 
 function CopyButton({ text, copied, onCopy, label, copiedLabel }: CopyButtonProps) {
+  const { language } = useLanguage();
+
   return (
     <div className="text-center sm:text-start">
       <button
         onClick={onCopy}
-        className="text-2xl font-semibold border-b-2 border-transparent hover:border-current transition-colors duration-200 focus:outline-none"
+        className="text-2xl font-semibold border-b-2 border-transparent hover:border-current transition-colors duration-200 focus:outline-none cursor-pointer"
       >
-        {copied ? "¡Copied!" : text}
+        {copied ? (language === 'es' ? "¡Copiado!" : language === 'ru' ? "Скопировано!" : "Copied!") : text}
       </button>
-      <p className="font-light text-sm mt-1">
+      <p className="font-light text-sm mt-1 text-text-color/70">
         {copied ? copiedLabel : label}
       </p>
     </div>

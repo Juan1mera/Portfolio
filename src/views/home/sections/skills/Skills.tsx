@@ -1,11 +1,14 @@
 import LogoLoop from "../../../../components/LogoLoop";
 import { frameworksLogos, techLogos, toolsLogos } from "../../../../constants/techLogos";
+import { useLanguage } from "../../../../context/LanguageContext";
 
 function Skills() {
+  const { t } = useLanguage();
+
   return (
     <>
       <section className="bg-background-black py-3 sm:py-4 md:py-5">
-        <h3 className="pl-4 sm:pl-6 md:pl-8 lg:pl-20 font-light text-xl sm:text-2xl md:text-3xl">Technologies</h3>
+        <h3 className="pl-4 sm:pl-6 md:pl-8 lg:pl-20 font-light text-xl sm:text-2xl md:text-3xl">{t.skills.technologies}</h3>
         <div className="w-full overflow-hidden">
           <LogoLoop
             logos={techLogos}
@@ -20,7 +23,7 @@ function Skills() {
       </section>
       
       <section className="bg-background-black py-3 sm:py-4 md:py-5">
-        <h3 className="pl-4 sm:pl-6 md:pl-8 lg:pl-20 font-light text-xl sm:text-2xl md:text-3xl">Frameworks</h3>
+        <h3 className="pl-4 sm:pl-6 md:pl-8 lg:pl-20 font-light text-xl sm:text-2xl md:text-3xl">{t.skills.frameworks}</h3>
         <div className="w-full overflow-hidden">
           <LogoLoop
             logos={frameworksLogos}
@@ -35,7 +38,7 @@ function Skills() {
       </section>
       
       <section className="bg-background-black py-3 sm:py-4 md:py-5">
-        <h3 className="pl-4 sm:pl-6 md:pl-8 lg:pl-20 font-light text-xl sm:text-2xl md:text-3xl">Tools</h3>
+        <h3 className="pl-4 sm:pl-6 md:pl-8 lg:pl-20 font-light text-xl sm:text-2xl md:text-3xl">{t.skills.tools}</h3>
         <div className="w-full overflow-hidden">
           <LogoLoop
             logos={toolsLogos}

@@ -1,13 +1,16 @@
 import { SiFirebase, SiGsk, SiMongodb, SiNestjs, SiReact, SiSass, SiSupabase, SiVite } from 'react-icons/si';
 import BlurText from '../../../../components/BlurText';
 import { FlowingMenu } from '../../../../components/FlowingMenu';
+import { useLanguage } from '../../../../context/LanguageContext';
 
 function WebSection() {
+  const { t } = useLanguage();
+
   const webProjects = [
     {
-      title: 'AmigoVet Web',
-      description: 'Website for the presentation of the "AmigoVet" mobile application in order to showcase its functionalities, previous versions and everything related.',
-      role: 'Frontend Developer',
+      title: t.work.projects.amigovetWeb.title,
+      description: t.work.projects.amigovetWeb.description,
+      role: t.work.projects.amigovetWeb.role,
       year: '2025',
       technologies: [
         { name: 'React', icon: <SiReact /> },
@@ -22,9 +25,9 @@ function WebSection() {
       ],
     },
     {
-      title: 'KnowYou',
-      description: 'Website for the presentation of the "AmigoVet" mobile application in order to showcase its functionalities, previous versions and everything related.',
-      role: 'Full Stack',
+      title: t.work.projects.knowYou.title,
+      description: t.work.projects.knowYou.description,
+      role: t.work.projects.knowYou.role,
       year: '2026',
       technologies: [
         { name: 'NextJs', icon: <SiReact /> },
@@ -40,9 +43,9 @@ function WebSection() {
       ],
     },
     {
-      title: 'Zentry Clon',
-      description: 'Zentry is a company that works with artificial intelligence. This 2024 clone of the Zentry website was created to practice using front-end development, animations with GSAP, and CEO.',
-      role: 'Frontend Developer',
+      title: t.work.projects.zentryClon.title,
+      description: t.work.projects.zentryClon.description,
+      role: t.work.projects.zentryClon.role,
       year: '2024',
       technologies: [
         { name: 'React', icon: <SiReact /> },
@@ -57,9 +60,9 @@ function WebSection() {
       ],
     },
     {
-      title: 'Data management',
-      description: 'Management system for data from multiple points of sale, where each point of sale can add only data from its own point of sale, and the administrator can view, modify, and generate monthly reports in Excel.',
-      role: 'Full-Stack Developer',
+      title: t.work.projects.dataManagement.title,
+      description: t.work.projects.dataManagement.description,
+      role: t.work.projects.dataManagement.role,
       year: '2024',
       technologies: [
         { name: 'React', icon: <SiReact /> },
@@ -76,7 +79,7 @@ function WebSection() {
   return (
     <div className="w-full">
       <BlurText
-        text="WEBS"
+        text={t.work.webs}
         className="font-extrabold text-2xl md:text-4xl pl-10"
         animateBy="words"
         delay={300}

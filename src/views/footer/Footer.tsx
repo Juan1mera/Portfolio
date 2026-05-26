@@ -1,6 +1,7 @@
 import { FaHeart } from "react-icons/fa";
 import { WebColors } from "../../constants/colors";
 import styled from "styled-components";
+import { useLanguage } from "../../context/LanguageContext";
 
 interface SocialLink {
   href: string;
@@ -52,6 +53,8 @@ const socialLinks: SocialLink[] = [
 ];
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <StyledFooter id="footer">
       <div className="footer-container"> 
@@ -73,18 +76,19 @@ export default function Footer() {
           ))}
 
           <div className="made-by">
-            Made with <FaHeart color={WebColors.PurpleLight} /> by{" "}
-            <span className="name">Juan Mera</span>
+            {t.footer.madeWith} <FaHeart color={WebColors.PurpleLight} style={{ display: 'inline', margin: '0 4px' }} /> {t.footer.by}{" "}
+            <span className="name" style={{ marginLeft: '4px' }}>Juan Mera</span>
           </div>
 
           <div className="copyright mt-8 text-sm opacity-70">
-            © {new Date().getFullYear()} Juan Mera. Todos los derechos reservados.
+            © {new Date().getFullYear()} Juan Mera. {t.footer.rightsReserved}
           </div>
         </div>
       </div>
     </StyledFooter>
   );
 }
+
 
 const StyledFooter = styled.footer`
   width: 100%;

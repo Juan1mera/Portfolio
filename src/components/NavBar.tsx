@@ -1,22 +1,25 @@
-// import { WebColors } from "../constants/colors";
 import StaggeredMenu from "./StaggeredMenu";
+import { useLanguage } from "../context/LanguageContext";
 
 function NavBar() {
+  const { t } = useLanguage();
+
   const menuItems = [
-    { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
-    { label: 'About', ariaLabel: 'Learn about us', link: '#about' },
-    { label: 'Works', ariaLabel: 'View our works', link: '#works' },
-    { label: 'Contact', ariaLabel: 'Get in touch', link: '#contact' }
+    { label: t.nav.home, ariaLabel: 'Go to home page', link: '/' },
+    { label: t.nav.about, ariaLabel: 'Learn about us', link: '#about' },
+    { label: t.nav.studies, ariaLabel: 'Learn about academic studies', link: '#studies' },
+    { label: t.nav.works, ariaLabel: 'View our works', link: '#works' },
+    { label: t.nav.contact, ariaLabel: 'Get in touch', link: '#contact' }
   ];
 
   const socialItems = [
-    { label: 'Buy me a Coffee', link: 'https://buymeacoffee.com/meradev' },
-    { label: 'Support', link: '/support' },
-    { label: 'Terms', link: '/terms' }
+    { label: t.nav.buyMeCoffee, link: 'https://buymeacoffee.com/meradev' },
+    { label: t.nav.support, link: '/support' },
+    { label: t.nav.terms, link: '/terms' }
   ];
 
   const centerItems = [
-    { text: "Let's Talks", href: '#footer' },
+    { text: t.nav.letsTalk, href: '#footer' },
   ];
 
   return (

@@ -7,6 +7,7 @@ import CustomLink from './ui/CustomLink';
 import { WebColors } from '../constants/colors';
 import LogoSvg from './LogoSvg';
 import ThemeToggle from './ThemeToggle';
+import { useLanguage } from '../context/LanguageContext';
 
 export interface StaggeredMenuItem {
   label: string;
@@ -61,6 +62,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   onMenuClose,
   accentColor = WebColors.PurpleLight,
 }: StaggeredMenuProps) => {
+  const { language, setLanguage, t } = useLanguage();
   const [open, setOpen] = useState(false);
   const openRef = useRef(false);
   const navigate = useNavigate();
@@ -76,7 +78,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   const iconRef = useRef<HTMLSpanElement>(null);
 
   const textInnerRef = useRef<HTMLSpanElement>(null);
-  const textLines = ['Menu', 'Close'];
+  const textLines = [t.nav.menu, t.nav.close];
 
   const openTlRef = useRef<gsap.core.Timeline | null>(null);
   const closeTlRef = useRef<gsap.core.Timeline | null>(null);
@@ -400,27 +402,46 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           </nav>
         )}
 
-        <button
-          ref={toggleBtnRef}
-          className="sm-toggle"
-          onClick={toggleMenu}
-          aria-expanded={open}
-          aria-controls="staggered-menu-panel"
-        >
-          <span className="sm-toggle-textWrap">
-            <span className="sm-toggle-textInner" ref={textInnerRef}>
-              {textLines.map((line, i) => (
-                <span key={line + i} className="sm-toggle-line">
-                  {line}
-                </span>
-              ))}
+        <div className="flex items-center gap-4 pointer-events-auto">
+          {/* Header Language Switcher */}
+          <div className="flex items-center gap-1 text-xs font-semibold select-none">
+            {(['es', 'en', 'ru'] as const).map((lang) => (
+              <button
+                key={lang}
+                onClick={() => setLanguage(lang)}
+                className={`px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-sm uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                  language === lang
+                    ? 'text-purple-light font-extrabold bg-purple-light/15 border border-purple-light/30 scale-105'
+                    : 'text-text-color/60 hover:text-text-color border border-transparent hover:bg-white/5'
+                }`}
+              >
+                {lang}
+              </button>
+            ))}
+          </div>
+
+          <button
+            ref={toggleBtnRef}
+            className="sm-toggle"
+            onClick={toggleMenu}
+            aria-expanded={open}
+            aria-controls="staggered-menu-panel"
+          >
+            <span className="sm-toggle-textWrap">
+              <span className="sm-toggle-textInner" ref={textInnerRef}>
+                {textLines.map((line, i) => (
+                  <span key={line + i} className="sm-toggle-line">
+                    {line}
+                  </span>
+                ))}
+              </span>
             </span>
-          </span>
-          <span className="sm-icon" ref={iconRef}>
-            <span className="sm-icon-line" ref={plusHRef}></span>
-            <span className="sm-icon-line" ref={plusVRef}></span>
-          </span>
-        </button>
+            <span className="sm-icon" ref={iconRef}>
+              <span className="sm-icon-line" ref={plusHRef}></span>
+              <span className="sm-icon-line" ref={plusVRef}></span>
+            </span>
+          </button>
+        </div>
       </header>
 
       <div className="sm-prelayers" ref={preLayersRef} data-position={position}>
@@ -480,8 +501,27 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           )}
 
           <div className="mt-8 pt-6 border-t border-black/10 dark:border-white/10 flex items-center justify-between">
-            <span className="text-sm font-semibold opacity-60 uppercase tracking-wider">Appearance</span>
+            <span className="text-sm font-semibold opacity-60 uppercase tracking-wider">{t.nav.appearance}</span>
             <ThemeToggle />
+          </div>
+
+          <div className="mt-4 pt-4 border-t border-black/10 dark:border-white/10 flex items-center justify-between">
+            <span className="text-sm font-semibold opacity-60 uppercase tracking-wider">Language</span>
+            <div className="flex items-center gap-1.5 text-xs font-semibold">
+              {(['es', 'en', 'ru'] as const).map((lang) => (
+                <button
+                  key={lang}
+                  onClick={() => setLanguage(lang)}
+                  className={`px-2 py-1 rounded-sm uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                    language === lang
+                      ? 'text-purple-light font-extrabold bg-purple-light/15 border border-purple-light/30 scale-105'
+                      : 'text-text-color/60 hover:text-text-color border border-transparent hover:bg-white/5'
+                  }`}
+                >
+                  {lang}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </aside>

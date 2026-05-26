@@ -1,14 +1,16 @@
 import {SiPython } from 'react-icons/si';
 import BlurText from '../../../../components/BlurText';
 import { FlowingMenu } from '../../../../components/FlowingMenu';
+import { useLanguage } from '../../../../context/LanguageContext';
 
 function GameSection() {
+  const { t } = useLanguage();
 
   const gameProjects = [
     {
-      title: 'Mario Clone',
-      description: 'A platform game with multiple levels, similar to the 1985 Mario game, using sprites taken from the internet, made entirely in Python with the PyGame library.',
-      role: 'Game Developer',
+      title: t.work.projects.marioClone.title,
+      description: t.work.projects.marioClone.description,
+      role: t.work.projects.marioClone.role,
       year: '2023',
       technologies: [
         { name: 'Python', icon: <SiPython /> },
@@ -21,9 +23,9 @@ function GameSection() {
       ],
     },
     {
-      title: 'Space Shooter',
-      description: 'A game with two difficulty levels, where the difficulty increases as time progresses in each level, made entirely in Python using the PyGame library.',
-      role: 'Game Developer',
+      title: t.work.projects.spaceShooter.title,
+      description: t.work.projects.spaceShooter.description,
+      role: t.work.projects.spaceShooter.role,
       year: '2023',
       technologies: [
         { name: 'Python', icon: <SiPython /> },
@@ -40,7 +42,7 @@ function GameSection() {
   return (
     <div className="w-full">
         <BlurText
-          text="GAMES"
+          text={t.work.games}
           className="font-extrabold text-2xl md:text-4xl pl-10"
           animateBy="words"
           delay={300}

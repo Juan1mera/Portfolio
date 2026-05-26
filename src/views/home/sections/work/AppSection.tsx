@@ -1,15 +1,17 @@
 import { SiAuth0, SiDart, SiFlutter, SiGooglemaps, SiMysql, SiNginx, SiSocketdotio, SiSpring, SiSqlite, SiSupabase } from "react-icons/si";
 import BlurText from "../../../../components/BlurText";
 import { FlowingMenu } from "../../../../components/FlowingMenu";
+import { useLanguage } from "../../../../context/LanguageContext";
 
 
 function AppSection() {
+  const { t } = useLanguage();
 
   const appProjects = [
     {
-      title: 'AmigoVet',
-      description: 'Mobile application for the care of your pets, where you can keep all the information about your pet as if it were its virtual ID card.',
-      role: 'Full-Stack Developer',
+      title: t.work.projects.amigovetApp.title,
+      description: t.work.projects.amigovetApp.description,
+      role: t.work.projects.amigovetApp.role,
       year: '2025',
       technologies: [
         { name: 'Flutter', icon: <SiFlutter /> },
@@ -31,9 +33,9 @@ function AppSection() {
       ]
     },
     {
-      title: 'GoCab',
-      description: 'A multiplatform mobile application where you can access it as both a user and a driver. You can see nearby taxis, request a ride, the driver can make you a counteroffer, you can track the trip and rate it at the end of the ride, built with Flutter and Spring Boot as the backend.',
-      role: 'Full-Stack Developer',
+      title: t.work.projects.goCab.title,
+      description: t.work.projects.goCab.description,
+      role: t.work.projects.goCab.role,
       year: '2025',
       technologies: [
         { name: 'Flutter', icon: <SiFlutter /> },
@@ -52,9 +54,9 @@ function AppSection() {
       ],
     },
     {
-      title: 'Chainly',
-      description: 'A mobile application built in Flutter, designed for managing personal finances. It allows the registration of multiple wallets, whether bank accounts or cash, each with its own currency. It also enables the recording of cash outflows, inflows, and transfers between cards of different currencies using an API.',
-      role: 'Full-Stack Developer',
+      title: t.work.projects.chainly.title,
+      description: t.work.projects.chainly.description,
+      role: t.work.projects.chainly.role,
       year: '2025',
       technologies: [
         { name: 'Flutter', icon: <SiFlutter /> },
@@ -74,7 +76,7 @@ function AppSection() {
   return (
     <div className="w-full">
       <BlurText
-        text="APPS"
+        text={t.work.apps}
         className="font-extrabold text-2xl md:text-4xl pl-10"
         animateBy="words"
         delay={300}
