@@ -1,4 +1,4 @@
-import { SiGsk, SiNestjs, SiReact, SiSass, SiSupabase, SiVite } from 'react-icons/si';
+import { SiFirebase, SiGsk, SiMongodb, SiNestjs, SiReact, SiSass, SiSupabase, SiVite } from 'react-icons/si';
 import BlurText from '../../../../components/BlurText';
 import { FlowingMenu } from '../../../../components/FlowingMenu';
 
@@ -19,6 +19,24 @@ function WebSection() {
       links: [
         { name: "GitHub", url: "https://github.com/Juan1mera/AmigoVet-Web" },
         { name: "Web", url: "https://amigovet.app" },
+      ],
+    },
+    {
+      title: 'KnowYou',
+      description: 'Website for the presentation of the "AmigoVet" mobile application in order to showcase its functionalities, previous versions and everything related.',
+      role: 'Full Stack',
+      year: '2026',
+      technologies: [
+        { name: 'NextJs', icon: <SiReact /> },
+        { name: 'FireBase', icon: <SiFirebase /> },
+        { name: 'NoSQL', icon: <SiMongodb /> },
+      ],
+      image1: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1779809439/Page2_mzfksq.webp',
+      image2: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1779809439/Page1_fqi0hq.webp',
+      image3: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1779809438/Page3_avw0ax.webp',
+      links: [
+        { name: "GitHub", url: "https://github.com/Juan1mera/Knew-you" },
+        { name: "Web", url: "https://knew-you.vercel.app/" },
       ],
     },
     {
