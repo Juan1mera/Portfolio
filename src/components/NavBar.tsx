@@ -1,8 +1,13 @@
 import StaggeredMenu from "./StaggeredMenu";
 import { useLanguage } from "../context/LanguageContext";
+import { useTheme } from "../context/ThemeContext";
 
 function NavBar() {
   const { t } = useLanguage();
+  const { theme } = useTheme();
+
+  // Color del botón del menú según el tema activo
+  const buttonColor = theme === 'dark' ? '#C9C4B3' : '#171717';
 
   const menuItems = [
     { label: t.nav.home, ariaLabel: 'Go to home page', link: '/' },
@@ -29,10 +34,9 @@ function NavBar() {
       socialItems={socialItems}
       displaySocials={true}
       displayItemNumbering={true}
-      menuButtonColor="#C9C4B3"
-      openMenuButtonColor="#C9C4B3"
+      menuButtonColor={buttonColor}
+      openMenuButtonColor={buttonColor}
       changeMenuColorOnOpen={true}
-      // colors={[WebColors.PurpleLight, WebColors.PurpleLightLight ]}
       logoText="Juan Mera"
       accentColor="#6950b2"
       isFixed={true}

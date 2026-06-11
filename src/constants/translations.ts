@@ -430,7 +430,7 @@ export const translations: Record<Language, TranslationsSchema> = {
     },
     contact: {
       titleTop: ['CONSTRUYAMOS'],
-      titleBottom: ['ALGO', 'JUNTOS'],
+      titleBottom: ['JUNTOS'],
       titlePurple: 'CONSTRUYAMOS',
       clickToCopy: '¡Haz clic para copiar!',
       copiedText: '¡Copiado! Pégalo donde quieras',

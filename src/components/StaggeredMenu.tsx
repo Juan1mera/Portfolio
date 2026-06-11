@@ -529,10 +529,10 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       <style>{`
         .sm-scope {
           --sm-accent: ${accentColor};
-          --sm-bg: ${WebColors.Background};
-          --sm-text: ${WebColors.TextColor};
-          --sm-purple: ${WebColors.PurpleLight};
-          --sm-green: ${WebColors.PurpleLight};
+          --sm-bg: var(--background);
+          --sm-text: var(--text-color);
+          --sm-purple: var(--color-purple-light);
+          --sm-green: var(--color-purple-light);
         }
 
         .sm-overlay {
@@ -783,7 +783,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           position: relative;
           color: var(--sm-text);
           font-weight: 700;
-          font-size: clamp(2rem, 8vw, 4rem);
+          font-size: clamp(1.6rem, 6.4vw, 3.2rem);
           cursor: pointer;
           line-height: 1;
           letter-spacing: -1px;

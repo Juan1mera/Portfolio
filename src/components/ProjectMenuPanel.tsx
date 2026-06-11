@@ -49,10 +49,13 @@ export const ProjectMenuPanel: React.FC<ProjectMenuPanelProps> = ({ data }) => {
           {images.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
               {images.map((img, i) => (
-                <div
+                <img
                   key={i}
-                  className="aspect-video bg-contain bg-no-repeat rounded-lg overflow-hidden cursor-zoom-in transition-all duration-300 hover:scale-[1.02]"
-                  style={{ backgroundImage: `url(${img})` }}
+                  src={img}
+                  alt={`${data.title} - captura ${i + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-video w-full object-contain rounded-lg cursor-zoom-in transition-all duration-300 hover:scale-[1.02]"
                   onClick={() => setExpandedImage(img)}
                 />
               ))}

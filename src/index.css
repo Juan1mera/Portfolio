@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap');
+/* La fuente se carga desde index.html con preconnect (no render-blocking) */
 @import "tailwindcss";
 
 @theme {
@@ -10,6 +10,18 @@
   --color-purple: var(--purple);
   --color-purple-light: #6950b2;
   --color-purple-extra-light: #e5e6fa;
+
+  /* Animación del marquee usado en FlowingMenu (animate-marquee) */
+  --animate-marquee: marquee 15s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 :root {
@@ -18,6 +30,7 @@
   --text-color: #C9C4B3;
   --text-light: #eeede6;
   --purple: #392F5A;
+  color-scheme: dark;
 }
 
 :root[data-theme='light'] {
@@ -26,6 +39,7 @@
   --text-color: #171717;
   --text-light: #392F5A;
   --purple: #6950b2;
+  color-scheme: light;
 }
 
 :root {
@@ -34,7 +48,6 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
   color: var(--text-color);
   background-color: var(--background);
 
@@ -49,7 +62,7 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   max-width: 1900px;
   min-height: 100vh;
 }
@@ -57,7 +70,6 @@ body {
 h1 {
   line-height: 1.1;
 }
-
 
 ::selection {
   background-color: var(--color-purple);

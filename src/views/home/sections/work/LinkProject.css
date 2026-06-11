@@ -1,0 +1,95 @@
+.link-project {
+  display: inline-block;
+}
+
+.link-project a.learn-more {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  width: fit-content;
+}
+
+.link-project a.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: var(--background);
+  border-radius: 1.625rem;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.link-project a.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+  z-index: 3;
+}
+
+.link-project a.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid var(--text-light);
+  border-right: 0.125rem solid var(--text-light);
+  transform: rotate(45deg);
+}
+
+.link-project a.learn-more .a-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: inline-block;
+  padding: 0.75rem 1.5rem 0.75rem 3.5rem;
+  color: var(--background);
+  font-weight: 700;
+  line-height: 1.6;
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+/* --- ESTADOS HOVER --- */
+
+.link-project a:hover .circle {
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.link-project a:hover .circle .icon.arrow {
+  background: var(--text-light);
+  transform: translateY(-50%) translateX(0.5rem);
+}
+
+.link-project a:hover .a-text {
+  color: var(--text-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .link-project a.learn-more .circle {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .link-project a.learn-more .a-text {
+    font-size: 0.875rem;
+    padding: 0.5rem 1.25rem 0.5rem 3.5rem;
+  }
+}

@@ -1,49 +1,46 @@
+import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Footer from './views/footer/Footer'
-
-import Support from './views/support/Support'
-import Terms from './views/terms/Terms'
-import NotFound from './views/errors/NotFound'
 import Home from './views/home/Home'
-import { useTheme } from './hooks/useTheme'
 
+// Rutas secundarias: lazy para no cargarlas con el home
+const Support = lazy(() => import('./views/support/Support'))
+const Terms = lazy(() => import('./views/terms/Terms'))
+const NotFound = lazy(() => import('./views/errors/NotFound'))
 
 function App() {
-  useTheme(); // Initialize theme
-
   return (
     <>
       {/* NavBar siempre visible */}
       <NavBar />
 
-      <Routes>
-        {/* Página principal con todo el scroll */}
-        <Route path="/" element={<Home />} />
+      <Suspense fallback={<main className="pt-20 min-h-screen" />}>
+        <Routes>
+          {/* Página principal con todo el scroll */}
+          <Route path="/" element={<Home />} />
 
-        {/* Página de Support */}
-        <Route
-          path="/support"
-          element={
-            <main className={'pt-20 min-h-screen '}>
-              <Support />
-            </main>
-          }
-        />
+          <Route
+            path="/support"
+            element={
+              <main className="pt-20 min-h-screen">
+                <Support />
+              </main>
+            }
+          />
 
-        {/* Página de Terms */}
-        <Route
-          path="/terms"
-          element={
-            <main className={'pt-20 min-h-screen '}>
-              <Terms />
-            </main>
-          }
-        />
+          <Route
+            path="/terms"
+            element={
+              <main className="pt-20 min-h-screen">
+                <Terms />
+              </main>
+            }
+          />
 
-        {/* Opcional: 404 */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
 
       <Footer />
     </>

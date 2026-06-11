@@ -1,0 +1,44 @@
+.custom-link a {
+  padding: 0.5rem 1rem;
+  margin: 0;
+  border: 2px solid var(--text-color);
+  border-radius: 24px;
+  background: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--text-color);
+  position: relative;
+  transition: color 0.3s ease-out, border-color 0.3s ease-out;
+}
+
+.custom-link a span {
+  position: relative;
+  color: var(--text-color);
+  transition: color 0.3s ease-out;
+}
+
+.custom-link a .icon {
+  width: 15px;
+  height: 15px;
+  stroke: var(--text-color);
+  transition: transform 0.2s ease-out 0.1s, stroke 0.3s ease-out;
+}
+
+.custom-link a:hover {
+  color: var(--color-purple-light);
+  border-color: var(--color-purple-light);
+}
+
+.custom-link a:hover span {
+  color: var(--color-purple-light);
+}
+
+.custom-link a:hover .icon {
+  transform: translateX(4px);
+  stroke: var(--color-purple-light);
+}

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
 import { translations } from '../constants/translations';
 import type { Language, TranslationsSchema } from '../constants/translations';
 
@@ -22,25 +22,30 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return 'en'; // default fallback
   });
 
-  const setLanguage = (lang: Language) => {
+  const setLanguage = useCallback((lang: Language) => {
     setLanguageState(lang);
     localStorage.setItem('language', lang);
-  };
+  }, []);
 
   useEffect(() => {
     // Add dynamic document attributes for SEO and screen readers
     document.documentElement.lang = language;
   }, [language]);
 
-  const t = translations[language];
+  // Memoizar el value evita re-renders de todos los consumidores en cada render del provider
+  const value = useMemo(
+    () => ({ language, setLanguage, t: translations[language] }),
+    [language, setLanguage]
+  );
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={value}>
       {children}
     </LanguageContext.Provider>
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useLanguage = (): LanguageContextProps => {
   const context = useContext(LanguageContext);
   if (!context) {

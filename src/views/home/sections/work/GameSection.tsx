@@ -1,4 +1,5 @@
-import {SiPython } from 'react-icons/si';
+import { useMemo } from 'react';
+import { SiPython } from 'react-icons/si';
 import BlurText from '../../../../components/BlurText';
 import { FlowingMenu } from '../../../../components/FlowingMenu';
 import { useLanguage } from '../../../../context/LanguageContext';
@@ -6,7 +7,7 @@ import { useLanguage } from '../../../../context/LanguageContext';
 function GameSection() {
   const { t } = useLanguage();
 
-  const gameProjects = [
+  const gameProjects = useMemo(() => [
     {
       title: t.work.projects.marioClone.title,
       description: t.work.projects.marioClone.description,
@@ -15,9 +16,9 @@ function GameSection() {
       technologies: [
         { name: 'Python', icon: <SiPython /> },
       ],
-      image1: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768443017/Page1_s6c5ju.webp',
-      image2: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768443016/Page2_kwvpqt.webp',
-      image3: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768443018/Page3_upvcht.webp',
+      image1: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/f_auto,q_auto,w_800/v1768443017/Page1_s6c5ju.webp',
+      image2: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/f_auto,q_auto,w_800/v1768443016/Page2_kwvpqt.webp',
+      image3: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/f_auto,q_auto,w_800/v1768443018/Page3_upvcht.webp',
       links: [
         { name: "GitHub", url: "https://github.com/Juan1mera/CluckSouls" },
       ],
@@ -30,14 +31,14 @@ function GameSection() {
       technologies: [
         { name: 'Python', icon: <SiPython /> },
       ],
-      image1: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768443057/Page1_jmmhfv.webp',
-      image2: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768443058/Page2_lshqim.webp',
-      image3: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/v1768443059/Page3_j9hwmo.webp',
+      image1: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/f_auto,q_auto,w_800/v1768443057/Page1_jmmhfv.webp',
+      image2: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/f_auto,q_auto,w_800/v1768443058/Page2_lshqim.webp',
+      image3: 'https://res.cloudinary.com/dhwc0l0wz/image/upload/f_auto,q_auto,w_800/v1768443059/Page3_j9hwmo.webp',
       links: [
         { name: "GitHub", url: "https://github.com/Juan1mera/Learning-Pygame/tree/main/space%20shooter" },
       ],
     },
-  ];
+  ], [t]);
 
   return (
     <div className="w-full">

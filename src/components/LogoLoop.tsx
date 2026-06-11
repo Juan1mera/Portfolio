@@ -111,12 +111,32 @@ const useImageLoader = (
   }, [onLoad, seqRef]);
 };
 
+// Pausa el rAF cuando el loop no está en pantalla (ahorra CPU/batería)
+const useInViewport = (ref: React.RefObject<HTMLElement | null>) => {
+  const [inViewport, setInViewport] = useState(true);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element || !window.IntersectionObserver) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setInViewport(entry.isIntersecting),
+      { rootMargin: '100px' }
+    );
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [ref]);
+
+  return inViewport;
+};
+
 const useAnimationLoop = (
   trackRef: React.RefObject<HTMLDivElement | null>,
   targetVelocity: number,
   seqWidth: number,
   isHovered: boolean,
-  pauseOnHover: boolean
+  pauseOnHover: boolean,
+  isActive: boolean
 ) => {
   const rafRef = useRef<number | null>(null);
   const lastTimestampRef = useRef<number | null>(null);
@@ -125,7 +145,7 @@ const useAnimationLoop = (
 
   useEffect(() => {
     const track = trackRef.current;
-    if (!track) return;
+    if (!track || !isActive) return;
 
     const prefersReduced =
       typeof window !== 'undefined' &&
@@ -170,7 +190,7 @@ const useAnimationLoop = (
       if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
       lastTimestampRef.current = null;
     };
-  }, [targetVelocity, seqWidth, isHovered, pauseOnHover, trackRef]);
+  }, [targetVelocity, seqWidth, isHovered, pauseOnHover, trackRef, isActive]);
 };
 
 export const LogoLoop = React.memo<LogoLoopProps>(
@@ -217,7 +237,8 @@ export const LogoLoop = React.memo<LogoLoopProps>(
     useResizeObserver(updateDimensions, [containerRef, seqRef]);
     // useImageLoader(seqRef, updateDimensions, [logos, gap, logoHeight]);
     useImageLoader(seqRef, updateDimensions);
-    useAnimationLoop(trackRef, targetVelocity, seqWidth, isHovered, pauseOnHover);
+    const inViewport = useInViewport(containerRef);
+    useAnimationLoop(trackRef, targetVelocity, seqWidth, isHovered, pauseOnHover, inViewport);
 
     const cssVariables = useMemo(
       () => ({
