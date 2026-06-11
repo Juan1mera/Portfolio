@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { CustomTitleSection } from "../../components/CustomTitleSection";
 import { useLanguage } from "../../context/LanguageContext";
+import { getEmail } from "../../utils/email";
 
 function Support() {
   const { language, t } = useLanguage();
   const [emailCopied, setEmailCopied] = useState(false);
-  const email = "mera.dev.co@gmail.com";
+  const email = getEmail();
 
   const handleCopyEmail = async () => {
     await navigator.clipboard.writeText(email);

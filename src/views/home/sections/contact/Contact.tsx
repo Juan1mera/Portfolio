@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { CustomTitleSection } from "../../../../components/CustomTitleSection";
 import { useLanguage } from "../../../../context/LanguageContext";
+import { getEmail } from "../../../../utils/email";
 
 function Contact() {
   const { t } = useLanguage();
 
-  // Email
+  // Email (ensamblado en runtime para evitar extractores)
   const [emailCopied, setEmailCopied] = useState(false);
-  const email = "mera.dev.co@gmail.com";
+  const email = getEmail();
 
   // Teléfono
   const [phoneCopied, setPhoneCopied] = useState(false);

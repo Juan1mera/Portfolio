@@ -336,7 +336,7 @@ export const translations: Record<Language, TranslationsSchema> = {
         },
         {
           title: '12. Contact',
-          content: 'If you have questions about these terms, your data, or any of my applications, you can write to me at mera.dev.co@gmail.com. You can also find more help options on the Support page of this site.',
+          content: 'If you have questions about these terms, your data, or any of my applications, you can write to me using the contact email shown on the Support page of this site, where you will also find more help options.',
         },
       ],
     },
@@ -553,7 +553,7 @@ export const translations: Record<Language, TranslationsSchema> = {
         },
         {
           title: '12. Contacto',
-          content: 'Si tienes preguntas sobre estos términos, tus datos o cualquiera de mis aplicaciones, puedes escribirme a mera.dev.co@gmail.com. También encontrarás más opciones de ayuda en la página de Soporte de este sitio.',
+          content: 'Si tienes preguntas sobre estos términos, tus datos o cualquiera de mis aplicaciones, puedes escribirme al correo de contacto que aparece en la página de Soporte de este sitio, donde también encontrarás más opciones de ayuda.',
         },
       ],
     },
@@ -770,7 +770,7 @@ export const translations: Record<Language, TranslationsSchema> = {
         },
         {
           title: '12. Контакты',
-          content: 'Если у вас есть вопросы о настоящих условиях, ваших данных или любом из моих приложений, напишите мне на mera.dev.co@gmail.com. Дополнительные варианты помощи вы найдёте на странице Поддержки этого сайта.',
+          content: 'Если у вас есть вопросы о настоящих условиях, ваших данных или любом из моих приложений, напишите мне на контактный адрес, указанный на странице Поддержки этого сайта, где вы также найдёте дополнительные варианты помощи.',
         },
       ],
     },

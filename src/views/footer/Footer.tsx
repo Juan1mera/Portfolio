@@ -1,5 +1,6 @@
 import { FaHeart } from "react-icons/fa";
 import { useLanguage } from "../../context/LanguageContext";
+import { getEmail, openMailto } from "../../utils/email";
 import "./Footer.css";
 
 interface SocialLink {
@@ -34,17 +35,13 @@ const socialLinks: SocialLink[] = [
     label: "LinkedIn",
     text: "@juan1mera",
   },
-  {
-    href: "mailto:mera.dev.co@gmail.com",
-    label: "Email",
-    text: "mera.dev.co@gmail.com",
-  },
-  {
-    href: "https://wa.me/+79155727834?text=Hello+Juan,+I+want+work+with+you+🧑‍💻",
-    label: "WhatsApp",
-    text: "+7 915 572 7834",
-  },
 ];
+
+const whatsappLink: SocialLink = {
+  href: "https://wa.me/+79155727834?text=Hello+Juan,+I+want+work+with+you+🧑‍💻",
+  label: "WhatsApp",
+  text: "+7 915 572 7834",
+};
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -68,6 +65,33 @@ export default function Footer() {
               </div>
             </a>
           ))}
+
+          {/* Email: sin mailto en el DOM ni texto literal (anti-scrapers) */}
+          <button
+            type="button"
+            onClick={openMailto}
+            aria-label="Email"
+            className="social-link"
+            style={{ background: 'none', border: 'none', font: 'inherit', color: 'inherit', cursor: 'pointer' }}
+          >
+            <div className="text-wrapper">
+              <span className="label-text">Email</span>
+              <span className="username-text">{getEmail()}</span>
+            </div>
+          </button>
+
+          <a
+            href={whatsappLink.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${whatsappLink.label}: ${whatsappLink.text}`}
+            className="social-link"
+          >
+            <div className="text-wrapper">
+              <span className="label-text">{whatsappLink.label}</span>
+              <span className="username-text">{whatsappLink.text}</span>
+            </div>
+          </a>
 
           <div className="made-by">
             {t.footer.madeWith} <FaHeart className="inline mx-1 text-purple-light" /> {t.footer.by}{" "}
