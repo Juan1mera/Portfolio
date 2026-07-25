@@ -1,5 +1,7 @@
 // src/constants/translations.ts
 
+import { calcularEdad } from "../utils/birtday";
+
 export type Language = 'en' | 'es' | 'ru';
 
 export interface FAQItemTranslation {
@@ -151,7 +153,7 @@ export const translations: Record<Language, TranslationsSchema> = {
       titleTop: ['GET', 'TO'],
       titleBottom: ['KNOW', 'ME'],
       titlePurple: 'ME',
-      p1: "I'm Juan José Mera Barrera, 18 years old, and currently in my fifth semester of Applied Informatics and Information Technologies at Belgorod State National Research University (BelGU), Russia. I've been passionate about programming since I was 10, starting with robotics using Arduino and later shifting my full focus to software development.",
+      p1: "I'm Juan José Mera Barrera, " + calcularEdad("2006-12-16") + " years old, and currently in my fifth semester of Applied Informatics and Information Technologies at Belgorod State National Research University (BelGU), Russia. I've been passionate about programming since I was 10, starting with robotics using Arduino and later shifting my full focus to software development.",
       p2: "I'm obsessed with crafting beautiful, intuitive, and user-friendly interfaces while optimizing performance in both web applications and servers. I have two years of hands-on programming experience, though no formal work history yet.",
       p3: "I'm eager to join a team where I can contribute my best, collaborate effectively, and help drive innovative projects forward.",
       letsTalk: "Let's Talk",
@@ -242,7 +244,7 @@ export const translations: Record<Language, TranslationsSchema> = {
       clickToCopy: 'Click to copy!',
       copiedText: '¡Copied! Paste wherever you want',
       downloadCv: 'Download CV',
-      cvDetails: 'PDF • 2025',
+      cvDetails: 'PDF • 2026',
     },
     footer: {
       madeWith: 'Made with',
@@ -368,7 +370,7 @@ export const translations: Record<Language, TranslationsSchema> = {
       titleTop: ['CONOCE', 'MÁS'],
       titleBottom: ['SOBRE', 'MÍ'],
       titlePurple: 'MÍ',
-      p1: 'Soy Juan José Mera Barrera, tengo 18 años y actualmente curso el quinto semestre de Informática Aplicada y Tecnologías de la Información en la Universidad Nacional de Investigación del Estado de Belgorod (BelGU), Rusia. Me apasiona la programación desde los 10 años, comenzando con la robótica usando Arduino y más tarde enfocándome por completo en el desarrollo de software.',
+      p1: 'Soy Juan José Mera Barrera, tengo ' + calcularEdad("2006-12-16") + ' años y actualmente curso el septimo semestre de Informática Aplicada y Tecnologías de la Información en la Universidad Nacional de Investigación del Estado de Belgorod (BelGU), Rusia. Me apasiona la programación desde los 10 años, comenzando con la robótica usando Arduino y más tarde enfocándome por completo en el desarrollo de software.',
       p2: 'Me obsesiona crear interfaces hermosas, intuitivas y fáciles de usar, optimizando al mismo tiempo el rendimiento tanto en aplicaciones web como en servidores. Tengo dos años de experiencia práctica en programación, aunque todavía no cuento con un historial laboral formal.',
       p3: 'Estoy ansioso por unirme a un equipo donde pueda dar lo mejor de mí, colaborar de manera efectiva y ayudar a impulsar proyectos innovadores.',
       letsTalk: 'Hablemos',
@@ -459,7 +461,7 @@ export const translations: Record<Language, TranslationsSchema> = {
       clickToCopy: '¡Haz clic para copiar!',
       copiedText: '¡Copiado! Pégalo donde quieras',
       downloadCv: 'Descargar CV',
-      cvDetails: 'PDF • 2025',
+      cvDetails: 'PDF • 2026',
     },
     footer: {
       madeWith: 'Hecho con',
@@ -585,7 +587,7 @@ export const translations: Record<Language, TranslationsSchema> = {
       titleTop: ['УЗНАЙТЕ'],
       titleBottom: ['ОБО', 'МНЕ'],
       titlePurple: 'МНЕ',
-      p1: 'Я Хуан Хосе Мера Баррера, мне 18 лет, и в настоящее время я учусь на пятом семестре прикладной информатики и информационных технологий в Белгородском государственном национальном исследовательском университете (НИУ БелГУ), Россия. Я увлекаюсь программированием с 10 лет, начав с робототехники на Arduino, а затем полностью переключившись на разработку программного обеспечения.',
+      p1: 'Я Хуан Хосе Мера Баррера, мне ' + calcularEdad("2006-12-16") + ' лет, и в настоящее время я учусь на пятом семестре прикладной информатики и информационных технологий в Белгородском государственном национальном исследовательском университете (НИУ БелГУ), Россия. Я увлекаюсь программированием с 10 лет, начав с робототехники на Arduino, а затем полностью переключившись на разработку программного обеспечения.',
       p2: 'Я одержим созданием красивых, интуитивно понятных и удобных интерфейсов при оптимизации производительности как в веб-приложениях, так и на серверах. У меня есть два года практического опыта программирования, хотя официальной трудовой биографии пока нет.',
       p3: 'Я стремлюсь присоединиться к команде, где смогу проявить себя наилучшим образом, эффективно сотрудничать и помогать продвигать инновационные проекты вперед.',
       letsTalk: 'Связаться',
@@ -676,7 +678,7 @@ export const translations: Record<Language, TranslationsSchema> = {
       clickToCopy: 'Нажмите, чтобы скопировать!',
       copiedText: 'Скопировано! Вставьте куда угодно',
       downloadCv: 'Скачать резюме',
-      cvDetails: 'PDF • 2025',
+      cvDetails: 'PDF • 2026',
     },
     footer: {
       madeWith: 'Сделано с',
