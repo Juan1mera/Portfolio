@@ -13,6 +13,7 @@ function NavBar() {
     { label: t.nav.home, ariaLabel: 'Go to home page', link: '/' },
     { label: t.nav.about, ariaLabel: 'Learn about us', link: '#about' },
     { label: t.nav.studies, ariaLabel: 'Learn about academic studies', link: '#studies' },
+    { label: t.nav.experience, ariaLabel: 'Learn about work experience', link: '#experience' },
     { label: t.nav.works, ariaLabel: 'View our works', link: '#works' },
     { label: t.nav.contact, ariaLabel: 'Get in touch', link: '#contact' }
   ];

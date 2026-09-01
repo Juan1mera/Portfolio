@@ -20,6 +20,14 @@ export interface ProjectText {
   description: string;
 }
 
+export interface ExperienceItem {
+  company: string;
+  role: string;
+  location: string;
+  period: string;
+  bullets: string[];
+}
+
 export interface StudiesItem {
   institution: string;
   period: string;
@@ -32,6 +40,7 @@ export interface TranslationsSchema {
     home: string;
     about: string;
     studies: string;
+    experience: string;
     works: string;
     contact: string;
     buyMeCoffee: string;
@@ -64,6 +73,12 @@ export interface TranslationsSchema {
     titleBottom: string[];
     titlePurple: string;
     items: StudiesItem[];
+  };
+  experience: {
+    titleTop: string[];
+    titleBottom: string[];
+    titlePurple: string;
+    items: ExperienceItem[];
   };
   skills: {
     technologies: string;
@@ -131,6 +146,7 @@ export const translations: Record<Language, TranslationsSchema> = {
       home: 'Home',
       about: 'About',
       studies: 'Studies',
+      experience: 'Experience',
       works: 'Works',
       contact: 'Contact',
       buyMeCoffee: 'Buy me a Coffee',
@@ -153,8 +169,8 @@ export const translations: Record<Language, TranslationsSchema> = {
       titleTop: ['GET', 'TO'],
       titleBottom: ['KNOW', 'ME'],
       titlePurple: 'ME',
-      p1: "I'm Juan José Mera Barrera, " + calcularEdad("2006-12-16") + " years old, and currently in my seventh semester of Applied Informatics and Information Technologies at Belgorod State National Research University (BelGU), Russia. I've been passionate about programming since I was 10, starting with robotics using Arduino and later shifting my full focus to software development.",
-      p2: "I'm obsessed with crafting beautiful, intuitive, and user-friendly interfaces while optimizing performance in both web applications and servers. I have two years of hands-on programming experience, though no formal work history yet.",
+      p1: "I'm Juan José Mera Barrera, " + calcularEdad("2006-12-16") + " years old, and currently in my seventh semester of Information Systems and Technologies at Belgorod State National Research University (BelGU), Russia. I've been passionate about programming since I was 10, starting with robotics using Arduino and later shifting my full focus to software development.",
+      p2: "I'm obsessed with crafting beautiful, intuitive, and user-friendly interfaces while optimizing performance in both web applications and servers. I have three years of professional experience: I started out as a freelance developer, then worked as a technical support engineer and developer for a company in Colombia, and today I build mobile apps and backends running in production as part of remote teams.",
       p3: "I'm eager to join a team where I can contribute my best, collaborate effectively, and help drive innovative projects forward.",
       letsTalk: "Let's Talk",
     },
@@ -166,14 +182,65 @@ export const translations: Record<Language, TranslationsSchema> = {
         {
           institution: 'Belgorod State National Research University (BelGU)',
           period: '2023 - 2027',
-          degree: "Bachelor's Degree in Applied Informatics and Information Technologies",
-          details: 'Currently in the seventh semester. Solid foundation in Algorithms and Data Structures, Software Engineering, Database Systems (SQL/NoSQL), and System Architecture.',
+          degree: 'B.Eng. in Information Systems and Technologies',
+          details: 'Currently in the seventh semester, focused on software architecture, design patterns and Artificial Intelligence. Hands-on experience in cross-platform application development, system simulation, data management and server configuration.',
         },
         {
           institution: 'Python Institute',
           period: '2024',
-          degree: 'Python Essentials Course',
-          details: 'Intensive hands-on learning through building complex desktop applications with PyQt, web applications with Django, Flask, and FastAPI, as well as mobile apps with Kivy.',
+          degree: 'Python Pro Certification',
+          details: 'Developed skills in data analysis with Pandas, backend web development with Django and Flask, and the creation of cross-platform desktop and mobile applications.',
+        },
+      ],
+    },
+    experience: {
+      titleTop: ['MY', 'WORK'],
+      titleBottom: ['EXPERIENCE'],
+      titlePurple: 'EXPERIENCE',
+      items: [
+        {
+          company: 'AmigoVet Startup',
+          role: 'Full Stack Developer',
+          location: 'Remote',
+          period: '2025',
+          bullets: [
+            'Designed and implemented the complete system architecture, covering the server infrastructure, the mobile application and the corporate landing page.',
+            'Led the setup, deployment and production release of the server and the website for the initial launch of the platform.',
+            'Ensured daily operational reliability and provided continuous technical support for the internal systems.',
+          ],
+        },
+        {
+          company: 'Symmetry Club',
+          role: 'Backend Developer',
+          location: 'Remote',
+          period: 'Jan 2026 - Jul 2026',
+          bullets: [
+            'Worked within the new features development team as a sub-contracted developer over a five-month period.',
+            'Designed and implemented the user streak system and the statistics module to improve user retention.',
+            'Identified, troubleshot and resolved multiple critical backend bugs, improving overall system stability.',
+          ],
+        },
+        {
+          company: 'Distriferca S.A.S',
+          role: 'Technical Support & Developer',
+          location: 'Popayan, Cauca, Colombia',
+          period: 'Oct 2024 - Sep 2025',
+          bullets: [
+            'Responsible for technical support and the continuous improvement of corporate management and inventory.',
+            "Ensured the daily operational reliability of the company's systems.",
+            'Built an automated weekly report generation module integrated with the inventory system.',
+          ],
+        },
+        {
+          company: 'Freelance Web Developer',
+          role: 'Full-Stack Developer',
+          location: 'Remote',
+          period: '2023 - 2024',
+          bullets: [
+            'Developed custom web applications for small and medium-sized companies.',
+            'Created solutions for inventory management, sales and expense statistics, invoice generation and monthly reporting.',
+            'Adapted every solution to the specific needs of each client.',
+          ],
         },
       ],
     },
@@ -348,6 +415,7 @@ export const translations: Record<Language, TranslationsSchema> = {
       home: 'Inicio',
       about: 'Sobre Mí',
       studies: 'Estudios',
+      experience: 'Experiencia',
       works: 'Proyectos',
       contact: 'Contacto',
       buyMeCoffee: 'Invítame a un Café',
@@ -370,8 +438,8 @@ export const translations: Record<Language, TranslationsSchema> = {
       titleTop: ['CONOCE', 'MÁS'],
       titleBottom: ['SOBRE', 'MÍ'],
       titlePurple: 'MÍ',
-      p1: 'Soy Juan José Mera Barrera, tengo ' + calcularEdad("2006-12-16") + ' años y actualmente curso el séptimo semestre de Informática Aplicada y Tecnologías de la Información en la Universidad Nacional de Investigación del Estado de Belgorod (BelGU), Rusia. Me apasiona la programación desde los 10 años, comenzando con la robótica usando Arduino y más tarde enfocándome por completo en el desarrollo de software.',
-      p2: 'Me obsesiona crear interfaces hermosas, intuitivas y fáciles de usar, optimizando al mismo tiempo el rendimiento tanto en aplicaciones web como en servidores. Tengo dos años de experiencia práctica en programación, aunque todavía no cuento con un historial laboral formal.',
+      p1: 'Soy Juan José Mera Barrera, tengo ' + calcularEdad("2006-12-16") + ' años y actualmente curso el séptimo semestre de Ingeniería en Sistemas y Tecnologías de la Información en la Universidad Nacional de Investigación del Estado de Belgorod (BelGU), Rusia. Me apasiona la programación desde los 10 años, comenzando con la robótica usando Arduino y más tarde enfocándome por completo en el desarrollo de software.',
+      p2: 'Me obsesiona crear interfaces hermosas, intuitivas y fáciles de usar, optimizando al mismo tiempo el rendimiento tanto en aplicaciones web como en servidores. Tengo tres años de experiencia profesional: empecé como desarrollador freelance, luego trabajé como soporte técnico y desarrollador para una empresa en Colombia, y hoy construyo aplicaciones móviles y backends en producción dentro de equipos remotos.',
       p3: 'Estoy ansioso por unirme a un equipo donde pueda dar lo mejor de mí, colaborar de manera efectiva y ayudar a impulsar proyectos innovadores.',
       letsTalk: 'Hablemos',
     },
@@ -383,14 +451,65 @@ export const translations: Record<Language, TranslationsSchema> = {
         {
           institution: 'Universidad Nacional de Investigación del Estado de Belgorod (BelGU)',
           period: '2023 - 2027',
-          degree: 'Informática Aplicada y Tecnologías de la Información',
-          details: 'Actualmente cursando el séptimo semestre. Formación sólida en Algoritmos y Estructuras de Datos, Ingeniería de Software, Sistemas de Bases de Datos (SQL/NoSQL) y Arquitectura de Sistemas.',
+          degree: 'Ingeniería en Sistemas y Tecnologías de la Información',
+          details: 'Actualmente cursando el séptimo semestre, con enfoque en arquitectura de software, patrones de diseño e Inteligencia Artificial. Experiencia práctica en desarrollo de aplicaciones multiplataforma, simulación de sistemas, gestión de datos y configuración de servidores.',
         },
         {
           institution: 'Python Institute',
           period: '2024',
-          degree: 'Curso de Python Essentials',
-          details: 'Aprendizaje práctico intensivo desarrollando aplicaciones de escritorio complejas con PyQt, aplicaciones web con Django, Flask y FastAPI, además de apps móviles con Kivy.',
+          degree: 'Certificación Python Pro',
+          details: 'Desarrollé habilidades en análisis de datos con Pandas, desarrollo web backend con Django y Flask, y creación de aplicaciones multiplataforma de escritorio y móviles.',
+        },
+      ],
+    },
+    experience: {
+      titleTop: ['MI', 'EXPERIENCIA'],
+      titleBottom: ['PROFESIONAL'],
+      titlePurple: 'EXPERIENCIA',
+      items: [
+        {
+          company: 'AmigoVet Startup',
+          role: 'Desarrollador Full Stack',
+          location: 'Remoto',
+          period: '2025',
+          bullets: [
+            'Diseñé e implementé la arquitectura integral del sistema, abarcando la infraestructura del servidor, la aplicación móvil y la landing page.',
+            'Lideré la configuración, el despliegue y la puesta en producción del servidor y del sitio web para el lanzamiento inicial de la plataforma.',
+            'Garanticé la confiabilidad operativa diaria y brindé soporte técnico continuo a los sistemas de la aplicación.',
+          ],
+        },
+        {
+          company: 'Symmetry Club',
+          role: 'Desarrollador Backend',
+          location: 'Remoto',
+          period: 'Ene 2026 - Jul 2026',
+          bullets: [
+            'Formé parte del equipo de desarrollo de nuevas funcionalidades bajo la modalidad de subcontratación durante un periodo de cinco meses.',
+            'Diseñé e implementé la funcionalidad de rachas (streaks) y el módulo de estadísticas de usuario para optimizar la retención.',
+            'Identifiqué, diagnostiqué y solucioné múltiples bugs críticos en el backend, mejorando la estabilidad general del sistema.',
+          ],
+        },
+        {
+          company: 'Distriferca S.A.S',
+          role: 'Soporte Técnico y Desarrollador',
+          location: 'Popayán, Cauca, Colombia',
+          period: 'Oct 2024 - Sep 2025',
+          bullets: [
+            'Responsable del soporte técnico y de la mejora continua de la gestión corporativa y de inventarios.',
+            'Garanticé la fiabilidad operativa diaria de los sistemas de la empresa.',
+            'Desarrollé un módulo automatizado de generación de reportes semanales integrado con el sistema de inventario.',
+          ],
+        },
+        {
+          company: 'Desarrollador Web Freelance',
+          role: 'Desarrollador Full-Stack',
+          location: 'Remoto',
+          period: '2023 - 2024',
+          bullets: [
+            'Desarrollé aplicaciones web a la medida para pequeñas y medianas empresas.',
+            'Creé soluciones para gestión de inventarios, estadísticas de ventas y gastos, generación de facturas e informes mensuales.',
+            'Adapté cada solución a las necesidades específicas de cada cliente.',
+          ],
         },
       ],
     },
@@ -565,6 +684,7 @@ export const translations: Record<Language, TranslationsSchema> = {
       home: 'Главная',
       about: 'Обо мне',
       studies: 'Обучение',
+      experience: 'Опыт',
       works: 'Работы',
       contact: 'Контакты',
       buyMeCoffee: 'Купи мне кофе',
@@ -587,8 +707,8 @@ export const translations: Record<Language, TranslationsSchema> = {
       titleTop: ['УЗНАЙТЕ'],
       titleBottom: ['ОБО', 'МНЕ'],
       titlePurple: 'МНЕ',
-      p1: 'Я Хуан Хосе Мера Баррера, мне ' + calcularEdad("2006-12-16") + ' лет, и в настоящее время я учусь на седьмом семестре прикладной информатики и информационных технологий в Белгородском государственном национальном исследовательском университете (НИУ БелГУ), Россия. Я увлекаюсь программированием с 10 лет, начав с робототехники на Arduino, а затем полностью переключившись на разработку программного обеспечения.',
-      p2: 'Я одержим созданием красивых, интуитивно понятных и удобных интерфейсов при оптимизации производительности как в веб-приложениях, так и на серверах. У меня есть два года практического опыта программирования, хотя официальной трудовой биографии пока нет.',
+      p1: 'Я Хуан Хосе Мера Баррера, мне ' + calcularEdad("2006-12-16") + ' лет, и в настоящее время я учусь на седьмом семестре по направлению «Информационные системы и технологии» в Белгородском государственном национальном исследовательском университете (НИУ БелГУ), Россия. Я увлекаюсь программированием с 10 лет, начав с робототехники на Arduino, а затем полностью переключившись на разработку программного обеспечения.',
+      p2: 'Я одержим созданием красивых, интуитивно понятных и удобных интерфейсов при оптимизации производительности как в веб-приложениях, так и на серверах. У меня три года профессионального опыта: я начинал как фриланс-разработчик, затем работал специалистом технической поддержки и разработчиком в компании в Колумбии, а сейчас создаю мобильные приложения и бэкенды, работающие в продакшене, в составе удалённых команд.',
       p3: 'Я стремлюсь присоединиться к команде, где смогу проявить себя наилучшим образом, эффективно сотрудничать и помогать продвигать инновационные проекты вперед.',
       letsTalk: 'Связаться',
     },
@@ -600,14 +720,65 @@ export const translations: Record<Language, TranslationsSchema> = {
         {
           institution: 'Белгородский государственный национальный исследовательский университет (НИУ БелГУ)',
           period: '2023 - 2027',
-          degree: 'Бакалавриат по направлению «Прикладная информатика и информационные технологии»',
-          details: 'В настоящее время обучаюсь на седьмом семестре. Прочная подготовка в области алгоритмов и структур данных, программной инженерии, систем баз данных (SQL/NoSQL) и архитектуры систем.',
+          degree: 'Бакалавриат по направлению «Информационные системы и технологии»',
+          details: 'В настоящее время обучаюсь на седьмом семестре. Основное внимание уделяется архитектуре программного обеспечения, паттернам проектирования и искусственному интеллекту. Практический опыт в разработке кроссплатформенных приложений, моделировании систем, управлении данными и настройке серверов.',
         },
         {
           institution: 'Python Institute',
           period: '2024',
-          degree: 'Курс Python Essentials',
-          details: 'Интенсивное практическое обучение через разработку сложных десктопных приложений на PyQt, веб-приложений на Django, Flask и FastAPI, а также мобильных приложений на Kivy.',
+          degree: 'Сертификация Python Pro',
+          details: 'Развил навыки анализа данных (Pandas), backend-разработки веб-приложений (Django и Flask), а также создания кроссплатформенных десктопных и мобильных приложений.',
+        },
+      ],
+    },
+    experience: {
+      titleTop: ['МОЙ'],
+      titleBottom: ['ОПЫТ', 'РАБОТЫ'],
+      titlePurple: 'ОПЫТ',
+      items: [
+        {
+          company: 'AmigoVet Startup',
+          role: 'Full Stack разработчик',
+          location: 'Удалённо',
+          period: '2025',
+          bullets: [
+            'Спроектировал и реализовал полную архитектуру системы: серверную инфраструктуру, мобильное приложение и корпоративный лендинг.',
+            'Руководил настройкой, развёртыванием и выводом в продакшн сервера и сайта к первому запуску платформы.',
+            'Обеспечивал ежедневную стабильную работу систем и оказывал постоянную техническую поддержку.',
+          ],
+        },
+        {
+          company: 'Symmetry Club',
+          role: 'Backend-разработчик',
+          location: 'Удалённо',
+          period: 'Янв 2026 - Июль 2026',
+          bullets: [
+            'Работал в команде разработки новых функций в качестве подрядчика на протяжении пяти месяцев.',
+            'Спроектировал и внедрил систему стриков и модуль пользовательской статистики для повышения удержания пользователей.',
+            'Находил, диагностировал и устранял критические ошибки в бэкенде, повышая общую стабильность системы.',
+          ],
+        },
+        {
+          company: 'Distriferca S.A.S',
+          role: 'Техническая поддержка и разработчик',
+          location: 'Попаян, Каука, Колумбия',
+          period: 'Окт 2024 - Сен 2025',
+          bullets: [
+            'Отвечал за техническую поддержку и постоянное улучшение корпоративного управления и учёта товаров.',
+            'Обеспечивал ежедневную бесперебойную работу систем компании.',
+            'Разработал модуль автоматической генерации еженедельных отчётов, интегрированный с системой учёта.',
+          ],
+        },
+        {
+          company: 'Веб-разработчик на фрилансе',
+          role: 'Full-Stack разработчик',
+          location: 'Удалённо',
+          period: '2023 - 2024',
+          bullets: [
+            'Разрабатывал веб-приложения на заказ для малого и среднего бизнеса.',
+            'Создавал решения для управления запасами, статистики продаж и расходов, генерации счетов и ежемесячных отчётов.',
+            'Адаптировал каждое решение под конкретные потребности клиента.',
+          ],
         },
       ],
     },

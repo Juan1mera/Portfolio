@@ -16,11 +16,6 @@ const socialLinks: SocialLink[] = [
     text: "/Juan1mera",
   },
   {
-    href: "https://instagram.com/mera.tsx",
-    label: "Instagram",
-    text: "@mera.tsx",
-  },
-  {
     href: "https://t.me/Juan_Mera1",
     label: "Telegram",
     text: "@Juan_Mera1",
