@@ -26,9 +26,9 @@ const socialLinks: SocialLink[] = [
     text: "/meradev",
   },
   {
-    href: "https://www.linkedin.com/in/juan1mera",
+    href: "https://www.linkedin.com/in/meradev/",
     label: "LinkedIn",
-    text: "@juan1mera",
+    text: "@meradev",
   },
 ];
 
